@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 const sd = [
   {"@context":"https://schema.org","@type":"WebSite","name":"APScore5","url":"https://apscore5.com","description":"Free AP test practice questions, unit quizzes, and exam prep for AP Biology, AP Human Geography, and AP Computer Science Principles.","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://apscore5.com/search?q={search_term_string}"},"query-input":"required name=search_term_string"}},
-  {"@context":"https://schema.org","@type":"Organization","name":"APScore5","url":"https://apscore5.com","logo":"https://apscore5.com/images/AP Score dark background light blue.svg","sameAs":["https://www.youtube.com/@APScore5","https://www.tiktok.com/@apscore5"]},
+  {"@context":"https://schema.org","@type":"Organization","name":"APScore5","url":"https://apscore5.com","logo":"https://apscore5.com/images/AP Score5 Light Background SVG.svg","sameAs":["https://www.youtube.com/@APScore5","https://www.tiktok.com/@apscore5"]},
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are AP tests scored?","acceptedAnswer":{"@type":"Answer","text":"AP exams are scored on a 1-5 scale. A 5 signals college-level mastery. Most colleges grant credit for scores of 3, 4, or 5."}},{"@type":"Question","name":"How long is an AP test?","acceptedAnswer":{"@type":"Answer","text":"Most AP exams run between 2 and 3.5 hours. AP Biology is about 3 hours, AP Human Geography around 2h15m, and AP CSP about 2 hours."}},{"@type":"Question","name":"When are AP test scores released?","acceptedAnswer":{"@type":"Answer","text":"AP scores are typically released in mid-July, about two months after the exam window."}},{"@type":"Question","name":"Can AP tests be retaken?","acceptedAnswer":{"@type":"Answer","text":"Yes. Students can retake any AP exam in a subsequent year. You control which scores are reported to colleges."}},{"@type":"Question","name":"How many AP exams are there?","acceptedAnswer":{"@type":"Answer","text":"The College Board currently offers 38 AP courses and exams."}},{"@type":"Question","name":"Do AP test scores matter for college?","acceptedAnswer":{"@type":"Answer","text":"Yes. Strong AP scores (3-5) can earn college credit or placement out of introductory courses."}},{"@type":"Question","name":"Which AP test is the hardest?","acceptedAnswer":{"@type":"Answer","text":"AP Physics C, AP Chemistry, and AP Calculus BC consistently have the lowest 5-rates."}},{"@type":"Question","name":"What is the easiest AP exam?","acceptedAnswer":{"@type":"Answer","text":"AP Human Geography, AP Computer Science Principles, and AP Environmental Science are often cited as most accessible."}}]},
 ];
 
@@ -40,7 +40,7 @@ export default async function Home() {
         <nav className="container nav">
           <a href="/" aria-label="APScore5 Home">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/AP Score dark background light blue.svg" alt="APScore5 logo" className="brand-logo"/>
+            <img src="/images/AP Score5 Light Background SVG.svg" alt="APScore5 logo" className="brand-logo"/>
           </a>
           <div className="nav-links">
             <a href="/courses" className="nav-link">AP Courses</a>
@@ -159,7 +159,7 @@ export default async function Home() {
           <div className="footer-inner">
             <div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/AP Score dark background light blue.svg" alt="APScore5" className="footer-logo"/>
+              <img src="/images/AP Score5 Light Background SVG.svg" alt="APScore5" className="footer-logo"/>
               <p>AP practice questions, unit quizzes, and exam prep designed to help students build confidence one session at a time.</p>
               <p className="disc">AP® is a trademark of the College Board, which is not affiliated with APScore5.</p>
             </div>
