@@ -1,0 +1,17 @@
+{
+  "id": "faq_block",
+  "label": "FAQ Block",
+  "repeatable": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      }
+    }
+  },
+  "status": true,
+  "format": "custom"
+}

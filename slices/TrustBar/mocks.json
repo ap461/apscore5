@@ -1,0 +1,35 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"stats": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"stat_label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "master",
+									"type": "Text"
+								}
+							],
+							[
+								"stat_value",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "rain",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

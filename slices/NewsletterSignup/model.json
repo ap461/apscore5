@@ -1,0 +1,46 @@
+{
+  "description": "Newsletter signup section for homepage",
+  "id": "newsletter_signup",
+  "name": "NewsletterSignup",
+  "type": "SharedSlice",
+  "variations": [
+    {
+      "description": "Default newsletter signup",
+      "docURL": "...",
+      "id": "default",
+      "imageUrl": "",
+      "name": "Default",
+      "primary": {
+        "button_text": {
+          "config": {
+            "label": "Button Text",
+            "placeholder": "e.g. Join Free"
+          },
+          "type": "Text"
+        },
+        "description": {
+          "config": {
+            "label": "Description",
+            "multi": "paragraph,strong,em"
+          },
+          "type": "StructuredText"
+        },
+        "heading": {
+          "config": {
+            "label": "Heading",
+            "single": "heading2"
+          },
+          "type": "StructuredText"
+        },
+        "input_placeholder": {
+          "config": {
+            "label": "Email Input Placeholder",
+            "placeholder": "e.g. Enter your email"
+          },
+          "type": "Text"
+        }
+      },
+      "version": "initial"
+    }
+  ]
+}

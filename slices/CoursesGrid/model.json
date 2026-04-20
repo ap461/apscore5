@@ -1,0 +1,61 @@
+{
+  "description": "Grid of AP courses displayed on the homepage",
+  "id": "courses_grid",
+  "name": "CoursesGrid",
+  "type": "SharedSlice",
+  "variations": [
+    {
+      "description": "Default courses grid",
+      "docURL": "...",
+      "id": "default",
+      "imageUrl": "",
+      "name": "Default",
+      "primary": {
+        "section_heading": {
+          "config": {
+            "label": "Section Heading",
+            "single": "heading2"
+          },
+          "type": "StructuredText"
+        },
+        "courses": {
+          "config": {
+            "fields": {
+              "course_name": {
+                "config": {
+                  "label": "Course Name",
+                  "placeholder": "e.g. AP Human Geography"
+                },
+                "type": "Text"
+              },
+              "course_link": {
+                "config": {
+                  "allowText": false,
+                  "label": "Course Link",
+                  "select": null
+                },
+                "type": "Link"
+              },
+              "course_description": {
+                "config": {
+                  "label": "Short Description",
+                  "placeholder": "e.g. Master human geography concepts"
+                },
+                "type": "Text"
+              },
+              "course_icon": {
+                "config": {
+                  "label": "Course Icon"
+                },
+                "type": "Image"
+              }
+            },
+            "label": "Courses"
+          },
+          "type": "Group"
+        }
+      },
+      "version": "initial"
+    }
+  ]
+}

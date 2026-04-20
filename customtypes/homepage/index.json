@@ -1,0 +1,58 @@
+{
+  "id": "homepage",
+  "label": "Homepage",
+  "repeatable": false,
+  "status": true,
+  "format": "custom",
+  "json": {
+    "Main": {
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "hero_section": {
+              "type": "SharedSlice"
+            },
+            "courses_grid": {
+              "type": "SharedSlice"
+            },
+            "newsletter_signup": {
+              "type": "SharedSlice"
+            },
+            "trust_bar": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO": {
+      "meta_title": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "AP Test Practice — Free AP Exam Prep"
+        }
+      },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "Free AP practice questions.Study 5 minutes a day and score a 5. No signup required."
+        }
+      },
+      "og_image": {
+        "type": "Image",
+        "config": {
+          "label": "OG Image",
+          "constraint": {
+            "width": 1200,
+            "height": 628
+          },
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

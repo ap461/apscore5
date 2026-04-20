@@ -1,0 +1,40 @@
+{
+  "description": "Trust bar showing stats and social proof",
+  "id": "trust_bar",
+  "name": "TrustBar",
+  "type": "SharedSlice",
+  "variations": [
+    {
+      "description": "Default trust bar",
+      "docURL": "...",
+      "id": "default",
+      "imageUrl": "",
+      "name": "Default",
+      "primary": {
+        "stats": {
+          "config": {
+            "fields": {
+              "stat_label": {
+                "config": {
+                  "label": "Label",
+                  "placeholder": "e.g. Students Helped"
+                },
+                "type": "Text"
+              },
+              "stat_value": {
+                "config": {
+                  "label": "Value",
+                  "placeholder": "e.g. 50,000+"
+                },
+                "type": "Text"
+              }
+            },
+            "label": "Stats"
+          },
+          "type": "Group"
+        }
+      },
+      "version": "initial"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "unit_page",
+  "label": "Unit Page",
+  "repeatable": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      }
+    }
+  },
+  "status": true,
+  "format": "custom"
+}

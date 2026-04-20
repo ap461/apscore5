@@ -1,0 +1,41 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "nose",
+				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sunt dolor id nisi id commodo duis proident."
+						}
+					}
+				]
+			},
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Strip"
+						}
+					}
+				]
+			},
+			"input_placeholder": {
+				"__TYPE__": "FieldContent",
+				"value": "stiff",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]
