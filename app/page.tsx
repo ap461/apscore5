@@ -159,7 +159,7 @@ export default async function Home() {
           <div className="footer-inner">
             <div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/AP Score5 Light Background SVG.svg" alt="APScore5" className="footer-logo"/>
+              <img src="/images/AP Score5 Dark Background SVG.svg" alt="APScore5" className="footer-logo"/>
               <p>AP practice questions, unit quizzes, and exam prep designed to help students build confidence one session at a time.</p>
               <p className="disc">AP® is a trademark of the College Board, which is not affiliated with APScore5.</p>
             </div>
