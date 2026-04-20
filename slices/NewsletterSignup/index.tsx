@@ -25,4 +25,5 @@ const NewsletterSignup: FC<NewsletterSignupProps> = ({ slice }) => {
     </section>
   );
 };
+
 export default NewsletterSignup;
