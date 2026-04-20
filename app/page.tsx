@@ -75,7 +75,7 @@ export default async function Home() {
               </div>
             </div>
             <div className="qcard" role="region" aria-label="Sample AP practice question">
-              <div className="ctop"><span className="tag">AP Biology · Unit 1</span><span className="qnum">Q 3 of 10</span></div>
+              <div className="ctop"><span className="tag">AP Biology · Unit 1</span><span className="qnum">Question 1 of 4</span></div>
               <div className="prog"><div className="progb" style={{width:"30%"}}></div></div>
               <p className="question">Which organelle is responsible for producing ATP through cellular respiration?</p>
               <div className="opts" id="hero-opts">
