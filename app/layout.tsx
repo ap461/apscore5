@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -33,6 +34,14 @@ export default function RootLayout({
         <meta
           name="google-adsense-account"
           content="ca-pub-4424361283304614"
+        />
+
+        {/* Google AdSense Script */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4424361283304614"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
         />
 
         {/* Prismic Script */}
