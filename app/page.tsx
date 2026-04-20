@@ -195,7 +195,7 @@ function renderQ(i){
   document.querySelector('.question').textContent=q.q;
   document.querySelector('.tag').textContent=q.tag;
   document.querySelector('.progb').style.width=((i+1)/questions.length*100)+'%';
-  document.querySelector('.qnum').textContent='Q '+(i+1)+' of '+questions.length;
+  document.querySelector('.qnum').textContent='Question '+(i+1)+' of '+questions.length;
   var opts=document.querySelectorAll('#hero-opts .opt');
   opts.forEach(function(o,idx){
     o.className='opt';
@@ -237,18 +237,31 @@ function attachHandlers(){
 }
 
 var nextBtn=document.getElementById('hero-next').querySelector('button');
-nextBtn.addEventListener('click',function(){
-  current=current+1;
-  if(current>=questions.length){
-    nextBtn.textContent='You\'ve completed all questions!';
+
+function updateNextBtn(){
+  if(current>=questions.length-1){
+    nextBtn.textContent='All questions done!';
     nextBtn.disabled=true;
-    return;
+    nextBtn.style.opacity='0.4';
+    nextBtn.style.cursor='not-allowed';
+  } else {
+    nextBtn.textContent='Next question \u2192';
+    nextBtn.disabled=false;
+    nextBtn.style.opacity='1';
+    nextBtn.style.cursor='pointer';
   }
+}
+
+nextBtn.addEventListener('click',function(){
+  if(current>=questions.length-1) return;
+  current=current+1;
   renderQ(current);
   attachHandlers();
+  updateNextBtn();
 });
 
 attachHandlers();
+updateNextBtn();
 })();`}}/>
     </>
   );
