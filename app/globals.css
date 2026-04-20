@@ -83,12 +83,12 @@ h2{font-size:clamp(30px,4.5vw,50px);line-height:1.05;letter-spacing:-.04em;color
 .ccard p{font-size:13px;line-height:1.65;color:var(--muted);margin-bottom:10px}
 .clink{font-size:13px;font-weight:700;color:var(--blue)}
 .faq-wrap{display:grid;gap:8px}
-.fi{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden}
-.fiq{padding:16px 18px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:15px;font-weight:600;color:var(--navy);gap:12px;user-select:none;-webkit-tap-highlight-color:transparent}
+.fi{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:14px;overflow:hidden}
+.fiq{padding:16px 18px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:15px;font-weight:600;color:#fff;gap:12px;user-select:none;-webkit-tap-highlight-color:transparent}
 .fiq-text{flex:1}
-.arr{font-size:16px;color:var(--muted);transition:.25s;flex-shrink:0}
+.arr{font-size:16px;color:rgba(255,255,255,.7);transition:.25s;flex-shrink:0}
 .fiq.open .arr{transform:rotate(180deg)}
-.fia{padding:0 18px 16px;font-size:15px;line-height:1.75;color:var(--muted);display:none}
+.fia{padding:0 18px 16px;font-size:15px;line-height:1.75;color:rgba(255,255,255,.85);display:none}
 .fia.show{display:block}
 .nl-box{background:var(--navy);border-radius:22px;padding:28px;margin:0 0 20px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
 .nl-box h3{font-size:22px;color:#fff;letter-spacing:-.03em;line-height:1.2}
