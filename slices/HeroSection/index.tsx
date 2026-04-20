@@ -1,30 +1,25 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
+import { PrismicNextLink } from "@prismicio/next";
 
-/**
- * Props for `HeroSection`.
- */
 export type HeroSectionProps = SliceComponentProps<Content.HeroSectionSlice>;
 
-/**
- * Component for "HeroSection" Slices.
- */
 const HeroSection: FC<HeroSectionProps> = ({ slice }) => {
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      Placeholder component for hero_section (variation: {slice.variation})
-      slices.
-      <br />
-      <strong>You can edit this slice directly in your code editor.</strong>
-      {/**
-       * 💡 Use the Prismic MCP server with your code editor
-       * 📚 Docs: https://prismic.io/docs/ai#code-with-prismics-mcp-server
-       */}
-    </section>
+    <div className="hero" data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
+      <div className="container hero-inner">
+        <div className="hero-text">
+          <PrismicRichText field={slice.primary.headline} />
+          <PrismicRichText field={slice.primary.subheadline} />
+          <div className="hero-cta">
+            <PrismicNextLink field={slice.primary.cta_link} className="btn btn-primary">
+              {slice.primary.cta_text || "Create a free account"}
+            </PrismicNextLink>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
