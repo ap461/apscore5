@@ -111,7 +111,7 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      <section id="faq" style={{background:"#EEF4FF",padding:"44px 0"}}>
+      <section id="faq" style={{background:"#2F66D0",padding:"44px 0"}}>
         <div className="container">
           <p className="kicker">Student Questions</p>
           <h2>Questions students actually search for.</h2><p className="sdesc">We know you have lots of questions about AP Exams. Here are answers to some of the most frequent ones students ask.</p>
