@@ -2,16 +2,84 @@
   "id": "course_pillar_page",
   "label": "Course Pillar Page",
   "repeatable": true,
+  "status": true,
+  "format": "custom",
   "json": {
     "Main": {
       "uid": {
         "type": "UID",
         "config": {
-          "label": "UID"
+          "label": "UID",
+          "placeholder": "e.g. ap-human-geography"
+        }
+      },
+      "course_name": {
+        "type": "Text",
+        "config": {
+          "label": "Course Name",
+          "placeholder": "AP Human Geography"
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "pillar_hero": { "type": "SharedSlice" },
+            "quick_answer": { "type": "SharedSlice" },
+            "difficulty_section": { "type": "SharedSlice" },
+            "exam_structure": { "type": "SharedSlice" },
+            "diagnostic_quiz": { "type": "SharedSlice" },
+            "video_embed": { "type": "SharedSlice" },
+            "unit_cards_grid": { "type": "SharedSlice" },
+            "conversion_block": { "type": "SharedSlice" },
+            "unit_question_bank": { "type": "SharedSlice" },
+            "study_strategy": { "type": "SharedSlice" },
+            "flashcard_carousel": { "type": "SharedSlice" },
+            "faq_accordion": { "type": "SharedSlice" }
+          }
+        }
+      }
+    },
+    "SEO": {
+      "meta_title": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "AP Human Geography Course Guide — Units, FRQ, Free Practice | APScore5"
+        }
+      },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "Plan smarter for AP Human Geography. Unit breakdowns, exam format, 70 free practice questions, 5-minute daily path to a 5."
+        }
+      },
+      "canonical_url": {
+        "type": "Link",
+        "config": {
+          "label": "Canonical URL",
+          "placeholder": "https://apscore5.com/ap-human-geography",
+          "allowText": false,
+          "select": null
+        }
+      },
+      "og_image": {
+        "type": "Image",
+        "config": {
+          "label": "Social Share Image (1200×628)"
+        }
+      },
+      "no_index": {
+        "type": "Boolean",
+        "config": {
+          "label": "Hide from search engines",
+          "default_value": false,
+          "placeholder_true": "Yes, hide",
+          "placeholder_false": "No, index normally"
         }
       }
     }
-  },
-  "status": true,
-  "format": "custom"
+  }
 }
