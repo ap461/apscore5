@@ -20,22 +20,32 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
+        {/* Google AdSense Meta Tag */}
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-4424361283304614"
+        />
+
+        {/* Prismic Script */}
         <script
           async
           defer
           src="https://static.cdn.prismic.io/prismic.js?new=true&repo=apscore5"
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+
+      <body className="min-h-full flex flex-col">
+        {children}
+      </body>
     </html>
   );
 }
