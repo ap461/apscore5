@@ -236,8 +236,14 @@ function attachHandlers(){
   });
 }
 
-document.getElementById('hero-next').querySelector('button').addEventListener('click',function(){
-  current=(current+1)%questions.length;
+var nextBtn=document.getElementById('hero-next').querySelector('button');
+nextBtn.addEventListener('click',function(){
+  current=current+1;
+  if(current>=questions.length){
+    nextBtn.textContent='You\'ve completed all questions!';
+    nextBtn.disabled=true;
+    return;
+  }
   renderQ(current);
   attachHandlers();
 });
