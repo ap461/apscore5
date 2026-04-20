@@ -169,7 +169,81 @@ export default async function Home() {
           </div>
         </div>
       </footer>
-      <script dangerouslySetInnerHTML={{__html:`(function(){document.querySelectorAll('.fiq').forEach(function(b){b.addEventListener('click',function(){var o=b.classList.contains('open');document.querySelectorAll('.fiq').forEach(function(x){x.classList.remove('open');x.setAttribute('aria-expanded','false');});document.querySelectorAll('.fia').forEach(function(x){x.classList.remove('show');});if(!o){b.classList.add('open');b.setAttribute('aria-expanded','true');var n=b.nextElementSibling;if(n)n.classList.add('show');}});b.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();b.click();}});});var done=false;document.querySelectorAll('#hero-opts .opt').forEach(function(o){o.addEventListener('click',function(){if(done)return;done=true;var ok=o.getAttribute('data-correct')==='true';document.querySelectorAll('#hero-opts .opt').forEach(function(x){x.style.pointerEvents='none';if(x.getAttribute('data-correct')==='true')x.classList.add('show-correct');});o.classList.add(ok?'chosen-correct':'chosen-wrong');document.getElementById('hero-feedback').classList.add('show');document.getElementById('hero-nudge').classList.add('show');document.getElementById('hero-next').classList.add('show');});});})();`}}/>
+      <script dangerouslySetInnerHTML={{__html:`(function(){
+// FAQ accordion
+document.querySelectorAll('.fiq').forEach(function(b){
+  b.addEventListener('click',function(){
+    var o=b.classList.contains('open');
+    document.querySelectorAll('.fiq').forEach(function(x){x.classList.remove('open');x.setAttribute('aria-expanded','false');});
+    document.querySelectorAll('.fia').forEach(function(x){x.classList.remove('show');});
+    if(!o){b.classList.add('open');b.setAttribute('aria-expanded','true');var n=b.nextElementSibling;if(n)n.classList.add('show');}
+  });
+  b.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();b.click();}});
+});
+
+// Hero question bank
+var questions=[
+  {q:"Which organelle is responsible for producing ATP through cellular respiration?",opts:["Nucleus","Mitochondria","Ribosome","Golgi Apparatus"],ans:1,exp:"Mitochondria are the powerhouse of the cell, converting glucose into ATP via cellular respiration. High-frequency AP Bio topic.",tag:"AP Biology · Unit 1"},
+  {q:"Which of the following best describes the demographic transition model?",opts:["A model showing how birth and death rates change as countries develop","A map of global population distribution","A theory about immigration patterns","A measure of population density"],ans:0,exp:"The DTM shows how birth and death rates shift through stages of economic development — core AP Human Geo Unit 2 concept.",tag:"AP Human Geography · Unit 2"},
+  {q:"Which of the following is an example of a binary number?",opts:["1025","1010","2048","ABCD"],ans:1,exp:"Binary uses only 0s and 1s. 1010 is a valid binary number. AP CSP Unit 2 covers number systems and data representation.",tag:"AP CSP · Unit 2"},
+  {q:"In the cell cycle, DNA replication occurs during which phase?",opts:["G1 phase","S phase","G2 phase","M phase"],ans:1,exp:"DNA replication happens during the S (synthesis) phase of interphase. This is heavily tested on the AP Biology exam.",tag:"AP Biology · Unit 4"},
+];
+var current=0;
+
+function renderQ(i){
+  var q=questions[i];
+  document.querySelector('.question').textContent=q.q;
+  document.querySelector('.tag').textContent=q.tag;
+  document.querySelector('.progb').style.width=((i+1)/questions.length*100)+'%';
+  document.querySelector('.qnum').textContent='Q '+(i+1)+' of '+questions.length;
+  var opts=document.querySelectorAll('#hero-opts .opt');
+  opts.forEach(function(o,idx){
+    o.className='opt';
+    o.style.pointerEvents='';
+    o.setAttribute('data-correct', idx===q.ans ? 'true':'false');
+    o.querySelector('span:last-child').textContent=q.opts[idx];
+  });
+  document.getElementById('hero-feedback').classList.remove('show');
+  document.getElementById('hero-feedback').querySelector('strong').textContent='';
+  document.getElementById('hero-feedback').childNodes[1].textContent='';
+  document.getElementById('hero-nudge').classList.remove('show');
+  document.getElementById('hero-next').classList.remove('show');
+}
+
+var done=false;
+function attachHandlers(){
+  done=false;
+  document.querySelectorAll('#hero-opts .opt').forEach(function(o){
+    var fresh=o.cloneNode(true);
+    o.parentNode.replaceChild(fresh,o);
+  });
+  document.querySelectorAll('#hero-opts .opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(done)return;done=true;
+      var ok=o.getAttribute('data-correct')==='true';
+      document.querySelectorAll('#hero-opts .opt').forEach(function(x){
+        x.style.pointerEvents='none';
+        if(x.getAttribute('data-correct')==='true')x.classList.add('show-correct');
+      });
+      o.classList.add(ok?'chosen-correct':'chosen-wrong');
+      var fb=document.getElementById('hero-feedback');
+      fb.querySelector('strong').textContent=(ok?'✓ Correct — ':'✗ Incorrect — ')+questions[current].opts[questions[current].ans];
+      fb.childNodes[fb.childNodes.length-1].textContent=questions[current].exp;
+      fb.classList.add('show');
+      document.getElementById('hero-nudge').classList.add('show');
+      document.getElementById('hero-next').classList.add('show');
+    });
+  });
+}
+
+document.getElementById('hero-next').querySelector('button').addEventListener('click',function(){
+  current=(current+1)%questions.length;
+  renderQ(current);
+  attachHandlers();
+});
+
+attachHandlers();
+})();`}}/>
     </>
   );
 }
