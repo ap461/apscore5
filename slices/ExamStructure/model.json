@@ -1,0 +1,84 @@
+{
+  "id": "exam_structure",
+  "type": "SharedSlice",
+  "name": "ExamStructure",
+  "description": "Exam format summary — description + unit weights grid + 1-5 score table + 4 logistics cards",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default exam structure",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": { "label": "Eyebrow", "placeholder": "Exam Structure" }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": { "label": "Headline", "single": "heading2,em" }
+        },
+        "lede": {
+          "type": "StructuredText",
+          "config": { "label": "Lede", "multi": "paragraph,strong,em" }
+        },
+        "format_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Format Description (before weights)",
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "weights_heading": {
+          "type": "Text",
+          "config": { "label": "Weights Section Heading" }
+        },
+        "score_heading": {
+          "type": "Text",
+          "config": { "label": "Score Table Heading" }
+        },
+        "score_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Score Table Description",
+            "multi": "paragraph,strong,em"
+          }
+        }
+      },
+      "items": {
+        "unit_label": {
+          "type": "Text",
+          "config": { "label": "Weight Card · Unit Label", "placeholder": "Unit 2" }
+        },
+        "unit_weight": {
+          "type": "Text",
+          "config": { "label": "Weight Card · Percent", "placeholder": "12–17%" }
+        },
+        "unit_topic": {
+          "type": "Text",
+          "config": {
+            "label": "Weight Card · Topic",
+            "placeholder": "Population & Migration"
+          }
+        },
+        "logistics_icon": {
+          "type": "Text",
+          "config": { "label": "Logistics Icon (emoji)", "placeholder": "📅" }
+        },
+        "logistics_title": {
+          "type": "Text",
+          "config": { "label": "Logistics Title", "placeholder": "Exam Date" }
+        },
+        "logistics_value": {
+          "type": "Text",
+          "config": {
+            "label": "Logistics Value",
+            "placeholder": "Tuesday, May 5, 2026 · 8:00 a.m. local"
+          }
+        }
+      }
+    }
+  ]
+}

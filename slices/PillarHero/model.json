@@ -1,0 +1,92 @@
+{
+  "id": "pillar_hero",
+  "type": "SharedSlice",
+  "name": "PillarHero",
+  "description": "Course pillar page hero — eyebrow, headline, sub, 5-stat strip, primary + secondary CTAs",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default pillar hero with five stat strip",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow Text",
+            "placeholder": "AP Human Geography · Complete Course Guide · Updated for the May 5, 2026 Exam"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Headline",
+            "single": "heading1,em"
+          }
+        },
+        "subheadline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Subheadline",
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "primary_cta_text": {
+          "type": "Text",
+          "config": {
+            "label": "Primary CTA Text",
+            "placeholder": "Start Free — Take the 10-Question Diagnostic →"
+          }
+        },
+        "primary_cta_link": {
+          "type": "Link",
+          "config": {
+            "label": "Primary CTA Link",
+            "allowText": false,
+            "select": null
+          }
+        },
+        "secondary_cta_text": {
+          "type": "Text",
+          "config": {
+            "label": "Secondary CTA Text",
+            "placeholder": "Jump to the 7 Units"
+          }
+        },
+        "secondary_cta_link": {
+          "type": "Link",
+          "config": {
+            "label": "Secondary CTA Link",
+            "allowText": false,
+            "select": null
+          }
+        }
+      },
+      "items": {
+        "stat_number": {
+          "type": "Text",
+          "config": {
+            "label": "Stat Number",
+            "placeholder": "1,250+"
+          }
+        },
+        "stat_label": {
+          "type": "Text",
+          "config": {
+            "label": "Stat Label",
+            "placeholder": "Practice Questions"
+          }
+        },
+        "stat_caption": {
+          "type": "Text",
+          "config": {
+            "label": "Stat Caption",
+            "placeholder": "Largest free bank online"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "quick_answer",
+  "type": "SharedSlice",
+  "name": "QuickAnswer",
+  "description": "Direct-answer block at top of pillar — question, bolded answer, expansion paragraph",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default quick answer block",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Section Eyebrow",
+            "placeholder": "Quick Answer"
+          }
+        },
+        "question": {
+          "type": "Text",
+          "config": {
+            "label": "Question",
+            "placeholder": "What is AP Human Geography about?"
+          }
+        },
+        "direct_answer": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Direct Answer (lead with bolded core)",
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "expansion": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Expansion Paragraph",
+            "multi": "paragraph,strong,em"
+          }
+        }
+      }
+    }
+  ]
+}
