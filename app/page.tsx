@@ -34,7 +34,7 @@ const faqs = [
 
 export default async function Home() {
   return (
-    <>
+    <div className="homepage">
       {sd.map((s,i)=><script key={i} type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(s)}}/>)}
       <div className="nav-wrap">
         <nav className="container nav">
@@ -263,6 +263,6 @@ nextBtn.addEventListener('click',function(){
 attachHandlers();
 updateNextBtn();
 })();`}}/>
-    </>
+    </div>
   );
 }
