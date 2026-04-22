@@ -1,0 +1,300 @@
+{
+  "id": "unit_question_bank",
+  "type": "SharedSlice",
+  "name": "UnitQuestionBank",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default unit question bank",
+      "imageUrl": "",
+      "docURL": "...",
+      "version": "initial",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Free Sample Questions"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Headline",
+            "single": "heading2,em"
+          }
+        },
+        "lede": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Lede",
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "signup_cta_link": {
+          "type": "Link",
+          "config": {
+            "label": "Signup CTA Link (used on every unit gate)",
+            "select": null,
+            "allowText": false
+          }
+        },
+        "unit_blocks": {
+          "type": "Group",
+          "config": {
+            "label": "Unit Blocks (7 units)",
+            "fields": {
+              "unit_number": {
+                "type": "Text",
+                "config": {
+                  "label": "Unit Number",
+                  "placeholder": "1"
+                }
+              },
+              "unit_title": {
+                "type": "Text",
+                "config": {
+                  "label": "Unit Title",
+                  "placeholder": "Thinking Geographically"
+                }
+              },
+              "unit_meta": {
+                "type": "Text",
+                "config": {
+                  "label": "Unit Meta (weight · count)",
+                  "placeholder": "Weight 8–10% · Expected 5–8 MCQs"
+                }
+              },
+              "unit_page_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Full Unit Page Link",
+                  "select": null,
+                  "allowText": false
+                }
+              },
+              "q1_text": {
+                "type": "Text",
+                "config": {
+                  "label": "Q1 · Stem"
+                }
+              },
+              "q1_difficulty": {
+                "type": "Select",
+                "config": {
+                  "label": "Q1 · Difficulty",
+                  "options": [
+                    "Easy",
+                    "Medium",
+                    "Hard"
+                  ]
+                }
+              },
+              "q1_a": {
+                "type": "Text",
+                "config": {
+                  "label": "Q1 · Option A"
+                }
+              },
+              "q1_b": {
+                "type": "Text",
+                "config": {
+                  "label": "Q1 · Option B"
+                }
+              },
+              "q1_c": {
+                "type": "Text",
+                "config": {
+                  "label": "Q1 · Option C"
+                }
+              },
+              "q1_d": {
+                "type": "Text",
+                "config": {
+                  "label": "Q1 · Option D"
+                }
+              },
+              "q1_correct": {
+                "type": "Select",
+                "config": {
+                  "label": "Q1 · Correct",
+                  "options": [
+                    "A",
+                    "B",
+                    "C",
+                    "D"
+                  ]
+                }
+              },
+              "q1_short_label": {
+                "type": "Text",
+                "config": {
+                  "label": "Q1 · Short Correct Label"
+                }
+              },
+              "q1_explanation": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Q1 · Explanation",
+                  "multi": "paragraph,strong,em"
+                }
+              },
+              "q1_tip": {
+                "type": "Text",
+                "config": {
+                  "label": "Q1 · Exam Tip"
+                }
+              },
+              "q2_text": {
+                "type": "Text",
+                "config": {
+                  "label": "Q2 · Stem"
+                }
+              },
+              "q2_difficulty": {
+                "type": "Select",
+                "config": {
+                  "label": "Q2 · Difficulty",
+                  "options": [
+                    "Easy",
+                    "Medium",
+                    "Hard"
+                  ]
+                }
+              },
+              "q2_a": {
+                "type": "Text",
+                "config": {
+                  "label": "Q2 · Option A"
+                }
+              },
+              "q2_b": {
+                "type": "Text",
+                "config": {
+                  "label": "Q2 · Option B"
+                }
+              },
+              "q2_c": {
+                "type": "Text",
+                "config": {
+                  "label": "Q2 · Option C"
+                }
+              },
+              "q2_d": {
+                "type": "Text",
+                "config": {
+                  "label": "Q2 · Option D"
+                }
+              },
+              "q2_correct": {
+                "type": "Select",
+                "config": {
+                  "label": "Q2 · Correct",
+                  "options": [
+                    "A",
+                    "B",
+                    "C",
+                    "D"
+                  ]
+                }
+              },
+              "q2_short_label": {
+                "type": "Text",
+                "config": {
+                  "label": "Q2 · Short Correct Label"
+                }
+              },
+              "q2_explanation": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Q2 · Explanation",
+                  "multi": "paragraph,strong,em"
+                }
+              },
+              "q2_tip": {
+                "type": "Text",
+                "config": {
+                  "label": "Q2 · Exam Tip"
+                }
+              },
+              "q3_text": {
+                "type": "Text",
+                "config": {
+                  "label": "Q3 · Stem"
+                }
+              },
+              "q3_difficulty": {
+                "type": "Select",
+                "config": {
+                  "label": "Q3 · Difficulty",
+                  "options": [
+                    "Easy",
+                    "Medium",
+                    "Hard"
+                  ]
+                }
+              },
+              "q3_a": {
+                "type": "Text",
+                "config": {
+                  "label": "Q3 · Option A"
+                }
+              },
+              "q3_b": {
+                "type": "Text",
+                "config": {
+                  "label": "Q3 · Option B"
+                }
+              },
+              "q3_c": {
+                "type": "Text",
+                "config": {
+                  "label": "Q3 · Option C"
+                }
+              },
+              "q3_d": {
+                "type": "Text",
+                "config": {
+                  "label": "Q3 · Option D"
+                }
+              },
+              "q3_correct": {
+                "type": "Select",
+                "config": {
+                  "label": "Q3 · Correct",
+                  "options": [
+                    "A",
+                    "B",
+                    "C",
+                    "D"
+                  ]
+                }
+              },
+              "q3_short_label": {
+                "type": "Text",
+                "config": {
+                  "label": "Q3 · Short Correct Label"
+                }
+              },
+              "q3_explanation": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Q3 · Explanation",
+                  "multi": "paragraph,strong,em"
+                }
+              },
+              "q3_tip": {
+                "type": "Text",
+                "config": {
+                  "label": "Q3 · Exam Tip"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "description": "Per-unit practice bank — shows 3 free preview questions then gates 7 more per unit. Items = one block per unit."
+}

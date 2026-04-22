@@ -1,0 +1,105 @@
+{
+  "id": "study_strategy",
+  "type": "SharedSlice",
+  "name": "StudyStrategy",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default study strategy",
+      "imageUrl": "",
+      "docURL": "...",
+      "version": "initial",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "5-to-10 Minutes a Day"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Headline",
+            "single": "heading2,em"
+          }
+        },
+        "lede": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Lede",
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "mock_headline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Mock Exam Headline",
+            "single": "heading3,em"
+          }
+        },
+        "mock_body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Mock Exam Body",
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "mock_features": {
+          "type": "Text",
+          "config": {
+            "label": "Mock Features (comma-separated)",
+            "placeholder": "60 MCQ + 3 FRQ, Pause & resume, AI-scored FRQs, Weak-area report"
+          }
+        },
+        "mock_cta_text": {
+          "type": "Text",
+          "config": {
+            "label": "Mock CTA Text",
+            "placeholder": "Start My Full-Length Mock →"
+          }
+        },
+        "mock_cta_link": {
+          "type": "Link",
+          "config": {
+            "label": "Mock CTA Link",
+            "select": null,
+            "allowText": false
+          }
+        }
+      },
+      "items": {
+        "phase_label": {
+          "type": "Text",
+          "config": {
+            "label": "Phase Label",
+            "placeholder": "PHASE 01"
+          }
+        },
+        "phase_icon": {
+          "type": "Text",
+          "config": {
+            "label": "Phase Icon (emoji)",
+            "placeholder": "📚"
+          }
+        },
+        "phase_title": {
+          "type": "Text",
+          "config": {
+            "label": "Phase Title",
+            "placeholder": "Build the Vocabulary Base"
+          }
+        },
+        "phase_description": {
+          "type": "Text",
+          "config": {
+            "label": "Phase Description",
+            "placeholder": "Sept–Dec · 5 min/day of flashcards, focused on the 50 most-tested terms per unit."
+          }
+        }
+      }
+    }
+  ],
+  "description": "4-phase study plan + optional mock exam promo card"
+}

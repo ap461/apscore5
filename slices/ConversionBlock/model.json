@@ -1,0 +1,77 @@
+{
+  "id": "conversion_block",
+  "type": "SharedSlice",
+  "name": "ConversionBlock",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default conversion block",
+      "imageUrl": "",
+      "docURL": "...",
+      "version": "initial",
+      "primary": {
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Headline",
+            "single": "heading2,em"
+          }
+        },
+        "subcopy": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Subcopy",
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "cta_text": {
+          "type": "Text",
+          "config": {
+            "label": "CTA Text",
+            "placeholder": "Start Free — Track My Progress →"
+          }
+        },
+        "cta_link": {
+          "type": "Link",
+          "config": {
+            "label": "CTA Link",
+            "select": null,
+            "allowText": false
+          }
+        },
+        "footnote": {
+          "type": "Text",
+          "config": {
+            "label": "Footnote",
+            "placeholder": "Free forever · No credit card · 60-second signup"
+          }
+        }
+      },
+      "items": {
+        "benefit_icon": {
+          "type": "Text",
+          "config": {
+            "label": "Benefit Icon (emoji)",
+            "placeholder": "📊"
+          }
+        },
+        "benefit_title": {
+          "type": "Text",
+          "config": {
+            "label": "Benefit Title",
+            "placeholder": "Track progress by unit"
+          }
+        },
+        "benefit_description": {
+          "type": "Text",
+          "config": {
+            "label": "Benefit Description",
+            "placeholder": "% complete and % correct for each of the seven units."
+          }
+        }
+      }
+    }
+  ],
+  "description": "Signup-focused conversion block with headline, sub, primary CTA, 4 benefit cards"
+}

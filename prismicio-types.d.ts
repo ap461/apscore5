@@ -69,7 +69,106 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-interface CoursePillarPageDocumentData {}
+type CoursePillarPageDocumentDataSlicesSlice =
+  | PillarHeroSlice
+  | QuickAnswerSlice
+  | DifficultySectionSlice
+  | ExamStructureSlice
+  | DiagnosticQuizSlice
+  | VideoEmbedSlice
+  | UnitCardsGridSlice
+  | ConversionBlockSlice
+  | UnitQuestionBankSlice
+  | StudyStrategySlice
+  | FlashcardCarouselSlice
+  | FaqAccordionSlice;
+
+/**
+ * Content for Course Pillar Page documents
+ */
+interface CoursePillarPageDocumentData {
+  /**
+   * Course Name field in *Course Pillar Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: AP Human Geography
+   * - **API ID Path**: course_pillar_page.course_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  course_name: prismic.KeyTextField;
+
+  /**
+   * Slice Zone field in *Course Pillar Page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: course_pillar_page.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<CoursePillarPageDocumentDataSlicesSlice>; /**
+   * Meta Title field in *Course Pillar Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: AP Human Geography Course Guide — Units, FRQ, Free Practice | APScore5
+   * - **API ID Path**: course_pillar_page.meta_title
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Course Pillar Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Plan smarter for AP Human Geography. Unit breakdowns, exam format, 70 free practice questions, 5-minute daily path to a 5.
+   * - **API ID Path**: course_pillar_page.meta_description
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Canonical URL field in *Course Pillar Page*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: https://apscore5.com/ap-human-geography
+   * - **API ID Path**: course_pillar_page.canonical_url
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  canonical_url: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Social Share Image (1200×628) field in *Course Pillar Page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: course_pillar_page.og_image
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  og_image: prismic.ImageField<never>;
+
+  /**
+   * Hide from search engines field in *Course Pillar Page*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: course_pillar_page.no_index
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  no_index: prismic.BooleanField;
+}
 
 /**
  * Course Pillar Page document from Prismic
@@ -237,6 +336,132 @@ export type AllDocumentTypes =
   | UnitPageDocument;
 
 /**
+ * Primary content in *ConversionBlock → Default → Primary*
+ */
+export interface ConversionBlockSliceDefaultPrimary {
+  /**
+   * Headline field in *ConversionBlock → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: conversion_block.default.primary.headline
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  headline: prismic.RichTextField;
+
+  /**
+   * Subcopy field in *ConversionBlock → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: conversion_block.default.primary.subcopy
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  subcopy: prismic.RichTextField;
+
+  /**
+   * CTA Text field in *ConversionBlock → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Start Free — Track My Progress →
+   * - **API ID Path**: conversion_block.default.primary.cta_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  cta_text: prismic.KeyTextField;
+
+  /**
+   * CTA Link field in *ConversionBlock → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: conversion_block.default.primary.cta_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  cta_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Footnote field in *ConversionBlock → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Free forever · No credit card · 60-second signup
+   * - **API ID Path**: conversion_block.default.primary.footnote
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  footnote: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ConversionBlock → Items*
+ */
+export interface ConversionBlockSliceDefaultItem {
+  /**
+   * Benefit Icon (emoji) field in *ConversionBlock → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 📊
+   * - **API ID Path**: conversion_block.items[].benefit_icon
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  benefit_icon: prismic.KeyTextField;
+
+  /**
+   * Benefit Title field in *ConversionBlock → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Track progress by unit
+   * - **API ID Path**: conversion_block.items[].benefit_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  benefit_title: prismic.KeyTextField;
+
+  /**
+   * Benefit Description field in *ConversionBlock → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: % complete and % correct for each of the seven units.
+   * - **API ID Path**: conversion_block.items[].benefit_description
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  benefit_description: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ConversionBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default conversion block
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ConversionBlockSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ConversionBlockSliceDefaultPrimary>,
+  Simplify<ConversionBlockSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *ConversionBlock*
+ */
+type ConversionBlockSliceVariation = ConversionBlockSliceDefault;
+
+/**
+ * ConversionBlock Shared Slice
+ *
+ * - **API ID**: `conversion_block`
+ * - **Description**: Signup-focused conversion block with headline, sub, primary CTA, 4 benefit cards
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ConversionBlockSlice = prismic.SharedSlice<
+  "conversion_block",
+  ConversionBlockSliceVariation
+>;
+
+/**
  * Item in *CoursesGrid → Default → Primary → Courses*
  */
 export interface CoursesGridSliceDefaultPrimaryCoursesItem {
@@ -342,6 +567,774 @@ type CoursesGridSliceVariation = CoursesGridSliceDefault;
 export type CoursesGridSlice = prismic.SharedSlice<
   "courses_grid",
   CoursesGridSliceVariation
+>;
+
+/**
+ * Primary content in *DiagnosticQuiz → Default → Primary*
+ */
+export interface DiagnosticQuizSliceDefaultPrimary {
+  /**
+   * Tag Label field in *DiagnosticQuiz → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Free Diagnostic · 10 Questions
+   * - **API ID Path**: diagnostic_quiz.default.primary.tag_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  tag_label: prismic.KeyTextField;
+
+  /**
+   * Total Questions (for progress) field in *DiagnosticQuiz → Default → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: 10
+   * - **API ID Path**: diagnostic_quiz.default.primary.total_questions
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  total_questions: prismic.NumberField;
+
+  /**
+   * Gate Title field in *DiagnosticQuiz → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 7 more diagnostic questions waiting
+   * - **API ID Path**: diagnostic_quiz.default.primary.gate_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  gate_title: prismic.KeyTextField;
+
+  /**
+   * Gate Body field in *DiagnosticQuiz → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: diagnostic_quiz.default.primary.gate_body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  gate_body: prismic.RichTextField;
+
+  /**
+   * Gate CTA Text field in *DiagnosticQuiz → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Create Free Account — Continue Diagnostic →
+   * - **API ID Path**: diagnostic_quiz.default.primary.gate_cta_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  gate_cta_text: prismic.KeyTextField;
+
+  /**
+   * Gate CTA Link field in *DiagnosticQuiz → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: diagnostic_quiz.default.primary.gate_cta_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  gate_cta_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Footnote field in *DiagnosticQuiz → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Free forever · No credit card · 60-second signup
+   * - **API ID Path**: diagnostic_quiz.default.primary.gate_footnote
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  gate_footnote: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *DiagnosticQuiz → Items*
+ */
+export interface DiagnosticQuizSliceDefaultItem {
+  /**
+   * Question Stem field in *DiagnosticQuiz → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: diagnostic_quiz.items[].question_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  question_text: prismic.KeyTextField;
+
+  /**
+   * Option A field in *DiagnosticQuiz → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: diagnostic_quiz.items[].option_a
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  option_a: prismic.KeyTextField;
+
+  /**
+   * Option B field in *DiagnosticQuiz → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: diagnostic_quiz.items[].option_b
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  option_b: prismic.KeyTextField;
+
+  /**
+   * Option C field in *DiagnosticQuiz → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: diagnostic_quiz.items[].option_c
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  option_c: prismic.KeyTextField;
+
+  /**
+   * Option D field in *DiagnosticQuiz → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: diagnostic_quiz.items[].option_d
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  option_d: prismic.KeyTextField;
+
+  /**
+   * Correct Answer Letter field in *DiagnosticQuiz → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: diagnostic_quiz.items[].correct_letter
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  correct_letter: prismic.SelectField<"A" | "B" | "C" | "D">;
+
+  /**
+   * Short Label For Correct Answer field in *DiagnosticQuiz → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Choropleth Map
+   * - **API ID Path**: diagnostic_quiz.items[].correct_short_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  correct_short_label: prismic.KeyTextField;
+
+  /**
+   * Explanation field in *DiagnosticQuiz → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: diagnostic_quiz.items[].explanation
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  explanation: prismic.RichTextField;
+
+  /**
+   * Exam Tip (one sentence) field in *DiagnosticQuiz → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: diagnostic_quiz.items[].exam_tip
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  exam_tip: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for DiagnosticQuiz Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default diagnostic quiz
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type DiagnosticQuizSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<DiagnosticQuizSliceDefaultPrimary>,
+  Simplify<DiagnosticQuizSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *DiagnosticQuiz*
+ */
+type DiagnosticQuizSliceVariation = DiagnosticQuizSliceDefault;
+
+/**
+ * DiagnosticQuiz Shared Slice
+ *
+ * - **API ID**: `diagnostic_quiz`
+ * - **Description**: 10-question diagnostic quiz — 3 free preview questions then signup gate. Items populate Q1-Q3.
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type DiagnosticQuizSlice = prismic.SharedSlice<
+  "diagnostic_quiz",
+  DiagnosticQuizSliceVariation
+>;
+
+/**
+ * Primary content in *DifficultySection → Default → Primary*
+ */
+export interface DifficultySectionSliceDefaultPrimary {
+  /**
+   * Section Eyebrow field in *DifficultySection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: The Honest Answer
+   * - **API ID Path**: difficulty_section.default.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Headline field in *DifficultySection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: difficulty_section.default.primary.headline
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  headline: prismic.RichTextField;
+
+  /**
+   * Lede Paragraph (with stats) field in *DifficultySection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: difficulty_section.default.primary.lede
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  lede: prismic.RichTextField;
+
+  /**
+   * Harder-Than-It-Looks Title field in *DifficultySection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: difficulty_section.default.primary.harder_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  harder_title: prismic.KeyTextField;
+
+  /**
+   * Harder Bullets field in *DifficultySection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: difficulty_section.default.primary.harder_bullets
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  harder_bullets: prismic.RichTextField;
+
+  /**
+   * Easier-Than-You-Expect Title field in *DifficultySection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: difficulty_section.default.primary.easier_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  easier_title: prismic.KeyTextField;
+
+  /**
+   * Easier Bullets field in *DifficultySection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: difficulty_section.default.primary.easier_bullets
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  easier_bullets: prismic.RichTextField;
+
+  /**
+   * Good Fit If… Title field in *DifficultySection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: difficulty_section.default.primary.fit_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  fit_title: prismic.KeyTextField;
+
+  /**
+   * Good Fit If… Body field in *DifficultySection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: difficulty_section.default.primary.fit_body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  fit_body: prismic.RichTextField;
+
+  /**
+   * Maybe Not Yet If… Title field in *DifficultySection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: difficulty_section.default.primary.maybe_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  maybe_title: prismic.KeyTextField;
+
+  /**
+   * Maybe Not Yet If… Body field in *DifficultySection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: difficulty_section.default.primary.maybe_body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  maybe_body: prismic.RichTextField;
+}
+
+/**
+ * Default variation for DifficultySection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default difficulty section
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type DifficultySectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<DifficultySectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *DifficultySection*
+ */
+type DifficultySectionSliceVariation = DifficultySectionSliceDefault;
+
+/**
+ * DifficultySection Shared Slice
+ *
+ * - **API ID**: `difficulty_section`
+ * - **Description**: "Is it hard?" analysis — lede, harder/easier bullet columns, fit-vs-maybe cards
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type DifficultySectionSlice = prismic.SharedSlice<
+  "difficulty_section",
+  DifficultySectionSliceVariation
+>;
+
+/**
+ * Primary content in *ExamStructure → Default → Primary*
+ */
+export interface ExamStructureSliceDefaultPrimary {
+  /**
+   * Eyebrow field in *ExamStructure → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Exam Structure
+   * - **API ID Path**: exam_structure.default.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Headline field in *ExamStructure → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: exam_structure.default.primary.headline
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  headline: prismic.RichTextField;
+
+  /**
+   * Lede field in *ExamStructure → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: exam_structure.default.primary.lede
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  lede: prismic.RichTextField;
+
+  /**
+   * Format Description (before weights) field in *ExamStructure → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: exam_structure.default.primary.format_description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  format_description: prismic.RichTextField;
+
+  /**
+   * Weights Section Heading field in *ExamStructure → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: exam_structure.default.primary.weights_heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  weights_heading: prismic.KeyTextField;
+
+  /**
+   * Score Table Heading field in *ExamStructure → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: exam_structure.default.primary.score_heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  score_heading: prismic.KeyTextField;
+
+  /**
+   * Score Table Description field in *ExamStructure → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: exam_structure.default.primary.score_description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  score_description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *ExamStructure → Items*
+ */
+export interface ExamStructureSliceDefaultItem {
+  /**
+   * Weight Card · Unit Label field in *ExamStructure → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Unit 2
+   * - **API ID Path**: exam_structure.items[].unit_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  unit_label: prismic.KeyTextField;
+
+  /**
+   * Weight Card · Percent field in *ExamStructure → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 12–17%
+   * - **API ID Path**: exam_structure.items[].unit_weight
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  unit_weight: prismic.KeyTextField;
+
+  /**
+   * Weight Card · Topic field in *ExamStructure → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Population & Migration
+   * - **API ID Path**: exam_structure.items[].unit_topic
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  unit_topic: prismic.KeyTextField;
+
+  /**
+   * Logistics Icon (emoji) field in *ExamStructure → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 📅
+   * - **API ID Path**: exam_structure.items[].logistics_icon
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  logistics_icon: prismic.KeyTextField;
+
+  /**
+   * Logistics Title field in *ExamStructure → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Exam Date
+   * - **API ID Path**: exam_structure.items[].logistics_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  logistics_title: prismic.KeyTextField;
+
+  /**
+   * Logistics Value field in *ExamStructure → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Tuesday, May 5, 2026 · 8:00 a.m. local
+   * - **API ID Path**: exam_structure.items[].logistics_value
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  logistics_value: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ExamStructure Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default exam structure
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ExamStructureSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ExamStructureSliceDefaultPrimary>,
+  Simplify<ExamStructureSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *ExamStructure*
+ */
+type ExamStructureSliceVariation = ExamStructureSliceDefault;
+
+/**
+ * ExamStructure Shared Slice
+ *
+ * - **API ID**: `exam_structure`
+ * - **Description**: Exam format summary — description + unit weights grid + 1-5 score table + 4 logistics cards
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ExamStructureSlice = prismic.SharedSlice<
+  "exam_structure",
+  ExamStructureSliceVariation
+>;
+
+/**
+ * Item in *FAQAccordion → Default → Primary → FAQ Items*
+ */
+export interface FaqAccordionSliceDefaultPrimaryFaqsItem {
+  /**
+   * Category Label field in *FAQAccordion → Default → Primary → FAQ Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Considering Taking AP Human Geography
+   * - **API ID Path**: faq_accordion.default.primary.faqs[].category
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  category: prismic.KeyTextField;
+
+  /**
+   * Question field in *FAQAccordion → Default → Primary → FAQ Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_accordion.default.primary.faqs[].question
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  question: prismic.KeyTextField;
+
+  /**
+   * Answer (AEO format: direct answer first 2 sentences) field in *FAQAccordion → Default → Primary → FAQ Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_accordion.default.primary.faqs[].answer
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  answer: prismic.RichTextField;
+
+  /**
+   * Open by default (use sparingly) field in *FAQAccordion → Default → Primary → FAQ Items*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: faq_accordion.default.primary.faqs[].open_by_default
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  open_by_default: prismic.BooleanField;
+}
+
+/**
+ * Primary content in *FAQAccordion → Default → Primary*
+ */
+export interface FaqAccordionSliceDefaultPrimary {
+  /**
+   * Eyebrow field in *FAQAccordion → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Common Questions
+   * - **API ID Path**: faq_accordion.default.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Headline field in *FAQAccordion → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_accordion.default.primary.headline
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  headline: prismic.RichTextField;
+
+  /**
+   * Lede field in *FAQAccordion → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_accordion.default.primary.lede
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  lede: prismic.RichTextField;
+
+  /**
+   * FAQ Items field in *FAQAccordion → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_accordion.default.primary.faqs[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  faqs: prismic.GroupField<Simplify<FaqAccordionSliceDefaultPrimaryFaqsItem>>;
+}
+
+/**
+ * Default variation for FAQAccordion Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default FAQ accordion
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FaqAccordionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FaqAccordionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FAQAccordion*
+ */
+type FaqAccordionSliceVariation = FaqAccordionSliceDefault;
+
+/**
+ * FAQAccordion Shared Slice
+ *
+ * - **API ID**: `faq_accordion`
+ * - **Description**: FAQ accordion grouped into named categories. Uses native <details> for SEO crawlability.
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FaqAccordionSlice = prismic.SharedSlice<
+  "faq_accordion",
+  FaqAccordionSliceVariation
+>;
+
+/**
+ * Primary content in *FlashcardCarousel → Default → Primary*
+ */
+export interface FlashcardCarouselSliceDefaultPrimary {
+  /**
+   * Eyebrow field in *FlashcardCarousel → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Core Vocabulary
+   * - **API ID Path**: flashcard_carousel.default.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Headline field in *FlashcardCarousel → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: flashcard_carousel.default.primary.headline
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  headline: prismic.RichTextField;
+
+  /**
+   * Lede field in *FlashcardCarousel → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: flashcard_carousel.default.primary.lede
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  lede: prismic.RichTextField;
+
+  /**
+   * Unlock All Link Text field in *FlashcardCarousel → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 🔓 Unlock all 350 flashcards + spaced repetition →
+   * - **API ID Path**: flashcard_carousel.default.primary.unlock_link_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  unlock_link_text: prismic.KeyTextField;
+
+  /**
+   * Unlock Link field in *FlashcardCarousel → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: flashcard_carousel.default.primary.unlock_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  unlock_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Primary content in *FlashcardCarousel → Items*
+ */
+export interface FlashcardCarouselSliceDefaultItem {
+  /**
+   * Term field in *FlashcardCarousel → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Absolute Location
+   * - **API ID Path**: flashcard_carousel.items[].term
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  term: prismic.KeyTextField;
+
+  /**
+   * Unit Label field in *FlashcardCarousel → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Unit 1
+   * - **API ID Path**: flashcard_carousel.items[].unit_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  unit_label: prismic.KeyTextField;
+
+  /**
+   * Definition field in *FlashcardCarousel → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A fixed coordinate, usually latitude and longitude.
+   * - **API ID Path**: flashcard_carousel.items[].definition
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  definition: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for FlashcardCarousel Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default flashcard carousel
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FlashcardCarouselSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FlashcardCarouselSliceDefaultPrimary>,
+  Simplify<FlashcardCarouselSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *FlashcardCarousel*
+ */
+type FlashcardCarouselSliceVariation = FlashcardCarouselSliceDefault;
+
+/**
+ * FlashcardCarousel Shared Slice
+ *
+ * - **API ID**: `flashcard_carousel`
+ * - **Description**: Flippable flashcard carousel sampled from the master term list
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FlashcardCarouselSlice = prismic.SharedSlice<
+  "flashcard_carousel",
+  FlashcardCarouselSliceVariation
 >;
 
 /**
@@ -511,6 +1504,399 @@ export type NewsletterSignupSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *PillarHero → Default → Primary*
+ */
+export interface PillarHeroSliceDefaultPrimary {
+  /**
+   * Eyebrow Text field in *PillarHero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: AP Human Geography · Complete Course Guide · Updated for the May 5, 2026 Exam
+   * - **API ID Path**: pillar_hero.default.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Headline field in *PillarHero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pillar_hero.default.primary.headline
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  headline: prismic.RichTextField;
+
+  /**
+   * Subheadline field in *PillarHero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pillar_hero.default.primary.subheadline
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  subheadline: prismic.RichTextField;
+
+  /**
+   * Primary CTA Text field in *PillarHero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Start Free — Take the 10-Question Diagnostic →
+   * - **API ID Path**: pillar_hero.default.primary.primary_cta_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  primary_cta_text: prismic.KeyTextField;
+
+  /**
+   * Primary CTA Link field in *PillarHero → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pillar_hero.default.primary.primary_cta_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  primary_cta_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Secondary CTA Text field in *PillarHero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Jump to the 7 Units
+   * - **API ID Path**: pillar_hero.default.primary.secondary_cta_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  secondary_cta_text: prismic.KeyTextField;
+
+  /**
+   * Secondary CTA Link field in *PillarHero → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pillar_hero.default.primary.secondary_cta_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  secondary_cta_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Primary content in *PillarHero → Items*
+ */
+export interface PillarHeroSliceDefaultItem {
+  /**
+   * Stat Number field in *PillarHero → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 1,250+
+   * - **API ID Path**: pillar_hero.items[].stat_number
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  stat_number: prismic.KeyTextField;
+
+  /**
+   * Stat Label field in *PillarHero → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Practice Questions
+   * - **API ID Path**: pillar_hero.items[].stat_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  stat_label: prismic.KeyTextField;
+
+  /**
+   * Stat Caption field in *PillarHero → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Largest free bank online
+   * - **API ID Path**: pillar_hero.items[].stat_caption
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  stat_caption: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for PillarHero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default pillar hero with five stat strip
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type PillarHeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PillarHeroSliceDefaultPrimary>,
+  Simplify<PillarHeroSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *PillarHero*
+ */
+type PillarHeroSliceVariation = PillarHeroSliceDefault;
+
+/**
+ * PillarHero Shared Slice
+ *
+ * - **API ID**: `pillar_hero`
+ * - **Description**: Course pillar page hero — eyebrow, headline, sub, 5-stat strip, primary + secondary CTAs
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type PillarHeroSlice = prismic.SharedSlice<
+  "pillar_hero",
+  PillarHeroSliceVariation
+>;
+
+/**
+ * Primary content in *QuickAnswer → Default → Primary*
+ */
+export interface QuickAnswerSliceDefaultPrimary {
+  /**
+   * Section Eyebrow field in *QuickAnswer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Quick Answer
+   * - **API ID Path**: quick_answer.default.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Question field in *QuickAnswer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: What is AP Human Geography about?
+   * - **API ID Path**: quick_answer.default.primary.question
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  question: prismic.KeyTextField;
+
+  /**
+   * Direct Answer (lead with bolded core) field in *QuickAnswer → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quick_answer.default.primary.direct_answer
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  direct_answer: prismic.RichTextField;
+
+  /**
+   * Expansion Paragraph field in *QuickAnswer → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quick_answer.default.primary.expansion
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  expansion: prismic.RichTextField;
+}
+
+/**
+ * Default variation for QuickAnswer Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default quick answer block
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type QuickAnswerSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<QuickAnswerSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *QuickAnswer*
+ */
+type QuickAnswerSliceVariation = QuickAnswerSliceDefault;
+
+/**
+ * QuickAnswer Shared Slice
+ *
+ * - **API ID**: `quick_answer`
+ * - **Description**: Direct-answer block at top of pillar — question, bolded answer, expansion paragraph
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type QuickAnswerSlice = prismic.SharedSlice<
+  "quick_answer",
+  QuickAnswerSliceVariation
+>;
+
+/**
+ * Primary content in *StudyStrategy → Default → Primary*
+ */
+export interface StudyStrategySliceDefaultPrimary {
+  /**
+   * Eyebrow field in *StudyStrategy → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 5-to-10 Minutes a Day
+   * - **API ID Path**: study_strategy.default.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Headline field in *StudyStrategy → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: study_strategy.default.primary.headline
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  headline: prismic.RichTextField;
+
+  /**
+   * Lede field in *StudyStrategy → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: study_strategy.default.primary.lede
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  lede: prismic.RichTextField;
+
+  /**
+   * Mock Exam Headline field in *StudyStrategy → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: study_strategy.default.primary.mock_headline
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  mock_headline: prismic.RichTextField;
+
+  /**
+   * Mock Exam Body field in *StudyStrategy → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: study_strategy.default.primary.mock_body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  mock_body: prismic.RichTextField;
+
+  /**
+   * Mock Features (comma-separated) field in *StudyStrategy → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 60 MCQ + 3 FRQ, Pause & resume, AI-scored FRQs, Weak-area report
+   * - **API ID Path**: study_strategy.default.primary.mock_features
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  mock_features: prismic.KeyTextField;
+
+  /**
+   * Mock CTA Text field in *StudyStrategy → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Start My Full-Length Mock →
+   * - **API ID Path**: study_strategy.default.primary.mock_cta_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  mock_cta_text: prismic.KeyTextField;
+
+  /**
+   * Mock CTA Link field in *StudyStrategy → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: study_strategy.default.primary.mock_cta_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  mock_cta_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Primary content in *StudyStrategy → Items*
+ */
+export interface StudyStrategySliceDefaultItem {
+  /**
+   * Phase Label field in *StudyStrategy → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: PHASE 01
+   * - **API ID Path**: study_strategy.items[].phase_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  phase_label: prismic.KeyTextField;
+
+  /**
+   * Phase Icon (emoji) field in *StudyStrategy → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 📚
+   * - **API ID Path**: study_strategy.items[].phase_icon
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  phase_icon: prismic.KeyTextField;
+
+  /**
+   * Phase Title field in *StudyStrategy → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Build the Vocabulary Base
+   * - **API ID Path**: study_strategy.items[].phase_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  phase_title: prismic.KeyTextField;
+
+  /**
+   * Phase Description field in *StudyStrategy → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Sept–Dec · 5 min/day of flashcards, focused on the 50 most-tested terms per unit.
+   * - **API ID Path**: study_strategy.items[].phase_description
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  phase_description: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for StudyStrategy Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default study strategy
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type StudyStrategySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<StudyStrategySliceDefaultPrimary>,
+  Simplify<StudyStrategySliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *StudyStrategy*
+ */
+type StudyStrategySliceVariation = StudyStrategySliceDefault;
+
+/**
+ * StudyStrategy Shared Slice
+ *
+ * - **API ID**: `study_strategy`
+ * - **Description**: 4-phase study plan + optional mock exam promo card
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type StudyStrategySlice = prismic.SharedSlice<
+  "study_strategy",
+  StudyStrategySliceVariation
+>;
+
+/**
  * Item in *TrustBar → Default → Primary → Stats*
  */
 export interface TrustBarSliceDefaultPrimaryStatsItem {
@@ -580,6 +1966,721 @@ export type TrustBarSlice = prismic.SharedSlice<
   TrustBarSliceVariation
 >;
 
+/**
+ * Primary content in *UnitCardsGrid → Default → Primary*
+ */
+export interface UnitCardsGridSliceDefaultPrimary {
+  /**
+   * Eyebrow field in *UnitCardsGrid → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Course Roadmap
+   * - **API ID Path**: unit_cards_grid.default.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Headline field in *UnitCardsGrid → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_cards_grid.default.primary.headline
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  headline: prismic.RichTextField;
+
+  /**
+   * Lede field in *UnitCardsGrid → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_cards_grid.default.primary.lede
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  lede: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *UnitCardsGrid → Items*
+ */
+export interface UnitCardsGridSliceDefaultItem {
+  /**
+   * Unit Number (zero-padded) field in *UnitCardsGrid → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 01
+   * - **API ID Path**: unit_cards_grid.items[].unit_number
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  unit_number: prismic.KeyTextField;
+
+  /**
+   * Weight Chip field in *UnitCardsGrid → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 8–10% of Exam
+   * - **API ID Path**: unit_cards_grid.items[].unit_weight
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  unit_weight: prismic.KeyTextField;
+
+  /**
+   * MCQ Count Chip field in *UnitCardsGrid → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 5–8 MCQs
+   * - **API ID Path**: unit_cards_grid.items[].unit_mcq
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  unit_mcq: prismic.KeyTextField;
+
+  /**
+   * Flavor Chip field in *UnitCardsGrid → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Foundation
+   * - **API ID Path**: unit_cards_grid.items[].unit_flavor_chip
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  unit_flavor_chip: prismic.KeyTextField;
+
+  /**
+   * Unit Title field in *UnitCardsGrid → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Thinking Geographically
+   * - **API ID Path**: unit_cards_grid.items[].unit_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  unit_title: prismic.KeyTextField;
+
+  /**
+   * One-line Tagline field in *UnitCardsGrid → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: The lens you wear through every other unit.
+   * - **API ID Path**: unit_cards_grid.items[].unit_tagline
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  unit_tagline: prismic.KeyTextField;
+
+  /**
+   * Overview Paragraphs field in *UnitCardsGrid → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_cards_grid.items[].overview
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  overview: prismic.RichTextField;
+
+  /**
+   * Common Trap Callout field in *UnitCardsGrid → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_cards_grid.items[].trap_text
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  trap_text: prismic.RichTextField;
+
+  /**
+   * Core Concepts List field in *UnitCardsGrid → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_cards_grid.items[].concepts
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  concepts: prismic.RichTextField;
+
+  /**
+   * Unit CTA Text field in *UnitCardsGrid → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Open Unit 1 →
+   * - **API ID Path**: unit_cards_grid.items[].unit_cta_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  unit_cta_text: prismic.KeyTextField;
+
+  /**
+   * Unit Page Link field in *UnitCardsGrid → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_cards_grid.items[].unit_cta_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  unit_cta_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Default variation for UnitCardsGrid Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default unit grid (repeatable items)
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type UnitCardsGridSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<UnitCardsGridSliceDefaultPrimary>,
+  Simplify<UnitCardsGridSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *UnitCardsGrid*
+ */
+type UnitCardsGridSliceVariation = UnitCardsGridSliceDefault;
+
+/**
+ * UnitCardsGrid Shared Slice
+ *
+ * - **API ID**: `unit_cards_grid`
+ * - **Description**: Grid of unit cards for the course — each with exam weight, core concepts, trap callout, and link to unit page
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type UnitCardsGridSlice = prismic.SharedSlice<
+  "unit_cards_grid",
+  UnitCardsGridSliceVariation
+>;
+
+/**
+ * Item in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+ */
+export interface UnitQuestionBankSliceDefaultPrimaryUnitBlocksItem {
+  /**
+   * Unit Number field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 1
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].unit_number
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  unit_number: prismic.KeyTextField;
+
+  /**
+   * Unit Title field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Thinking Geographically
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].unit_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  unit_title: prismic.KeyTextField;
+
+  /**
+   * Unit Meta (weight · count) field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Weight 8–10% · Expected 5–8 MCQs
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].unit_meta
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  unit_meta: prismic.KeyTextField;
+
+  /**
+   * Full Unit Page Link field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].unit_page_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  unit_page_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Q1 · Stem field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q1_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  q1_text: prismic.KeyTextField;
+
+  /**
+   * Q1 · Difficulty field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q1_difficulty
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  q1_difficulty: prismic.SelectField<"Easy" | "Medium" | "Hard">;
+
+  /**
+   * Q1 · Option A field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q1_a
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  q1_a: prismic.KeyTextField;
+
+  /**
+   * Q1 · Option B field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q1_b
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  q1_b: prismic.KeyTextField;
+
+  /**
+   * Q1 · Option C field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q1_c
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  q1_c: prismic.KeyTextField;
+
+  /**
+   * Q1 · Option D field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q1_d
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  q1_d: prismic.KeyTextField;
+
+  /**
+   * Q1 · Correct field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q1_correct
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  q1_correct: prismic.SelectField<"A" | "B" | "C" | "D">;
+
+  /**
+   * Q1 · Short Correct Label field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q1_short_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  q1_short_label: prismic.KeyTextField;
+
+  /**
+   * Q1 · Explanation field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q1_explanation
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  q1_explanation: prismic.RichTextField;
+
+  /**
+   * Q1 · Exam Tip field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q1_tip
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  q1_tip: prismic.KeyTextField;
+
+  /**
+   * Q2 · Stem field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q2_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  q2_text: prismic.KeyTextField;
+
+  /**
+   * Q2 · Difficulty field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q2_difficulty
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  q2_difficulty: prismic.SelectField<"Easy" | "Medium" | "Hard">;
+
+  /**
+   * Q2 · Option A field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q2_a
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  q2_a: prismic.KeyTextField;
+
+  /**
+   * Q2 · Option B field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q2_b
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  q2_b: prismic.KeyTextField;
+
+  /**
+   * Q2 · Option C field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q2_c
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  q2_c: prismic.KeyTextField;
+
+  /**
+   * Q2 · Option D field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q2_d
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  q2_d: prismic.KeyTextField;
+
+  /**
+   * Q2 · Correct field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q2_correct
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  q2_correct: prismic.SelectField<"A" | "B" | "C" | "D">;
+
+  /**
+   * Q2 · Short Correct Label field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q2_short_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  q2_short_label: prismic.KeyTextField;
+
+  /**
+   * Q2 · Explanation field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q2_explanation
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  q2_explanation: prismic.RichTextField;
+
+  /**
+   * Q2 · Exam Tip field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q2_tip
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  q2_tip: prismic.KeyTextField;
+
+  /**
+   * Q3 · Stem field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q3_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  q3_text: prismic.KeyTextField;
+
+  /**
+   * Q3 · Difficulty field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q3_difficulty
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  q3_difficulty: prismic.SelectField<"Easy" | "Medium" | "Hard">;
+
+  /**
+   * Q3 · Option A field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q3_a
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  q3_a: prismic.KeyTextField;
+
+  /**
+   * Q3 · Option B field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q3_b
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  q3_b: prismic.KeyTextField;
+
+  /**
+   * Q3 · Option C field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q3_c
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  q3_c: prismic.KeyTextField;
+
+  /**
+   * Q3 · Option D field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q3_d
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  q3_d: prismic.KeyTextField;
+
+  /**
+   * Q3 · Correct field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q3_correct
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  q3_correct: prismic.SelectField<"A" | "B" | "C" | "D">;
+
+  /**
+   * Q3 · Short Correct Label field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q3_short_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  q3_short_label: prismic.KeyTextField;
+
+  /**
+   * Q3 · Explanation field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q3_explanation
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  q3_explanation: prismic.RichTextField;
+
+  /**
+   * Q3 · Exam Tip field in *UnitQuestionBank → Default → Primary → Unit Blocks (7 units)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[].q3_tip
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  q3_tip: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *UnitQuestionBank → Default → Primary*
+ */
+export interface UnitQuestionBankSliceDefaultPrimary {
+  /**
+   * Eyebrow field in *UnitQuestionBank → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Free Sample Questions
+   * - **API ID Path**: unit_question_bank.default.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Headline field in *UnitQuestionBank → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.headline
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  headline: prismic.RichTextField;
+
+  /**
+   * Lede field in *UnitQuestionBank → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.lede
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  lede: prismic.RichTextField;
+
+  /**
+   * Signup CTA Link (used on every unit gate) field in *UnitQuestionBank → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.signup_cta_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  signup_cta_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Unit Blocks (7 units) field in *UnitQuestionBank → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unit_question_bank.default.primary.unit_blocks[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  unit_blocks: prismic.GroupField<
+    Simplify<UnitQuestionBankSliceDefaultPrimaryUnitBlocksItem>
+  >;
+}
+
+/**
+ * Default variation for UnitQuestionBank Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default unit question bank
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type UnitQuestionBankSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<UnitQuestionBankSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *UnitQuestionBank*
+ */
+type UnitQuestionBankSliceVariation = UnitQuestionBankSliceDefault;
+
+/**
+ * UnitQuestionBank Shared Slice
+ *
+ * - **API ID**: `unit_question_bank`
+ * - **Description**: Per-unit practice bank — shows 3 free preview questions then gates 7 more per unit. Items = one block per unit.
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type UnitQuestionBankSlice = prismic.SharedSlice<
+  "unit_question_bank",
+  UnitQuestionBankSliceVariation
+>;
+
+/**
+ * Primary content in *VideoEmbed → Default → Primary*
+ */
+export interface VideoEmbedSliceDefaultPrimary {
+  /**
+   * Eyebrow field in *VideoEmbed → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: ▶ 60-Second Overview
+   * - **API ID Path**: video_embed.default.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *VideoEmbed → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_embed.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * YouTube Video ID field in *VideoEmbed → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: dQw4w9WgXcQ
+   * - **API ID Path**: video_embed.default.primary.youtube_id
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  youtube_id: prismic.KeyTextField;
+
+  /**
+   * Duration Label field in *VideoEmbed → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 0:58
+   * - **API ID Path**: video_embed.default.primary.duration
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  duration: prismic.KeyTextField;
+
+  /**
+   * Placeholder Caption field in *VideoEmbed → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: AP Human Geography — The 60-Second Overview
+   * - **API ID Path**: video_embed.default.primary.placeholder_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  placeholder_text: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for VideoEmbed Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default video embed
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type VideoEmbedSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<VideoEmbedSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *VideoEmbed*
+ */
+type VideoEmbedSliceVariation = VideoEmbedSliceDefault;
+
+/**
+ * VideoEmbed Shared Slice
+ *
+ * - **API ID**: `video_embed`
+ * - **Description**: YouTube video embed with title and eyebrow — click-to-play to defer YouTube iframe load
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type VideoEmbedSlice = prismic.SharedSlice<
+  "video_embed",
+  VideoEmbedSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -603,6 +2704,7 @@ declare module "@prismicio/client" {
     export type {
       CoursePillarPageDocument,
       CoursePillarPageDocumentData,
+      CoursePillarPageDocumentDataSlicesSlice,
       FaqBlockDocument,
       FaqBlockDocumentData,
       HomepageDocument,
@@ -615,11 +2717,40 @@ declare module "@prismicio/client" {
       UnitPageDocument,
       UnitPageDocumentData,
       AllDocumentTypes,
+      ConversionBlockSlice,
+      ConversionBlockSliceDefaultPrimary,
+      ConversionBlockSliceDefaultItem,
+      ConversionBlockSliceVariation,
+      ConversionBlockSliceDefault,
       CoursesGridSlice,
       CoursesGridSliceDefaultPrimaryCoursesItem,
       CoursesGridSliceDefaultPrimary,
       CoursesGridSliceVariation,
       CoursesGridSliceDefault,
+      DiagnosticQuizSlice,
+      DiagnosticQuizSliceDefaultPrimary,
+      DiagnosticQuizSliceDefaultItem,
+      DiagnosticQuizSliceVariation,
+      DiagnosticQuizSliceDefault,
+      DifficultySectionSlice,
+      DifficultySectionSliceDefaultPrimary,
+      DifficultySectionSliceVariation,
+      DifficultySectionSliceDefault,
+      ExamStructureSlice,
+      ExamStructureSliceDefaultPrimary,
+      ExamStructureSliceDefaultItem,
+      ExamStructureSliceVariation,
+      ExamStructureSliceDefault,
+      FaqAccordionSlice,
+      FaqAccordionSliceDefaultPrimaryFaqsItem,
+      FaqAccordionSliceDefaultPrimary,
+      FaqAccordionSliceVariation,
+      FaqAccordionSliceDefault,
+      FlashcardCarouselSlice,
+      FlashcardCarouselSliceDefaultPrimary,
+      FlashcardCarouselSliceDefaultItem,
+      FlashcardCarouselSliceVariation,
+      FlashcardCarouselSliceDefault,
       HeroSectionSlice,
       HeroSectionSliceDefaultPrimary,
       HeroSectionSliceVariation,
@@ -628,11 +2759,39 @@ declare module "@prismicio/client" {
       NewsletterSignupSliceDefaultPrimary,
       NewsletterSignupSliceVariation,
       NewsletterSignupSliceDefault,
+      PillarHeroSlice,
+      PillarHeroSliceDefaultPrimary,
+      PillarHeroSliceDefaultItem,
+      PillarHeroSliceVariation,
+      PillarHeroSliceDefault,
+      QuickAnswerSlice,
+      QuickAnswerSliceDefaultPrimary,
+      QuickAnswerSliceVariation,
+      QuickAnswerSliceDefault,
+      StudyStrategySlice,
+      StudyStrategySliceDefaultPrimary,
+      StudyStrategySliceDefaultItem,
+      StudyStrategySliceVariation,
+      StudyStrategySliceDefault,
       TrustBarSlice,
       TrustBarSliceDefaultPrimaryStatsItem,
       TrustBarSliceDefaultPrimary,
       TrustBarSliceVariation,
       TrustBarSliceDefault,
+      UnitCardsGridSlice,
+      UnitCardsGridSliceDefaultPrimary,
+      UnitCardsGridSliceDefaultItem,
+      UnitCardsGridSliceVariation,
+      UnitCardsGridSliceDefault,
+      UnitQuestionBankSlice,
+      UnitQuestionBankSliceDefaultPrimaryUnitBlocksItem,
+      UnitQuestionBankSliceDefaultPrimary,
+      UnitQuestionBankSliceVariation,
+      UnitQuestionBankSliceDefault,
+      VideoEmbedSlice,
+      VideoEmbedSliceDefaultPrimary,
+      VideoEmbedSliceVariation,
+      VideoEmbedSliceDefault,
     };
   }
 }

@@ -3,8 +3,20 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  conversion_block: dynamic(() => import("./ConversionBlock")),
   courses_grid: dynamic(() => import("./CoursesGrid")),
+  diagnostic_quiz: dynamic(() => import("./DiagnosticQuiz")),
+  difficulty_section: dynamic(() => import("./DifficultySection")),
+  exam_structure: dynamic(() => import("./ExamStructure")),
+  faq_accordion: dynamic(() => import("./FAQAccordion")),
+  flashcard_carousel: dynamic(() => import("./FlashcardCarousel")),
   hero_section: dynamic(() => import("./HeroSection")),
   newsletter_signup: dynamic(() => import("./NewsletterSignup")),
+  pillar_hero: dynamic(() => import("./PillarHero")),
+  quick_answer: dynamic(() => import("./QuickAnswer")),
+  study_strategy: dynamic(() => import("./StudyStrategy")),
   trust_bar: dynamic(() => import("./TrustBar")),
+  unit_cards_grid: dynamic(() => import("./UnitCardsGrid")),
+  unit_question_bank: dynamic(() => import("./UnitQuestionBank")),
+  video_embed: dynamic(() => import("./VideoEmbed")),
 };

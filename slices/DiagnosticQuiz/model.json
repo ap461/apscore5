@@ -1,0 +1,132 @@
+{
+  "id": "diagnostic_quiz",
+  "type": "SharedSlice",
+  "name": "DiagnosticQuiz",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default diagnostic quiz",
+      "imageUrl": "",
+      "docURL": "...",
+      "version": "initial",
+      "primary": {
+        "tag_label": {
+          "type": "Text",
+          "config": {
+            "label": "Tag Label",
+            "placeholder": "Free Diagnostic · 10 Questions"
+          }
+        },
+        "total_questions": {
+          "type": "Number",
+          "config": {
+            "label": "Total Questions (for progress)",
+            "placeholder": "10"
+          }
+        },
+        "gate_title": {
+          "type": "Text",
+          "config": {
+            "label": "Gate Title",
+            "placeholder": "7 more diagnostic questions waiting"
+          }
+        },
+        "gate_body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Gate Body",
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "gate_cta_text": {
+          "type": "Text",
+          "config": {
+            "label": "Gate CTA Text",
+            "placeholder": "Create Free Account — Continue Diagnostic →"
+          }
+        },
+        "gate_cta_link": {
+          "type": "Link",
+          "config": {
+            "label": "Gate CTA Link",
+            "select": null,
+            "allowText": false
+          }
+        },
+        "gate_footnote": {
+          "type": "Text",
+          "config": {
+            "label": "Footnote",
+            "placeholder": "Free forever · No credit card · 60-second signup"
+          }
+        }
+      },
+      "items": {
+        "question_text": {
+          "type": "Text",
+          "config": {
+            "label": "Question Stem"
+          }
+        },
+        "option_a": {
+          "type": "Text",
+          "config": {
+            "label": "Option A"
+          }
+        },
+        "option_b": {
+          "type": "Text",
+          "config": {
+            "label": "Option B"
+          }
+        },
+        "option_c": {
+          "type": "Text",
+          "config": {
+            "label": "Option C"
+          }
+        },
+        "option_d": {
+          "type": "Text",
+          "config": {
+            "label": "Option D"
+          }
+        },
+        "correct_letter": {
+          "type": "Select",
+          "config": {
+            "label": "Correct Answer Letter",
+            "options": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          }
+        },
+        "correct_short_label": {
+          "type": "Text",
+          "config": {
+            "label": "Short Label For Correct Answer",
+            "placeholder": "Choropleth Map"
+          }
+        },
+        "explanation": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Explanation",
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "exam_tip": {
+          "type": "Text",
+          "config": {
+            "label": "Exam Tip (one sentence)"
+          }
+        }
+      }
+    }
+  ],
+  "description": "10-question diagnostic quiz — 3 free preview questions then signup gate. Items populate Q1-Q3."
+}

@@ -1,0 +1,76 @@
+{
+  "id": "faq_accordion",
+  "type": "SharedSlice",
+  "name": "FAQAccordion",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default FAQ accordion",
+      "imageUrl": "",
+      "docURL": "...",
+      "version": "initial",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Common Questions"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Headline",
+            "single": "heading2,em"
+          }
+        },
+        "lede": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Lede",
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "faqs": {
+          "type": "Group",
+          "config": {
+            "label": "FAQ Items",
+            "fields": {
+              "category": {
+                "type": "Text",
+                "config": {
+                  "label": "Category Label",
+                  "placeholder": "Considering Taking AP Human Geography"
+                }
+              },
+              "question": {
+                "type": "Text",
+                "config": {
+                  "label": "Question"
+                }
+              },
+              "answer": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Answer (AEO format: direct answer first 2 sentences)",
+                  "multi": "paragraph,strong,em,hyperlink"
+                }
+              },
+              "open_by_default": {
+                "type": "Boolean",
+                "config": {
+                  "label": "Open by default (use sparingly)",
+                  "default_value": false,
+                  "placeholder_true": "Open",
+                  "placeholder_false": "Collapsed"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "description": "FAQ accordion grouped into named categories. Uses native <details> for SEO crawlability."
+}

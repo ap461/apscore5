@@ -1,0 +1,119 @@
+{
+  "id": "unit_cards_grid",
+  "type": "SharedSlice",
+  "name": "UnitCardsGrid",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default unit grid (repeatable items)",
+      "imageUrl": "",
+      "docURL": "...",
+      "version": "initial",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Course Roadmap"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Headline",
+            "single": "heading2,em"
+          }
+        },
+        "lede": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Lede",
+            "multi": "paragraph,strong,em"
+          }
+        }
+      },
+      "items": {
+        "unit_number": {
+          "type": "Text",
+          "config": {
+            "label": "Unit Number (zero-padded)",
+            "placeholder": "01"
+          }
+        },
+        "unit_weight": {
+          "type": "Text",
+          "config": {
+            "label": "Weight Chip",
+            "placeholder": "8–10% of Exam"
+          }
+        },
+        "unit_mcq": {
+          "type": "Text",
+          "config": {
+            "label": "MCQ Count Chip",
+            "placeholder": "5–8 MCQs"
+          }
+        },
+        "unit_flavor_chip": {
+          "type": "Text",
+          "config": {
+            "label": "Flavor Chip",
+            "placeholder": "Foundation"
+          }
+        },
+        "unit_title": {
+          "type": "Text",
+          "config": {
+            "label": "Unit Title",
+            "placeholder": "Thinking Geographically"
+          }
+        },
+        "unit_tagline": {
+          "type": "Text",
+          "config": {
+            "label": "One-line Tagline",
+            "placeholder": "The lens you wear through every other unit."
+          }
+        },
+        "overview": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Overview Paragraphs",
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "trap_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Common Trap Callout",
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "concepts": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Core Concepts List",
+            "multi": "list-item,strong,em"
+          }
+        },
+        "unit_cta_text": {
+          "type": "Text",
+          "config": {
+            "label": "Unit CTA Text",
+            "placeholder": "Open Unit 1 →"
+          }
+        },
+        "unit_cta_link": {
+          "type": "Link",
+          "config": {
+            "label": "Unit Page Link",
+            "select": null,
+            "allowText": false
+          }
+        }
+      }
+    }
+  ],
+  "description": "Grid of unit cards for the course — each with exam weight, core concepts, trap callout, and link to unit page"
+}

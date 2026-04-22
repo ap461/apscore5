@@ -1,0 +1,53 @@
+{
+  "id": "video_embed",
+  "type": "SharedSlice",
+  "name": "VideoEmbed",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default video embed",
+      "imageUrl": "",
+      "docURL": "...",
+      "version": "initial",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "▶ 60-Second Overview"
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "single": "heading3,em"
+          }
+        },
+        "youtube_id": {
+          "type": "Text",
+          "config": {
+            "label": "YouTube Video ID",
+            "placeholder": "dQw4w9WgXcQ"
+          }
+        },
+        "duration": {
+          "type": "Text",
+          "config": {
+            "label": "Duration Label",
+            "placeholder": "0:58"
+          }
+        },
+        "placeholder_text": {
+          "type": "Text",
+          "config": {
+            "label": "Placeholder Caption",
+            "placeholder": "AP Human Geography — The 60-Second Overview"
+          }
+        }
+      }
+    }
+  ],
+  "description": "YouTube video embed with title and eyebrow — click-to-play to defer YouTube iframe load"
+}

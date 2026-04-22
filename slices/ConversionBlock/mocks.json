@@ -1,0 +1,79 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"headline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Large"
+						}
+					}
+				]
+			},
+			"subcopy": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eiusmod cupidatat proident aute occaecat ipsum mollit ad reprehenderit culpa laboris."
+						}
+					}
+				]
+			},
+			"cta_text": {
+				"__TYPE__": "FieldContent",
+				"value": "current",
+				"type": "Text"
+			},
+			"cta_link": {
+				"__TYPE__": "LinkContent",
+				"key": "597690f6-f3b1-4035-a48a-a4c97eb3f044",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com"
+				}
+			},
+			"footnote": {
+				"__TYPE__": "FieldContent",
+				"value": "complete",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"benefit_icon",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "forth",
+							"type": "Text"
+						}
+					],
+					[
+						"benefit_title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "desk",
+							"type": "Text"
+						}
+					],
+					[
+						"benefit_description",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "neck",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]
