@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local working files — handoff docs and design references kept on disk
+# but not committed (they're per-author scratchpads, not project source)
+APSCORE5_HANDOFF.md
+ap-human-geography-pillar-STAGING.html
