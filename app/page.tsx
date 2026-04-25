@@ -43,7 +43,7 @@ export default async function Home() {
             <img src="/images/AP Score5 Light Background SVG.svg" alt="APScore5 logo" className="brand-logo"/>
           </a>
           <div className="nav-links">
-            <a href="/courses" className="nav-link">AP Score5 Courses</a>
+            <a href="/courses" className="nav-link">AP Courses Latest</a>
             <a href="/practice" className="nav-link">Practice</a>
             <a href="/daily" className="nav-link">Daily Questions</a>
             <a href="/dashboard" className="nav-link">Progress</a>
