@@ -7,4 +7,10 @@ export const components = {
   hero_section: dynamic(() => import("./HeroSection")),
   newsletter_signup: dynamic(() => import("./NewsletterSignup")),
   trust_bar: dynamic(() => import("./TrustBar")),
+  courses_hub_hero: dynamic(() => import("./CoursesHubHero")),
+  course_grid: dynamic(() => import("./CourseGrid")),
+  why_ap_matters: dynamic(() => import("./WhyApMatters")),
+  ap_planning_poll: dynamic(() => import("./ApPlanningPoll")),
+  conversion_block: dynamic(() => import("./ConversionBlock")),
+  faq_accordion: dynamic(() => import("./FaqAccordion")),
 };

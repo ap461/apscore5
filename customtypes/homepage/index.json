@@ -5,52 +5,189 @@
   "status": true,
   "format": "custom",
   "json": {
-    "Main": {
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
-        "config": {
-          "choices": {
-            "hero_section": {
-              "type": "SharedSlice"
-            },
-            "courses_grid": {
-              "type": "SharedSlice"
-            },
-            "newsletter_signup": {
-              "type": "SharedSlice"
-            },
-            "trust_bar": {
-              "type": "SharedSlice"
-            }
-          }
-        }
-      }
-    },
     "SEO": {
       "meta_title": {
         "type": "Text",
         "config": {
           "label": "Meta Title",
-          "placeholder": "AP Test Practice — Free AP Exam Prep"
+          "placeholder": "AP Test Practice — Free AP Exam Prep | APScore5"
         }
       },
       "meta_description": {
         "type": "Text",
         "config": {
           "label": "Meta Description",
-          "placeholder": "Free AP practice questions.Study 5 minutes a day and score a 5. No signup required."
+          "placeholder": "Free AP practice questions for AP Biology, AP Human Geography, and AP CSP."
         }
       },
       "og_image": {
         "type": "Image",
         "config": {
           "label": "OG Image",
-          "constraint": {
-            "width": 1200,
-            "height": 628
-          },
+          "constraint": { "width": 1200, "height": 628 },
           "thumbnails": []
+        }
+      }
+    },
+    "Hero": {
+      "hero_eyebrow": {
+        "type": "Text",
+        "config": {
+          "label": "Eyebrow",
+          "placeholder": "Free AP Exam Prep — No Signup Required"
+        }
+      },
+      "hero_headline": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Headline",
+          "allowTargetBlank": false,
+          "multi": "heading1"
+        }
+      },
+      "hero_subheadline": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Subheadline",
+          "allowTargetBlank": false,
+          "multi": "paragraph,strong,em"
+        }
+      },
+      "hero_cta_primary_text": {
+        "type": "Text",
+        "config": { "label": "Primary CTA Text", "placeholder": "Create a free account" }
+      },
+      "hero_cta_primary_url": {
+        "type": "Link",
+        "config": { "label": "Primary CTA URL", "allowTargetBlank": false }
+      },
+      "hero_cta_secondary_text": {
+        "type": "Text",
+        "config": { "label": "Secondary CTA Text", "placeholder": "Browse AP Courses" }
+      },
+      "hero_cta_secondary_url": {
+        "type": "Link",
+        "config": { "label": "Secondary CTA URL", "allowTargetBlank": false }
+      },
+      "hero_note": {
+        "type": "Text",
+        "config": {
+          "label": "Hero Note",
+          "placeholder": "✓ Free forever · ✓ No credit card · ✓ Start in 30 seconds"
+        }
+      },
+      "trust_items": {
+        "type": "Group",
+        "config": {
+          "label": "Trust Items",
+          "fields": {
+            "value": {
+              "type": "Text",
+              "config": { "label": "Value", "placeholder": "12,000+" }
+            },
+            "label": {
+              "type": "Text",
+              "config": { "label": "Label", "placeholder": "AP Practice Questions" }
+            }
+          }
+        }
+      }
+    },
+    "Stats": {
+      "stats": {
+        "type": "Group",
+        "config": {
+          "label": "Stats Bar Items",
+          "fields": {
+            "value": {
+              "type": "Text",
+              "config": { "label": "Value", "placeholder": "12,000+" }
+            },
+            "label": {
+              "type": "Text",
+              "config": { "label": "Label", "placeholder": "AP Practice Questions" }
+            }
+          }
+        }
+      }
+    },
+    "Courses Section": {
+      "courses_kicker": {
+        "type": "Text",
+        "config": { "label": "Courses Kicker", "placeholder": "AP Courses" }
+      },
+      "courses_headline": {
+        "type": "Text",
+        "config": { "label": "Courses Headline", "placeholder": "Choose your AP course and start today." }
+      },
+      "courses_description": {
+        "type": "Text",
+        "config": {
+          "label": "Courses Description",
+          "placeholder": "Each course is broken into unit pages, quizzes, and study guides."
+        }
+      }
+    },
+    "CTA Section": {
+      "cta_kicker": {
+        "type": "Text",
+        "config": { "label": "CTA Kicker", "placeholder": "Start Free" }
+      },
+      "cta_headline": {
+        "type": "StructuredText",
+        "config": {
+          "label": "CTA Headline",
+          "allowTargetBlank": false,
+          "multi": "heading2"
+        }
+      },
+      "cta_body": {
+        "type": "StructuredText",
+        "config": {
+          "label": "CTA Body",
+          "allowTargetBlank": false,
+          "multi": "paragraph"
+        }
+      },
+      "cta_points": {
+        "type": "Group",
+        "config": {
+          "label": "CTA Points",
+          "fields": {
+            "text": {
+              "type": "Text",
+              "config": { "label": "Point Text", "placeholder": "✓ Start before signup friction appears" }
+            }
+          }
+        }
+      },
+      "cta_primary_text": {
+        "type": "Text",
+        "config": { "label": "CTA Primary Text", "placeholder": "Try a free question →" }
+      },
+      "cta_primary_url": {
+        "type": "Link",
+        "config": { "label": "CTA Primary URL", "allowTargetBlank": false }
+      },
+      "cta_secondary_text": {
+        "type": "Text",
+        "config": { "label": "CTA Secondary Text", "placeholder": "Read AP exam FAQ" }
+      },
+      "cta_secondary_url": {
+        "type": "Link",
+        "config": { "label": "CTA Secondary URL", "allowTargetBlank": false }
+      }
+    },
+    "Newsletter": {
+      "newsletter_headline": {
+        "type": "Text",
+        "config": { "label": "Newsletter Headline", "placeholder": "Get a free AP question every day." }
+      },
+      "newsletter_body": {
+        "type": "Text",
+        "config": {
+          "label": "Newsletter Body",
+          "placeholder": "One question. One clear explanation. Daily practice that compounds over time."
         }
       }
     }

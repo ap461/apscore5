@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ADSENSE, PRISMIC, CANONICAL_SITE_URL } from "@/config/endpoints";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,10 +14,22 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+/**
+ * Root layout metadata — provides sensible defaults.
+ * Each page overrides these via its own `generateMetadata` / `metadata` export.
+ */
 export const metadata: Metadata = {
-  title: "AP Test Practice — Free AP Exam Prep | APScore5",
+  metadataBase: new URL(CANONICAL_SITE_URL),
+  title: {
+    default: "AP Test Practice — Free AP Exam Prep | APScore5",
+    template: "%s | APScore5",
+  },
   description:
     "Free AP practice questions for AP Biology, AP Human Geography, and AP CSP. Study 5 minutes a day and score a 5. No signup required.",
+  // Google AdSense ownership verification — goes into <head> automatically
+  other: {
+    "google-adsense-account": ADSENSE.publisherId,
+  },
 };
 
 export default function RootLayout({
@@ -29,31 +42,24 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <head>
-        {/* Google AdSense Meta Tag */}
-        <meta
-          name="google-adsense-account"
-          content="ca-pub-4424361283304614"
-        />
+      <body className="min-h-full flex flex-col">
+        {children}
 
-        {/* Google AdSense Script */}
+        {/* Google AdSense script — loaded after page is interactive */}
         <Script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4424361283304614"
+          src={ADSENSE.scriptSrc}
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
 
-        {/* Prismic Script */}
-        <script
+        {/* Prismic Toolbar — for preview / CMS link resolution */}
+        <Script
           async
           defer
-          src="https://static.cdn.prismic.io/prismic.js?new=true&repo=apscore5"
+          src={PRISMIC.toolbarSrc}
+          strategy="afterInteractive"
         />
-      </head>
-
-      <body className="min-h-full flex flex-col">
-        {children}
       </body>
     </html>
   );

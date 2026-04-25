@@ -1,0 +1,61 @@
+{
+  "id": "course",
+  "label": "Course",
+  "repeatable": true,
+  "status": true,
+  "format": "custom",
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID",
+          "placeholder": "ap-biology"
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Course Title",
+          "placeholder": "AP Biology"
+        }
+      },
+      "description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Course Description",
+          "allowTargetBlank": false,
+          "multi": "paragraph,strong,em"
+        }
+      },
+      "icon": {
+        "type": "Text",
+        "config": {
+          "label": "Icon (emoji)",
+          "placeholder": "🧬"
+        }
+      },
+      "question_count": {
+        "type": "Text",
+        "config": {
+          "label": "Question Count (display string)",
+          "placeholder": "4,800 questions"
+        }
+      },
+      "url_path": {
+        "type": "Text",
+        "config": {
+          "label": "URL Path",
+          "placeholder": "/ap-biology"
+        }
+      },
+      "order": {
+        "type": "Number",
+        "config": {
+          "label": "Sort Order (lower = first)",
+          "placeholder": "1"
+        }
+      }
+    }
+  }
+}

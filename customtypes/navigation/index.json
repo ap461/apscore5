@@ -1,0 +1,91 @@
+{
+  "id": "navigation",
+  "label": "Navigation",
+  "repeatable": false,
+  "status": true,
+  "format": "custom",
+  "json": {
+    "Navigation": {
+      "nav_links": {
+        "type": "Group",
+        "config": {
+          "label": "Nav Links",
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": { "label": "Label", "placeholder": "AP Courses" }
+            },
+            "url": {
+              "type": "Text",
+              "config": { "label": "URL", "placeholder": "/courses" }
+            }
+          }
+        }
+      }
+    },
+    "Footer": {
+      "footer_courses": {
+        "type": "Group",
+        "config": {
+          "label": "Footer — AP Courses",
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": { "label": "Label", "placeholder": "AP Biology" }
+            },
+            "url": {
+              "type": "Text",
+              "config": { "label": "URL", "placeholder": "/ap-biology" }
+            }
+          }
+        }
+      },
+      "footer_site": {
+        "type": "Group",
+        "config": {
+          "label": "Footer — Site",
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": { "label": "Label", "placeholder": "How it Works" }
+            },
+            "url": {
+              "type": "Text",
+              "config": { "label": "URL", "placeholder": "/courses" }
+            }
+          }
+        }
+      },
+      "footer_company": {
+        "type": "Group",
+        "config": {
+          "label": "Footer — Company",
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": { "label": "Label", "placeholder": "About" }
+            },
+            "url": {
+              "type": "Text",
+              "config": { "label": "URL", "placeholder": "/about" }
+            }
+          }
+        }
+      },
+      "footer_tagline": {
+        "type": "Text",
+        "config": {
+          "label": "Footer Tagline",
+          "placeholder": "AP practice questions, unit quizzes, and exam prep designed to help students build confidence."
+        }
+      },
+      "footer_disclaimer": {
+        "type": "Text",
+        "config": {
+          "label": "Footer Disclaimer",
+          "placeholder": "AP® is a trademark of the College Board, which is not affiliated with APScore5."
+        }
+      }
+    }
+  }
+}

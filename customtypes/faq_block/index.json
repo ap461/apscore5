@@ -1,17 +1,40 @@
 {
   "id": "faq_block",
-  "label": "FAQ Block",
+  "label": "FAQ Item",
   "repeatable": true,
+  "status": true,
+  "format": "custom",
   "json": {
     "Main": {
       "uid": {
         "type": "UID",
         "config": {
-          "label": "UID"
+          "label": "UID",
+          "placeholder": "how-are-ap-tests-scored"
+        }
+      },
+      "question": {
+        "type": "Text",
+        "config": {
+          "label": "Question",
+          "placeholder": "How are AP tests scored?"
+        }
+      },
+      "answer": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Answer",
+          "allowTargetBlank": false,
+          "multi": "paragraph,strong,em,hyperlink"
+        }
+      },
+      "order": {
+        "type": "Number",
+        "config": {
+          "label": "Sort Order (lower = first)",
+          "placeholder": "1"
         }
       }
     }
-  },
-  "status": true,
-  "format": "custom"
+  }
 }
