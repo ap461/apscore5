@@ -35,9 +35,22 @@ const NewsletterSignup: FC<NewsletterSignupProps> = ({ slice }) => {
       <div className="container">
         <div className="nl-box">
           <div>
-            {/* Override heading tags semantically or keep it inside the mapped RichText rendering */}
-            <PrismicRichText field={d.heading} />
-            <PrismicRichText field={d.description} />
+            {/* Override heading tags semantically to match the original design */}
+            <PrismicRichText 
+              field={d.heading} 
+              components={{
+                heading1: ({ children }) => <h3 id="newsletter-heading" style={{ color: "white" }}>{children}</h3>,
+                heading2: ({ children }) => <h3 id="newsletter-heading" style={{ color: "white" }}>{children}</h3>,
+                heading3: ({ children }) => <h3 id="newsletter-heading" style={{ color: "white" }}>{children}</h3>,
+                paragraph: ({ children }) => <h3 id="newsletter-heading" style={{ color: "white" }}>{children}</h3>,
+              }}
+            />
+            <PrismicRichText 
+              field={d.description} 
+              components={{
+                paragraph: ({ children }) => <p style={{ color: "rgba(255,255,255,0.9)" }}>{children}</p>,
+              }}
+            />
           </div>
           <div>
             {formState === "success" ? (
