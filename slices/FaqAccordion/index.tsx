@@ -2,14 +2,26 @@ import { FC } from "react";
 import { PrismicRichText } from "@prismicio/react";
 
 const FaqAccordion: FC<any> = ({ slice }) => {
+  const items =
+    slice.primary?.faq_items ||
+    slice.primary?.items ||
+    slice.items ||
+    [];
+
+  const eyebrow = typeof slice.primary?.eyebrow === "string" ? slice.primary.eyebrow : null;
+  const headline = typeof slice.primary?.headline === "string" ? slice.primary.headline : null;
+  const lede = typeof slice.primary?.lede === "string" ? slice.primary.lede : null;
+
   return (
     <section className="faq-accordion py-12" data-slice-type={slice.slice_type}>
       <div className="container">
-        <h2 style={{ textAlign: "center", marginBottom: "1em" }}>Frequently Asked Questions</h2>
+        {eyebrow && (<p className="eyebrow" style={{ textAlign: "center" }}>{eyebrow}</p>)}
+        {headline && (<h2 style={{ textAlign: "center", marginBottom: "0.5em" }}>{headline}</h2>)}
+        {lede && (<p style={{ textAlign: "center", maxWidth: "700px", margin: "0 auto 2em", color: "#555" }}>{lede}</p>)}
 
-        {slice.items && slice.items.length > 0 && (
+        {items.length > 0 && (
           <div style={{ maxWidth: "820px", margin: "0 auto" }}>
-            {slice.items.map((item: any, i: number) => (
+            {items.map((item: any, i: number) => (
               <details key={i} open={item.open_by_default} style={{ borderBottom: "1px solid #e5e5e5", padding: "1.25em 0" }}>
                 <summary style={{ cursor: "pointer", fontWeight: 600, fontSize: "1.1em", lineHeight: 1.4 }}>
                   {item.category_label && (
