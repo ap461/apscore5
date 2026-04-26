@@ -9,6 +9,7 @@ import { getNavigation } from "@/lib/prismic";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import StickyMobileCta from "@/components/StickyMobileCta";
 import { CANONICAL_SITE_URL } from "@/config/endpoints";
 
 const UNIT_NAMES_BY_UID: Record<string, string[]> = {
@@ -157,6 +158,8 @@ export default async function Page(props: PageProps<"/course/[uid]">) {
         )}
 
         <SliceZone slices={restSlices} components={components} />
+
+        <StickyMobileCta hidden={false} />
       </main>
       <Footer nav={nav} />
     </>
