@@ -2,22 +2,25 @@ import { FC } from "react";
 import { PrismicRichText } from "@prismicio/react";
 
 const FaqAccordion: FC<any> = ({ slice }) => {
-  const items =
-    slice.primary?.faq_items ||
-    slice.primary?.items ||
-    slice.items ||
-    [];
-
-  const eyebrow = typeof slice.primary?.eyebrow === "string" ? slice.primary.eyebrow : null;
-  const headline = typeof slice.primary?.headline === "string" ? slice.primary.headline : null;
-  const lede = typeof slice.primary?.lede === "string" ? slice.primary.lede : null;
+  let items: any[] = [];
+  if (Array.isArray(slice.items) && slice.items.length > 0) {
+    items = slice.items;
+  } else if (slice.primary && typeof slice.primary === "object") {
+    for (const key of Object.keys(slice.primary)) {
+      const val = slice.primary[key];
+      if (Array.isArray(val) && val.length > 0 && typeof val[0] === "object" && val[0] !== null) {
+        items = val;
+        break;
+      }
+    }
+  }
 
   return (
     <section className="faq-accordion py-12" data-slice-type={slice.slice_type}>
       <div className="container">
-        {eyebrow && (<p className="eyebrow" style={{ textAlign: "center" }}>{eyebrow}</p>)}
-        {headline && (<h2 style={{ textAlign: "center", marginBottom: "0.5em" }}>{headline}</h2>)}
-        {lede && (<p style={{ textAlign: "center", maxWidth: "700px", margin: "0 auto 2em", color: "#555" }}>{lede}</p>)}
+        {slice.primary?.eyebrow && (<p className="eyebrow" style={{ textAlign: "center" }}>{slice.primary.eyebrow}</p>)}
+        <div style={{ textAlign: "center" }}><PrismicRichText field={slice.primary?.headline} /></div>
+        <div style={{ textAlign: "center", maxWidth: "700px", margin: "0 auto 2em", color: "#555" }}><PrismicRichText field={slice.primary?.lede} /></div>
 
         {items.length > 0 && (
           <div style={{ maxWidth: "820px", margin: "0 auto" }}>
