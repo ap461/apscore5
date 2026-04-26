@@ -9,36 +9,18 @@ const ConversionBlock: FC<any> = ({ slice }) => {
         <PrismicRichText field={slice.primary?.subcopy} />
 
         {slice.primary?.cta_link?.url && slice.primary?.cta_text && (
-          
-            href={slice.primary.cta_link.url}
-            className="btn btn-p"
-            style={{ marginTop: "1em", display: "inline-block" }}
-          >
-            {slice.primary.cta_text}
-          </a>
+          <a href={slice.primary.cta_link.url} className="btn btn-p" style={{ marginTop: "1em", display: "inline-block" }}>{slice.primary.cta_text}</a>
         )}
 
         {slice.primary?.footnote && (
-          <p style={{ fontSize: "0.875em", color: "#666", marginTop: "0.75em" }}>
-            {slice.primary.footnote}
-          </p>
+          <p style={{ fontSize: "0.875em", color: "#666", marginTop: "0.75em" }}>{slice.primary.footnote}</p>
         )}
 
         {slice.items && slice.items.length > 0 && (
-          <div
-            style={{
-              marginTop: "3em",
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-              gap: "2em",
-              textAlign: "left",
-            }}
-          >
+          <div style={{ marginTop: "3em", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "2em", textAlign: "left" }}>
             {slice.items.map((item: any, i: number) => (
               <div key={i}>
-                <div style={{ fontSize: "2.5em", marginBottom: "0.25em" }}>
-                  {item.benefit_icon}
-                </div>
+                <div style={{ fontSize: "2.5em", marginBottom: "0.25em" }}>{item.benefit_icon}</div>
                 <h3 style={{ marginBottom: "0.25em" }}>{item.benefit_title}</h3>
                 <p>{item.benefit_description}</p>
               </div>
