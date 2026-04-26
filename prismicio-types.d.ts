@@ -79,7 +79,9 @@ type CoursePillarPageDocumentDataSlicesSlice =
   | ExamStructureSlice
   | StudyStrategySlice
   | UnitCardsGridSlice
-  | VideoEmbedSlice;
+  | VideoEmbedSlice
+  | UnitQuestionBankSlice
+  | FlashcardCarouselSlice;
 
 /**
  * Content for Course Pillar Page documents
@@ -898,6 +900,123 @@ export type VideoEmbedSlice = prismic.SharedSlice<
   VideoEmbedSliceVariation
 >;
 
+/**
+ * Item in *UnitQuestionBank → Default → Primary → unit_blocks*
+ */
+export interface UnitQuestionBankSliceDefaultPrimaryUnitBlocksItem {
+  unit_number: prismic.KeyTextField;
+  unit_title: prismic.KeyTextField;
+  unit_meta: prismic.KeyTextField;
+  unit_page_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+  q1_text: prismic.KeyTextField;
+  q1_difficulty: prismic.SelectField<"Easy" | "Medium" | "Hard">;
+  q1_a: prismic.KeyTextField;
+  q1_b: prismic.KeyTextField;
+  q1_c: prismic.KeyTextField;
+  q1_d: prismic.KeyTextField;
+  q1_correct: prismic.SelectField<"A" | "B" | "C" | "D">;
+  q1_short_label: prismic.KeyTextField;
+  q1_explanation: prismic.RichTextField;
+  q1_tip: prismic.KeyTextField;
+  q2_text: prismic.KeyTextField;
+  q2_difficulty: prismic.SelectField<"Easy" | "Medium" | "Hard">;
+  q2_a: prismic.KeyTextField;
+  q2_b: prismic.KeyTextField;
+  q2_c: prismic.KeyTextField;
+  q2_d: prismic.KeyTextField;
+  q2_correct: prismic.SelectField<"A" | "B" | "C" | "D">;
+  q2_short_label: prismic.KeyTextField;
+  q2_explanation: prismic.RichTextField;
+  q2_tip: prismic.KeyTextField;
+  q3_text: prismic.KeyTextField;
+  q3_difficulty: prismic.SelectField<"Easy" | "Medium" | "Hard">;
+  q3_a: prismic.KeyTextField;
+  q3_b: prismic.KeyTextField;
+  q3_c: prismic.KeyTextField;
+  q3_d: prismic.KeyTextField;
+  q3_correct: prismic.SelectField<"A" | "B" | "C" | "D">;
+  q3_short_label: prismic.KeyTextField;
+  q3_explanation: prismic.RichTextField;
+  q3_tip: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *UnitQuestionBank → Default → Primary*
+ */
+export interface UnitQuestionBankSliceDefaultPrimary {
+  eyebrow: prismic.KeyTextField;
+  headline: prismic.RichTextField;
+  lede: prismic.RichTextField;
+  signup_cta_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+  unit_blocks: prismic.GroupField<
+    Simplify<UnitQuestionBankSliceDefaultPrimaryUnitBlocksItem>
+  >;
+}
+
+export type UnitQuestionBankSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<UnitQuestionBankSliceDefaultPrimary>,
+  never
+>;
+
+type UnitQuestionBankSliceVariation = UnitQuestionBankSliceDefault;
+
+export type UnitQuestionBankSlice = prismic.SharedSlice<
+  "unit_question_bank",
+  UnitQuestionBankSliceVariation
+>;
+
+/**
+ * Primary content in *FlashcardCarousel → Default → Primary*
+ */
+export interface FlashcardCarouselSliceDefaultPrimary {
+  eyebrow: prismic.KeyTextField;
+  headline: prismic.RichTextField;
+  lede: prismic.RichTextField;
+  unlock_link_text: prismic.KeyTextField;
+  unlock_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Primary content in *FlashcardCarousel → Items*
+ */
+export interface FlashcardCarouselSliceDefaultItem {
+  term: prismic.KeyTextField;
+  unit_label: prismic.KeyTextField;
+  definition: prismic.KeyTextField;
+}
+
+export type FlashcardCarouselSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FlashcardCarouselSliceDefaultPrimary>,
+  Simplify<FlashcardCarouselSliceDefaultItem>
+>;
+
+type FlashcardCarouselSliceVariation = FlashcardCarouselSliceDefault;
+
+export type FlashcardCarouselSlice = prismic.SharedSlice<
+  "flashcard_carousel",
+  FlashcardCarouselSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -985,6 +1104,16 @@ declare module "@prismicio/client" {
       VideoEmbedSliceDefaultPrimary,
       VideoEmbedSliceVariation,
       VideoEmbedSliceDefault,
+      UnitQuestionBankSlice,
+      UnitQuestionBankSliceDefaultPrimary,
+      UnitQuestionBankSliceDefaultPrimaryUnitBlocksItem,
+      UnitQuestionBankSliceVariation,
+      UnitQuestionBankSliceDefault,
+      FlashcardCarouselSlice,
+      FlashcardCarouselSliceDefaultPrimary,
+      FlashcardCarouselSliceDefaultItem,
+      FlashcardCarouselSliceVariation,
+      FlashcardCarouselSliceDefault,
     };
   }
 }

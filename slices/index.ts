@@ -20,4 +20,6 @@ export const components = {
   study_strategy: dynamic(() => import("./StudyStrategy")),
   unit_cards_grid: dynamic(() => import("./UnitCardsGrid")),
   video_embed: dynamic(() => import("./VideoEmbed")),
+  unit_question_bank: dynamic(() => import("./UnitQuestionBank")),
+  flashcard_carousel: dynamic(() => import("./FlashcardCarousel")),
 };

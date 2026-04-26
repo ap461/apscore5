@@ -1,0 +1,77 @@
+{
+  "id": "flashcard_carousel",
+  "type": "SharedSlice",
+  "name": "FlashcardCarousel",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default flashcard carousel",
+      "imageUrl": "",
+      "docURL": "...",
+      "version": "initial",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Core Vocabulary"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Headline",
+            "single": "heading2,em"
+          }
+        },
+        "lede": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Lede",
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "unlock_link_text": {
+          "type": "Text",
+          "config": {
+            "label": "Unlock All Link Text",
+            "placeholder": "🔓 Unlock all 350 flashcards + spaced repetition →"
+          }
+        },
+        "unlock_link": {
+          "type": "Link",
+          "config": {
+            "label": "Unlock Link",
+            "select": null,
+            "allowText": false
+          }
+        }
+      },
+      "items": {
+        "term": {
+          "type": "Text",
+          "config": {
+            "label": "Term",
+            "placeholder": "Absolute Location"
+          }
+        },
+        "unit_label": {
+          "type": "Text",
+          "config": {
+            "label": "Unit Label",
+            "placeholder": "Unit 1"
+          }
+        },
+        "definition": {
+          "type": "Text",
+          "config": {
+            "label": "Definition",
+            "placeholder": "A fixed coordinate, usually latitude and longitude."
+          }
+        }
+      }
+    }
+  ],
+  "description": "Flippable flashcard carousel sampled from the master term list"
+}

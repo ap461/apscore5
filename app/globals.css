@@ -763,5 +763,185 @@ details.fi summary.fiq::-webkit-details-marker{display:none}
   text-align:center;margin:14px auto 0;max-width:560px;
 }
 
+/* UnitQuestionBank — per-unit practice questions w/ lock-on-answer + reveal + ad */
+.qb-units{display:grid;gap:24px;margin-top:8px}
+.qb-unit{
+  background:#fff;border:1px solid var(--border);
+  border-radius:20px;padding:28px;
+  box-shadow:var(--shadow-sm);
+}
+.qb-unit-head{
+  margin-bottom:18px;padding-bottom:18px;
+  border-bottom:1px solid var(--border);
+}
+.qb-unit-number{
+  display:inline-block;
+  font-size:11px;font-weight:800;color:var(--blue);
+  text-transform:uppercase;letter-spacing:.08em;
+  margin-bottom:6px;
+}
+.qb-unit h3{
+  font-size:20px;color:var(--navy);
+  letter-spacing:-.02em;margin:0 0 4px;
+}
+.qb-unit-meta{font-size:13px;color:var(--muted);margin:0}
+.qb-question{
+  background:var(--soft);border-radius:14px;
+  padding:20px;margin-bottom:14px;
+}
+.qb-question:last-of-type{margin-bottom:0}
+.qb-q-head{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:10px;gap:8px;
+}
+.qb-q-num{
+  font-size:11px;font-weight:800;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.08em;
+}
+.qb-difficulty{
+  font-size:11px;font-weight:700;
+  padding:3px 10px;border-radius:999px;
+  text-transform:uppercase;letter-spacing:.05em;
+}
+.qb-d-easy{background:#d1fae5;color:#065f46}
+.qb-d-medium{background:#fef3c7;color:#92400e}
+.qb-d-hard{background:#fee2e2;color:#b91c1c}
+.qb-q-text{
+  font-size:15.5px;font-weight:600;color:var(--navy);
+  line-height:1.55;margin:0 0 14px;
+}
+.qb-opts{display:grid;gap:8px;margin-bottom:14px}
+.qb-opt{
+  width:100%;display:flex;align-items:flex-start;gap:12px;
+  background:#fff;border:1.5px solid var(--border);border-radius:12px;
+  padding:12px 14px;
+  font:inherit;font-size:14px;color:var(--text);line-height:1.5;
+  text-align:left;cursor:pointer;
+  transition:border-color .15s,background .15s;
+}
+.qb-opt:hover:not(:disabled){border-color:rgba(47,102,208,.35);background:var(--soft2)}
+.qb-opt:disabled{cursor:default}
+.qb-opt.chosen-correct{background:#eef6ff;border-color:rgba(47,102,208,.4)}
+.qb-opt.chosen-wrong{background:#fff3f3;border-color:rgba(220,50,50,.35)}
+.qb-opt.show-correct{background:#eef6ff;border-color:rgba(47,102,208,.4)}
+.qb-letter{
+  flex:0 0 24px;width:24px;height:24px;
+  border:1.5px solid var(--border);border-radius:50%;
+  background:var(--soft);color:var(--blue);
+  font-size:11px;font-weight:800;
+  display:inline-flex;align-items:center;justify-content:center;
+  margin-top:1px;
+}
+.qb-opt.chosen-correct .qb-letter,
+.qb-opt.show-correct .qb-letter{background:var(--blue);color:#fff;border-color:var(--blue)}
+.qb-opt.chosen-wrong .qb-letter{background:#dc2626;color:#fff;border-color:#dc2626}
+.qb-opt-text{flex:1}
+.qb-feedback{
+  background:#fff;border:1px solid var(--border);border-radius:12px;
+  padding:14px 16px;font-size:14px;line-height:1.65;color:var(--muted);
+  margin-bottom:14px;
+}
+.qb-feedback strong{display:block;color:var(--navy);font-size:15px;margin-bottom:4px}
+.qb-feedback p{margin:0 0 6px}
+.qb-feedback p:last-child{margin-bottom:0}
+.qb-tip{
+  margin-top:8px;padding:10px 12px;
+  background:var(--soft2);border-radius:10px;
+  font-size:13px;color:var(--navy);
+}
+.qb-ad{
+  margin-top:14px;padding-top:14px;
+  border-top:1px solid var(--border);
+}
+.qb-unit-cta{
+  margin-top:18px;display:flex;justify-content:flex-end;gap:10px;
+}
+
+/* FlashcardCarousel — 3D flip + virtual deck with ad slides every 5th position */
+.fc-deck{
+  max-width:520px;margin:24px auto 0;
+  display:flex;flex-direction:column;align-items:center;gap:18px;
+}
+.fc-stage{
+  width:100%;height:300px;
+  perspective:1200px;
+  display:flex;align-items:center;justify-content:center;
+}
+.fc-card{
+  position:relative;width:100%;height:100%;
+  background:transparent;border:none;padding:0;
+  cursor:pointer;font:inherit;
+  transform-style:preserve-3d;
+  transition:transform .55s cubic-bezier(.2,.8,.2,1);
+}
+.fc-card.is-flipped{transform:rotateY(180deg)}
+.fc-card-inner{
+  position:relative;width:100%;height:100%;
+  transform-style:preserve-3d;
+}
+.fc-card-front,
+.fc-card-back{
+  position:absolute;inset:0;
+  border-radius:20px;padding:32px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;
+  -webkit-backface-visibility:hidden;backface-visibility:hidden;
+  box-shadow:var(--shadow);
+}
+.fc-card-front{
+  background:linear-gradient(160deg,#fff 0%,var(--soft2) 100%);
+  border:1px solid var(--border);
+}
+.fc-card-back{
+  background:linear-gradient(160deg,var(--navy) 0%,#141a78 100%);
+  border:1px solid rgba(255,255,255,.12);
+  color:#fff;
+  transform:rotateY(180deg);
+}
+.fc-unit{
+  font-size:11px;font-weight:800;color:var(--blue);
+  text-transform:uppercase;letter-spacing:.08em;
+  margin-bottom:14px;
+}
+.fc-term{
+  font-size:clamp(22px,2.6vw,30px);
+  font-weight:700;color:var(--navy);
+  letter-spacing:-.02em;line-height:1.25;
+}
+.fc-flip-hint{
+  font-size:12px;color:var(--muted);
+  margin-top:18px;
+}
+.fc-back-label{
+  font-size:11px;font-weight:800;color:rgba(255,255,255,.5);
+  text-transform:uppercase;letter-spacing:.08em;
+  margin-bottom:14px;
+}
+.fc-definition{
+  font-size:17px;line-height:1.55;color:#fff;font-weight:500;
+}
+.fc-ad-slide{
+  width:100%;height:100%;
+  background:var(--soft);border:1px dashed var(--border-mid);
+  border-radius:20px;padding:24px;
+  display:flex;align-items:center;justify-content:center;
+}
+.fc-controls{
+  display:flex;align-items:center;gap:12px;
+}
+.fc-nav{
+  background:#fff;border:1px solid var(--border);
+  color:var(--navy);font-weight:700;font-size:14px;
+  padding:8px 14px;border-radius:999px;cursor:pointer;
+  transition:border-color .15s,background .15s;
+}
+.fc-nav:hover:not(:disabled){border-color:var(--blue);background:var(--soft2)}
+.fc-nav:disabled{opacity:.4;cursor:not-allowed}
+.fc-counter{
+  font-size:13px;font-weight:600;color:var(--muted);
+  min-width:80px;text-align:center;
+}
+.fc-unlock{margin-top:8px}
+
 .nextbtn button:disabled{opacity:.35;cursor:not-allowed;}
 }
