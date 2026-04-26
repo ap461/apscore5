@@ -101,6 +101,12 @@
           "placeholder_true": "Yes, hide",
           "placeholder_false": "No, index normally"
         }
+      },
+      "last_reviewed": {
+        "type": "Date",
+        "config": {
+          "label": "Last Reviewed Date"
+        }
       }
     }
   },

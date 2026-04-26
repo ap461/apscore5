@@ -127,6 +127,11 @@ interface CoursePillarPageDocumentData {
    * Hide from search engines field in *Course Pillar Page*
    */
   no_index: prismic.BooleanField;
+
+  /**
+   * Last Reviewed Date field in *Course Pillar Page*
+   */
+  last_reviewed: prismic.DateField;
 }
 
 /**

@@ -943,5 +943,30 @@ details.fi summary.fiq::-webkit-details-marker{display:none}
 }
 .fc-unlock{margin-top:8px}
 
+/* Page meta — breadcrumb nav + last-reviewed strip on pillar pages */
+.breadcrumbs{padding:18px 0 10px;font-size:13px}
+.breadcrumbs ol{
+  display:flex;flex-wrap:wrap;align-items:center;gap:0;
+  list-style:none;padding:0;margin:0;
+}
+.breadcrumbs ol li{display:inline-flex;align-items:center}
+.breadcrumbs ol li:not(:last-child)::after{
+  content:"›";margin:0 8px;color:var(--muted);font-weight:500;
+}
+.breadcrumbs ol li a{color:var(--muted);transition:color .15s}
+.breadcrumbs ol li a:hover{color:var(--blue)}
+.breadcrumbs ol li [aria-current="page"]{color:var(--navy);font-weight:600}
+
+.page-meta-bar{
+  text-align:center;
+  font-size:13px;color:var(--muted);
+  padding:14px 24px;
+  border-bottom:1px solid var(--border);
+  background:#fff;
+}
+.page-meta-bar::before{
+  content:"✓ ";color:var(--blue);font-weight:700;
+}
+
 .nextbtn button:disabled{opacity:.35;cursor:not-allowed;}
 }
