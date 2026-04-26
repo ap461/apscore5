@@ -1,15 +1,28 @@
 import { FC } from "react";
 import { PrismicRichText } from "@prismicio/react";
 
-const WhyApMatters: FC<any> = ({ slice }) => {
+const WhyApMatters: FC<{ slice: { slice_type: string; primary?: Record<string, unknown> } }> = ({ slice }) => {
   return (
-    <section className="why-ap-matters py-12" data-slice-type={slice.slice_type}>
+    <section data-slice-type={slice.slice_type}>
       <div className="container">
-        <p className="eyebrow">{slice.primary?.eyebrow}</p>
-        <PrismicRichText field={slice.primary?.headline} />
-        <div className="space-y-4">
-          <PrismicRichText field={slice.primary?.body} />
-        </div>
+        {slice.primary?.eyebrow ? (
+          <div className="kicker">{String(slice.primary.eyebrow)}</div>
+        ) : null}
+        <PrismicRichText
+          field={slice.primary?.headline as never}
+          components={{ heading1: ({ children }) => <h2>{children}</h2> }}
+        />
+        <PrismicRichText
+          field={slice.primary?.body as never}
+          components={{
+            paragraph: ({ children }) => (
+              <p className="sdesc" style={{ maxWidth: "720px", marginBottom: "14px" }}>
+                {children}
+              </p>
+            ),
+            strong: ({ children }) => <strong>{children}</strong>,
+          }}
+        />
       </div>
     </section>
   );

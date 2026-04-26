@@ -1,42 +1,80 @@
 import { FC } from "react";
 import { PrismicRichText } from "@prismicio/react";
 
-const FaqAccordion: FC<any> = ({ slice }) => {
-  let items: any[] = [];
+type FaqItem = {
+  question?: string;
+  answer?: unknown;
+  category_label?: string;
+  open_by_default?: boolean;
+};
+
+type FaqAccordionSlice = {
+  slice_type: string;
+  primary?: Record<string, unknown>;
+  items?: FaqItem[];
+};
+
+const FaqAccordion: FC<{ slice: FaqAccordionSlice }> = ({ slice }) => {
+  let items: FaqItem[] = [];
 
   if (Array.isArray(slice.items) && slice.items.length > 0) {
     items = slice.items;
   } else if (slice.primary && typeof slice.primary === "object") {
     for (const key of Object.keys(slice.primary)) {
-      const val = slice.primary[key];
+      const val = (slice.primary as Record<string, unknown>)[key];
       if (!Array.isArray(val) || val.length === 0) continue;
       const first = val[0];
       if (typeof first !== "object" || first === null) continue;
-      if ("type" in first && typeof first.type === "string" && ("spans" in first || "text" in first)) continue;
-      items = val;
+      if (
+        "type" in first &&
+        typeof (first as { type?: unknown }).type === "string" &&
+        ("spans" in first || "text" in first)
+      )
+        continue;
+      items = val as FaqItem[];
       break;
     }
   }
 
   return (
-    <section className="faq-accordion py-12" data-slice-type={slice.slice_type}>
+    <section className="faq-light" id="faq" data-slice-type={slice.slice_type}>
       <div className="container">
-        {slice.primary?.eyebrow && (<p className="eyebrow">{slice.primary.eyebrow}</p>)}
-        <PrismicRichText field={slice.primary?.headline} />
-        <div style={{ marginBottom: "2em", color: "#555" }}><PrismicRichText field={slice.primary?.lede} /></div>
+        {slice.primary?.eyebrow ? (
+          <div className="kicker">{String(slice.primary.eyebrow)}</div>
+        ) : null}
+        <PrismicRichText
+          field={slice.primary?.headline as never}
+          components={{
+            heading1: ({ children }) => <h2>{children}</h2>,
+            heading2: ({ children }) => <h2>{children}</h2>,
+          }}
+        />
+        <PrismicRichText
+          field={slice.primary?.lede as never}
+          components={{
+            paragraph: ({ children }) => <p className="sdesc">{children}</p>,
+          }}
+        />
 
         {items.length > 0 && (
-          <div>
-            {items.map((item: any, i: number) => (
-              <details key={i} open={item.open_by_default} style={{ borderBottom: "1px solid #e5e5e5", padding: "1.25em 0" }}>
-                <summary style={{ cursor: "pointer", fontWeight: 600, fontSize: "1.1em", lineHeight: 1.4 }}>
-                  {item.category_label && (
-                    <span style={{ display: "inline-block", fontSize: "0.7em", color: "#555", textTransform: "uppercase", letterSpacing: "0.05em", marginRight: "0.75em", fontWeight: 600, padding: "0.2em 0.6em", backgroundColor: "#f0f0f0", borderRadius: "4px", verticalAlign: "middle" }}>{item.category_label}</span>
-                  )}
-                  {item.question}
+          <div className="faq-wrap">
+            {items.map((item, i) => (
+              <details key={i} className="fi" open={item.open_by_default}>
+                <summary className="fiq">
+                  <span className="fiq-text">
+                    {item.category_label && (
+                      <span className="tag" style={{ marginRight: "10px" }}>
+                        {item.category_label}
+                      </span>
+                    )}
+                    {item.question}
+                  </span>
+                  <span className="arr" aria-hidden="true">
+                    ▾
+                  </span>
                 </summary>
-                <div style={{ marginTop: "1em", color: "#333", lineHeight: 1.6 }}>
-                  <PrismicRichText field={item.answer} components={{ paragraph: ({ children }) => <p style={{ marginBottom: "0.75em" }}>{children}</p> }} />
+                <div className="fia">
+                  <PrismicRichText field={item.answer as never} />
                 </div>
               </details>
             ))}

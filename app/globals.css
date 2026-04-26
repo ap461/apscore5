@@ -209,5 +209,106 @@ footer a:hover{color:#fff}
 .faq-light .arr{color:var(--navy);}
 .faq-light .fi{background:#fff;border-color:rgba(10,15,90,.12);}
 
+/* ── Phase 3 additions — see docs/PHASE_3_PLAN.md ─────────────── */
+
+/* .grid4 — 4-up responsive grid; collapses 4 → 2 → 1.
+   Used by ConversionBlock (4 benefits row). */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:900px){.grid4{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.grid4{grid-template-columns:1fr}}
+
+/* Native <details>-based FAQ accordion — used by FaqAccordion slice.
+   Hides the default disclosure triangle and drives open state from
+   the [open] attribute so we get JS-free, keyboard-accessible
+   accordions on top of the existing .fi/.fiq/.fia visual system. */
+details.fi summary.fiq{list-style:none}
+details.fi summary.fiq::-webkit-details-marker{display:none}
+.fi[open] .fia{display:block}
+.fi[open] .arr{transform:rotate(180deg)}
+
+/* .pillar-hero — pillar-page hero. Stronger visual treatment than
+   the homepage .hero (navy bg, dot pattern, blue radial glow).
+   Pillar pages earn this; do not use on the homepage. */
+.pillar-hero{
+  position:relative;overflow:hidden;
+  background:var(--navy);color:#fff;
+  padding:72px 0 56px;
+}
+.pillar-hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.8;
+  background-image:radial-gradient(rgba(255,255,255,.06) 1.5px,transparent 1.5px);
+  background-size:30px 30px;
+}
+.pillar-hero::after{
+  content:"";position:absolute;top:-120px;right:-120px;
+  width:620px;height:620px;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(47,102,208,.28) 0%,transparent 65%);
+}
+.pillar-hero > .container{position:relative;z-index:1}
+.pillar-hero .eyebrow{
+  background:rgba(245,166,35,.10);
+  border-color:rgba(245,166,35,.30);
+  color:var(--orange);
+}
+.pillar-hero .eydot{box-shadow:0 0 10px rgba(245,166,35,.6)}
+.pillar-hero h1{
+  color:#fff;font-weight:800;
+  font-size:clamp(40px,6vw,68px);line-height:1.02;letter-spacing:-2px;
+  margin-bottom:22px;max-width:900px;
+}
+.pillar-hero h1 em{
+  font-style:normal;color:var(--orange);position:relative;display:inline-block;
+}
+.pillar-hero h1 em::after{
+  content:"";position:absolute;left:0;right:0;bottom:-6px;
+  height:4px;background:var(--orange);border-radius:6px;opacity:.4;
+}
+.pillar-hero .sub{
+  color:rgba(255,255,255,.72);max-width:720px;margin-bottom:32px;
+}
+.pillar-hero .sub strong{color:#fff;font-weight:600}
+
+.pillar-stats{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:28px;
+}
+@media(min-width:768px){.pillar-stats{grid-template-columns:repeat(5,1fr)}}
+.pillar-stat{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  border-radius:16px;text-align:center;padding:16px 14px;
+}
+.pillar-stat-num{
+  color:var(--orange);font-size:26px;font-weight:800;
+  line-height:1;letter-spacing:-.5px;margin-bottom:4px;
+}
+.pillar-stat-label{
+  color:rgba(255,255,255,.65);font-size:10px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.05em;line-height:1.3;margin-bottom:4px;
+}
+.pillar-stat-cap{color:rgba(255,255,255,.42);font-size:10px;line-height:1.3}
+
+/* Pillar-page CTAs — squarer than homepage .btn pill (border-radius:9px).
+   The heavier pillar visual reads better with a tighter radius. */
+.btn-pillar-p{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--orange);color:var(--navy);
+  border:none;border-radius:9px;padding:14px 26px;
+  font-family:inherit;font-size:15px;font-weight:700;
+  cursor:pointer;text-decoration:none;
+  transition:background .15s,transform .15s;
+}
+.btn-pillar-p:hover{background:#fbb83a;transform:translateY(-1px)}
+.btn-pillar-s{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:transparent;color:rgba(255,255,255,.85);
+  border:1.5px solid rgba(255,255,255,.25);
+  border-radius:9px;padding:14px 22px;
+  font-family:inherit;font-size:15px;font-weight:700;
+  cursor:pointer;text-decoration:none;
+  transition:border-color .15s,color .15s,transform .15s;
+}
+.btn-pillar-s:hover{border-color:rgba(255,255,255,.5);color:#fff;transform:translateY(-1px)}
+
 .nextbtn button:disabled{opacity:.35;cursor:not-allowed;}
 }
