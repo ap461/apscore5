@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Content, RichTextField } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import DemographicTransitionDiagram from "@/components/diagrams/DemographicTransitionDiagram";
 
 export type DifficultySectionProps =
   SliceComponentProps<Content.DifficultySectionSlice>;
@@ -77,6 +78,11 @@ const DifficultySection: FC<DifficultySectionProps> = ({ slice }) => {
             </div>
           ))}
         </div>
+
+        <p className="dtm-intro">
+          Example of a model you&apos;ll need to apply on the exam:
+        </p>
+        <DemographicTransitionDiagram />
       </div>
     </section>
   );

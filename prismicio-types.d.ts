@@ -93,6 +93,11 @@ interface CoursePillarPageDocumentData {
   course_name: prismic.KeyTextField;
 
   /**
+   * Banner image field in *Course Pillar Page*
+   */
+  banner_image: prismic.ImageField;
+
+  /**
    * Slice Zone field in *Course Pillar Page*
    */
   slices: prismic.SliceZone<CoursePillarPageDocumentDataSlicesSlice>;

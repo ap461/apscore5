@@ -968,6 +968,88 @@ details.fi summary.fiq::-webkit-details-marker{display:none}
   content:"✓ ";color:var(--blue);font-weight:700;
 }
 
+/* Page banner image — sits above the hero, below breadcrumbs */
+.page-banner{
+  margin:0 auto;
+  max-width:1200px;
+  padding:8px 16px 0;
+}
+.page-banner img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:16px;
+  box-shadow:0 8px 32px -12px rgba(10,15,90,.15);
+}
+@media (max-width:768px){
+  .page-banner{padding:4px 12px 0}
+  .page-banner img{border-radius:12px}
+}
+
+/* Inline SVG diagrams — DemographicTransitionDiagram inside DifficultySection */
+.dtm-intro{
+  text-align:center;
+  font-size:14px;
+  color:var(--muted);
+  margin:32px 0 -8px;
+  font-weight:500;
+}
+.dtm-figure{
+  margin:32px auto 0;
+  max-width:680px;
+  padding:24px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  box-shadow:0 4px 16px -8px rgba(10,15,90,.08);
+}
+.dtm-figure svg{display:block;width:100%;height:auto}
+.dtm-figure figcaption{
+  margin-top:12px;
+  font-size:13px;
+  color:var(--muted);
+  text-align:center;
+  font-style:italic;
+}
+
+/* ScoreDistributionChart inside ExamStructure */
+.score-figure{
+  margin:24px auto 32px;
+  max-width:680px;
+  padding:24px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  box-shadow:0 4px 16px -8px rgba(10,15,90,.08);
+}
+.score-figure svg{display:block;width:100%;height:auto}
+.score-figure figcaption{
+  margin-top:8px;
+  font-size:13px;
+  color:var(--muted);
+  text-align:center;
+  font-style:italic;
+}
+
+/* StudyTimeline inside StudyStrategy */
+.timeline-figure{
+  margin:24px auto 36px;
+  max-width:760px;
+  padding:24px;
+  background:linear-gradient(135deg, #fff 0%, var(--soft) 100%);
+  border:1px solid var(--border);
+  border-radius:16px;
+  box-shadow:0 4px 16px -8px rgba(10,15,90,.08);
+}
+.timeline-figure svg{display:block;width:100%;height:auto}
+.timeline-figure figcaption{
+  margin-top:12px;
+  font-size:14px;
+  color:var(--navy);
+  text-align:center;
+  font-weight:600;
+}
+
 /* Sticky mobile CTA bar — Playbook Part 1 #8 (third CTA placement) */
 .sticky-mobile-cta{
   display:none;

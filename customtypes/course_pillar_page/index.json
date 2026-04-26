@@ -18,6 +18,14 @@
           "placeholder": "AP Human Geography"
         }
       },
+      "banner_image": {
+        "type": "Image",
+        "config": {
+          "label": "Banner image",
+          "constraint": { "width": 1200, "height": 628 },
+          "thumbnails": []
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

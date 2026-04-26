@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import ScoreDistributionChart from "@/components/diagrams/ScoreDistributionChart";
 
 export type ExamStructureProps = SliceComponentProps<Content.ExamStructureSlice>;
 
@@ -58,6 +59,13 @@ const ExamStructure: FC<ExamStructureProps> = ({ slice }) => {
             </div>
           </>
         )}
+
+        <h3 className="exam-subhead">How students actually scored last year</h3>
+        <ScoreDistributionChart />
+        <p className="note">
+          In 2025, 17.1 percent of students scored a 5 and 64.7 percent passed
+          with a 3 or higher. The mean score was 3.14.
+        </p>
 
         {logistics.length > 0 && (
           <div className="grid4 logistics-grid">

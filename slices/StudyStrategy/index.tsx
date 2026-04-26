@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { PrismicNextLink } from "@prismicio/next";
+import StudyTimeline from "@/components/diagrams/StudyTimeline";
 
 export type StudyStrategyProps =
   SliceComponentProps<Content.StudyStrategySlice>;
@@ -41,6 +42,8 @@ const StudyStrategy: FC<StudyStrategyProps> = ({ slice }) => {
             strong: ({ children }) => <strong>{children}</strong>,
           }}
         />
+
+        <StudyTimeline />
 
         {items.length > 0 && (
           <div className="steps-grid">

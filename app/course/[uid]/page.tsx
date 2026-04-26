@@ -9,6 +9,7 @@ import { getNavigation } from "@/lib/prismic";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import Banner from "@/components/Banner";
 import StickyMobileCta from "@/components/StickyMobileCta";
 import { CANONICAL_SITE_URL } from "@/config/endpoints";
 
@@ -150,6 +151,11 @@ export default async function Page(props: PageProps<"/course/[uid]">) {
             ]}
           />
         </div>
+
+        <Banner
+          image={data.banner_image}
+          fallbackAlt={`${courseName} — Complete course guide for the May 5, 2026 exam.`}
+        />
 
         <SliceZone slices={heroSlices} components={components} />
 
