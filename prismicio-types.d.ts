@@ -72,7 +72,12 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-type CoursePillarPageDocumentDataSlicesSlice = PillarHeroSlice;
+type CoursePillarPageDocumentDataSlicesSlice =
+  | PillarHeroSlice
+  | QuickAnswerSlice
+  | DifficultySectionSlice
+  | ExamStructureSlice
+  | StudyStrategySlice;
 
 /**
  * Content for Course Pillar Page documents
@@ -688,6 +693,140 @@ export type PillarHeroSlice = prismic.SharedSlice<
   PillarHeroSliceVariation
 >;
 
+/**
+ * Primary content in *QuickAnswer → Default → Primary*
+ */
+export interface QuickAnswerSliceDefaultPrimary {
+  eyebrow: prismic.KeyTextField;
+  question: prismic.KeyTextField;
+  direct_answer: prismic.RichTextField;
+  expansion: prismic.RichTextField;
+}
+
+export type QuickAnswerSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<QuickAnswerSliceDefaultPrimary>,
+  never
+>;
+
+type QuickAnswerSliceVariation = QuickAnswerSliceDefault;
+
+export type QuickAnswerSlice = prismic.SharedSlice<
+  "quick_answer",
+  QuickAnswerSliceVariation
+>;
+
+/**
+ * Primary content in *DifficultySection → Default → Primary*
+ */
+export interface DifficultySectionSliceDefaultPrimary {
+  eyebrow: prismic.KeyTextField;
+  headline: prismic.RichTextField;
+  lede: prismic.RichTextField;
+  harder_title: prismic.KeyTextField;
+  harder_bullets: prismic.RichTextField;
+  easier_title: prismic.KeyTextField;
+  easier_bullets: prismic.RichTextField;
+  fit_title: prismic.KeyTextField;
+  fit_body: prismic.RichTextField;
+  maybe_title: prismic.KeyTextField;
+  maybe_body: prismic.RichTextField;
+}
+
+export type DifficultySectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<DifficultySectionSliceDefaultPrimary>,
+  never
+>;
+
+type DifficultySectionSliceVariation = DifficultySectionSliceDefault;
+
+export type DifficultySectionSlice = prismic.SharedSlice<
+  "difficulty_section",
+  DifficultySectionSliceVariation
+>;
+
+/**
+ * Primary content in *ExamStructure → Default → Primary*
+ */
+export interface ExamStructureSliceDefaultPrimary {
+  eyebrow: prismic.KeyTextField;
+  headline: prismic.RichTextField;
+  lede: prismic.RichTextField;
+  format_description: prismic.RichTextField;
+  weights_heading: prismic.KeyTextField;
+  score_heading: prismic.KeyTextField;
+  score_description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *ExamStructure → Items*
+ */
+export interface ExamStructureSliceDefaultItem {
+  unit_label: prismic.KeyTextField;
+  unit_weight: prismic.KeyTextField;
+  unit_topic: prismic.KeyTextField;
+  logistics_icon: prismic.KeyTextField;
+  logistics_title: prismic.KeyTextField;
+  logistics_value: prismic.KeyTextField;
+}
+
+export type ExamStructureSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ExamStructureSliceDefaultPrimary>,
+  Simplify<ExamStructureSliceDefaultItem>
+>;
+
+type ExamStructureSliceVariation = ExamStructureSliceDefault;
+
+export type ExamStructureSlice = prismic.SharedSlice<
+  "exam_structure",
+  ExamStructureSliceVariation
+>;
+
+/**
+ * Primary content in *StudyStrategy → Default → Primary*
+ */
+export interface StudyStrategySliceDefaultPrimary {
+  eyebrow: prismic.KeyTextField;
+  headline: prismic.RichTextField;
+  lede: prismic.RichTextField;
+  mock_headline: prismic.RichTextField;
+  mock_body: prismic.RichTextField;
+  mock_features: prismic.KeyTextField;
+  mock_cta_text: prismic.KeyTextField;
+  mock_cta_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Primary content in *StudyStrategy → Items*
+ */
+export interface StudyStrategySliceDefaultItem {
+  phase_label: prismic.KeyTextField;
+  phase_icon: prismic.KeyTextField;
+  phase_title: prismic.KeyTextField;
+  phase_description: prismic.KeyTextField;
+}
+
+export type StudyStrategySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<StudyStrategySliceDefaultPrimary>,
+  Simplify<StudyStrategySliceDefaultItem>
+>;
+
+type StudyStrategySliceVariation = StudyStrategySliceDefault;
+
+export type StudyStrategySlice = prismic.SharedSlice<
+  "study_strategy",
+  StudyStrategySliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -748,6 +887,24 @@ declare module "@prismicio/client" {
       PillarHeroSliceDefaultItem,
       PillarHeroSliceVariation,
       PillarHeroSliceDefault,
+      QuickAnswerSlice,
+      QuickAnswerSliceDefaultPrimary,
+      QuickAnswerSliceVariation,
+      QuickAnswerSliceDefault,
+      DifficultySectionSlice,
+      DifficultySectionSliceDefaultPrimary,
+      DifficultySectionSliceVariation,
+      DifficultySectionSliceDefault,
+      ExamStructureSlice,
+      ExamStructureSliceDefaultPrimary,
+      ExamStructureSliceDefaultItem,
+      ExamStructureSliceVariation,
+      ExamStructureSliceDefault,
+      StudyStrategySlice,
+      StudyStrategySliceDefaultPrimary,
+      StudyStrategySliceDefaultItem,
+      StudyStrategySliceVariation,
+      StudyStrategySliceDefault,
     };
   }
 }

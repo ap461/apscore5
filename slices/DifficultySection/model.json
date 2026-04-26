@@ -1,0 +1,91 @@
+{
+  "id": "difficulty_section",
+  "type": "SharedSlice",
+  "name": "DifficultySection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default difficulty section",
+      "imageUrl": "",
+      "docURL": "...",
+      "version": "initial",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Section Eyebrow",
+            "placeholder": "The Honest Answer"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Headline",
+            "single": "heading2,em"
+          }
+        },
+        "lede": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Lede Paragraph (with stats)",
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "harder_title": {
+          "type": "Text",
+          "config": {
+            "label": "Harder-Than-It-Looks Title"
+          }
+        },
+        "harder_bullets": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Harder Bullets",
+            "multi": "list-item,strong,em"
+          }
+        },
+        "easier_title": {
+          "type": "Text",
+          "config": {
+            "label": "Easier-Than-You-Expect Title"
+          }
+        },
+        "easier_bullets": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Easier Bullets",
+            "multi": "list-item,strong,em"
+          }
+        },
+        "fit_title": {
+          "type": "Text",
+          "config": {
+            "label": "Good Fit If… Title"
+          }
+        },
+        "fit_body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Good Fit If… Body",
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "maybe_title": {
+          "type": "Text",
+          "config": {
+            "label": "Maybe Not Yet If… Title"
+          }
+        },
+        "maybe_body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Maybe Not Yet If… Body",
+            "multi": "paragraph,strong,em"
+          }
+        }
+      }
+    }
+  ],
+  "description": "\"Is it hard?\" analysis — lede, harder/easier bullet columns, fit-vs-maybe cards"
+}

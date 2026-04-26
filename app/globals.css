@@ -433,5 +433,131 @@ details.fi summary.fiq::-webkit-details-marker{display:none}
 }
 .btn-pillar-s:hover{border-color:rgba(255,255,255,.5);color:#fff;transform:translateY(-1px)}
 
+/* QuickAnswer — direct-answer block, prominent at top of page (AEO).
+   Constrained reading width; bolded core stands out via parent paragraph. */
+.quick-answer{max-width:760px}
+.quick-answer h2{margin-bottom:14px}
+.quick-answer-direct{
+  font-size:19px;line-height:1.55;color:var(--text);
+  margin:0 0 14px;font-weight:500;
+}
+.quick-answer-direct strong{color:var(--navy);font-weight:700}
+
+/* ExamStructure — unit weights table + logistics cards + score table */
+.exam-subhead{
+  font-size:18px;font-weight:700;color:var(--navy);
+  letter-spacing:-.01em;margin:28px 0 12px;
+}
+.exam-weights{display:grid;gap:8px;margin-bottom:8px}
+.exam-weight-row{
+  display:grid;grid-template-columns:auto 90px 1fr;
+  gap:18px;align-items:center;
+  padding:14px 18px;
+  background:#fff;border:1px solid var(--border);border-radius:12px;
+}
+.exam-weight-row .label{font-weight:700;color:var(--navy);font-size:14px;white-space:nowrap}
+.exam-weight-row .weight{
+  background:var(--soft2);color:var(--blue);
+  font-weight:800;font-size:13px;
+  padding:5px 10px;border-radius:999px;text-align:center;
+}
+.exam-weight-row .topic{color:var(--muted);font-size:14px;line-height:1.5}
+@media(max-width:600px){
+  .exam-weight-row{grid-template-columns:auto 80px;gap:10px;padding:12px 14px}
+  .exam-weight-row .topic{grid-column:1/-1;font-size:13px}
+}
+
+.logistics-grid{margin:8px 0 12px}
+.logistics-card{
+  background:#fff;border:1px solid var(--border);
+  border-radius:14px;padding:16px 18px;
+}
+.logistics-card .logistics-icon{font-size:22px;line-height:1;margin-bottom:10px}
+.logistics-card h4{
+  font-size:11px;font-weight:800;
+  text-transform:uppercase;letter-spacing:.05em;
+  color:var(--muted);margin:0 0 4px;
+}
+.logistics-card .value{
+  font-size:14px;color:var(--navy);font-weight:700;line-height:1.4;
+}
+
+/* DifficultySection — 2-up grid of harder/easier/fit/maybe */
+.difficulty-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:14px;
+  margin-top:8px;
+}
+@media(max-width:768px){.difficulty-grid{grid-template-columns:1fr}}
+.difficulty-card{
+  background:#fff;border:1px solid var(--border);
+  border-radius:18px;padding:22px 24px;
+}
+.difficulty-card h3{
+  font-size:16px;font-weight:700;color:var(--navy);
+  letter-spacing:-.01em;margin:0 0 10px;
+}
+.difficulty-card p{
+  font-size:14px;color:var(--muted);line-height:1.7;margin:0 0 8px;
+}
+.difficulty-card p:last-child{margin-bottom:0}
+.difficulty-card ul{list-style:none;padding:0;margin:0}
+.difficulty-card li{
+  font-size:14px;color:var(--muted);line-height:1.6;
+  padding:6px 0 6px 18px;position:relative;
+}
+.difficulty-card li::before{
+  content:"";position:absolute;left:2px;top:14px;
+  width:6px;height:6px;border-radius:50%;
+  background:var(--blue);
+}
+.difficulty-card strong{color:var(--navy);font-weight:700}
+.difficulty-fit, .difficulty-maybe{
+  background:linear-gradient(135deg,#fff,var(--soft2));
+}
+
+/* StudyStrategy — phase cards + optional mock exam promo */
+.steps-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  margin:8px 0 28px;
+}
+@media(max-width:900px){.steps-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.steps-grid{grid-template-columns:1fr}}
+.step-card{
+  background:#fff;border:1px solid var(--border);
+  border-radius:18px;padding:22px;
+}
+.step-card .step-label{
+  font-size:11px;font-weight:800;
+  text-transform:uppercase;letter-spacing:.06em;
+  color:var(--blue);margin-bottom:10px;
+}
+.step-card .step-icon{font-size:26px;line-height:1;margin-bottom:8px}
+.step-card h3{
+  font-size:15px;font-weight:700;color:var(--navy);
+  letter-spacing:-.01em;margin:0 0 6px;
+}
+.step-card p{font-size:14px;color:var(--muted);line-height:1.6;margin:0}
+
+.mock-card{
+  background:linear-gradient(135deg,#fff,var(--soft2));
+  border:1px solid var(--border);box-shadow:var(--shadow-sm);
+  border-radius:20px;padding:32px 28px;
+  text-align:center;
+}
+.mock-card h3{
+  font-size:22px;color:var(--navy);
+  letter-spacing:-.02em;margin:0 0 10px;
+}
+.mock-card .sdesc{margin:0 auto 14px;max-width:560px}
+.mock-card .features{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:8px;
+  margin:0 0 18px;
+}
+.mock-card .feature{
+  font-size:13px;color:var(--muted);
+  background:#fff;border:1px solid var(--border);
+  padding:6px 12px;border-radius:999px;
+}
+
 .nextbtn button:disabled{opacity:.35;cursor:not-allowed;}
 }

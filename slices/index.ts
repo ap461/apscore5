@@ -14,4 +14,8 @@ export const components = {
   conversion_block: dynamic(() => import("./ConversionBlock")),
   faq_accordion: dynamic(() => import("./FaqAccordion")),
   pillar_hero: dynamic(() => import("./PillarHero")),
+  quick_answer: dynamic(() => import("./QuickAnswer")),
+  difficulty_section: dynamic(() => import("./DifficultySection")),
+  exam_structure: dynamic(() => import("./ExamStructure")),
+  study_strategy: dynamic(() => import("./StudyStrategy")),
 };
