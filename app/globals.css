@@ -217,6 +217,61 @@ footer a:hover{color:#fff}
 @media(max-width:900px){.grid4{grid-template-columns:1fr 1fr}}
 @media(max-width:768px){.grid4{grid-template-columns:1fr}}
 
+/* Conversion CTA card — premium feel with optional benefits row */
+.cta-card{
+  background:linear-gradient(135deg,#fff 0%,var(--soft2) 100%);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  border-radius:26px;
+  padding:56px 40px 48px;
+  position:relative;
+  overflow:hidden;
+}
+.cta-card::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(10,15,90,.05) 1px,transparent 1px);
+  background-size:28px 28px;opacity:.6;
+}
+.cta-card > *{position:relative;z-index:1}
+@media (max-width:768px){
+  .cta-card{padding:40px 24px 32px;border-radius:20px}
+}
+
+.cta-card-head{text-align:center;max-width:620px;margin:0 auto}
+.cta-card-head h2{margin-bottom:14px}
+.cta-card-head .sdesc{margin:0 auto 22px;text-align:center;max-width:560px}
+.cta-card-head .btn{box-shadow:0 12px 28px rgba(10,15,90,.20)}
+.cta-card-head .note{margin-top:14px}
+
+.cta-benefits{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:28px;
+  margin-top:44px;
+  padding-top:36px;
+  border-top:1px solid var(--border);
+}
+@media (max-width:900px){
+  .cta-benefits{grid-template-columns:repeat(2,1fr);gap:32px 24px}
+}
+@media (max-width:600px){
+  .cta-benefits{grid-template-columns:1fr;gap:28px}
+}
+
+.cta-benefit{text-align:left}
+.cta-benefit .icon{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:44px;height:44px;border-radius:12px;
+  background:var(--soft2);font-size:22px;
+  margin-bottom:12px;
+}
+.cta-benefit h3{
+  font-size:15px;font-weight:700;color:var(--navy);
+  margin:0 0 6px;letter-spacing:-.01em;
+}
+.cta-benefit p{
+  font-size:14px;color:var(--muted);line-height:1.6;margin:0;
+}
+
 /* Native <details>-based FAQ accordion — used by FaqAccordion slice.
    Hides the default disclosure triangle and drives open state from
    the [open] attribute so we get JS-free, keyboard-accessible
