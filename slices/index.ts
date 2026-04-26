@@ -13,4 +13,5 @@ export const components = {
   ap_planning_poll: dynamic(() => import("./ApPlanningPoll")),
   conversion_block: dynamic(() => import("./ConversionBlock")),
   faq_accordion: dynamic(() => import("./FaqAccordion")),
+  pillar_hero: dynamic(() => import("./PillarHero")),
 };

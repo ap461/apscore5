@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0A0F5A;
+  --color-blue: #2F66D0;
+  --color-light-blue: #5AA9FF;
+  --color-orange: #F5A623;
+}
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --navy:#0A0F5A;--blue:#2F66D0;--lb:#5AA9FF;--orange:#F5A623;

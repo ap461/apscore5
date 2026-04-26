@@ -72,7 +72,53 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-interface CoursePillarPageDocumentData {}
+type CoursePillarPageDocumentDataSlicesSlice = PillarHeroSlice;
+
+/**
+ * Content for Course Pillar Page documents
+ */
+interface CoursePillarPageDocumentData {
+  /**
+   * Course Name field in *Course Pillar Page*
+   */
+  course_name: prismic.KeyTextField;
+
+  /**
+   * Slice Zone field in *Course Pillar Page*
+   */
+  slices: prismic.SliceZone<CoursePillarPageDocumentDataSlicesSlice>;
+
+  /**
+   * Meta Title field in *Course Pillar Page*
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Course Pillar Page*
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Canonical URL field in *Course Pillar Page*
+   */
+  canonical_url: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Social Share Image (1200×628) field in *Course Pillar Page*
+   */
+  og_image: prismic.ImageField<never>;
+
+  /**
+   * Hide from search engines field in *Course Pillar Page*
+   */
+  no_index: prismic.BooleanField;
+}
 
 /**
  * Course Pillar Page document from Prismic
@@ -584,6 +630,64 @@ export type TrustBarSlice = prismic.SharedSlice<
   TrustBarSliceVariation
 >;
 
+/**
+ * Primary content in *PillarHero → Default → Primary*
+ */
+export interface PillarHeroSliceDefaultPrimary {
+  eyebrow: prismic.KeyTextField;
+  headline: prismic.RichTextField;
+  subheadline: prismic.RichTextField;
+  primary_cta_text: prismic.KeyTextField;
+  primary_cta_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+  secondary_cta_text: prismic.KeyTextField;
+  secondary_cta_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Primary content in *PillarHero → Items*
+ */
+export interface PillarHeroSliceDefaultItem {
+  stat_number: prismic.KeyTextField;
+  stat_label: prismic.KeyTextField;
+  stat_caption: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for PillarHero Slice
+ */
+export type PillarHeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PillarHeroSliceDefaultPrimary>,
+  Simplify<PillarHeroSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *PillarHero*
+ */
+type PillarHeroSliceVariation = PillarHeroSliceDefault;
+
+/**
+ * PillarHero Shared Slice
+ *
+ * - **API ID**: `pillar_hero`
+ */
+export type PillarHeroSlice = prismic.SharedSlice<
+  "pillar_hero",
+  PillarHeroSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -607,6 +711,7 @@ declare module "@prismicio/client" {
     export type {
       CoursePillarPageDocument,
       CoursePillarPageDocumentData,
+      CoursePillarPageDocumentDataSlicesSlice,
       CourseDocument,
       FaqBlockDocument,
       FaqBlockDocumentData,
@@ -638,6 +743,11 @@ declare module "@prismicio/client" {
       TrustBarSliceDefaultPrimary,
       TrustBarSliceVariation,
       TrustBarSliceDefault,
+      PillarHeroSlice,
+      PillarHeroSliceDefaultPrimary,
+      PillarHeroSliceDefaultItem,
+      PillarHeroSliceVariation,
+      PillarHeroSliceDefault,
     };
   }
 }
