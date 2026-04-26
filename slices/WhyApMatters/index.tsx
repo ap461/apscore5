@@ -7,7 +7,9 @@ const WhyApMatters: FC<any> = ({ slice }) => {
       <div className="container">
         <p className="eyebrow">{slice.primary?.eyebrow}</p>
         <PrismicRichText field={slice.primary?.headline} />
-        <PrismicRichText field={slice.primary?.body} />
+        <div className="space-y-4">
+          <PrismicRichText field={slice.primary?.body} />
+        </div>
       </div>
     </section>
   );
