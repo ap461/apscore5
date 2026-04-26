@@ -5,17 +5,29 @@ import { asLink } from "@prismicio/client";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
+import { getNavigation } from "@/lib/prismic";
+import Nav from "@/components/layout/Nav";
+import Footer from "@/components/layout/Footer";
 
 export default async function Page(props: PageProps<"/course/[uid]">) {
   const { uid } = await props.params;
   const client = createClient();
-  const page = await client
-    .getByUID("course_pillar_page", uid)
-    .catch(() => null);
+  const [page, nav] = await Promise.all([
+    client.getByUID("course_pillar_page", uid).catch(() => null),
+    getNavigation(),
+  ]);
 
   if (!page) notFound();
 
-  return <SliceZone slices={page.data.slices} components={components} />;
+  return (
+    <>
+      <Nav nav={nav} />
+      <main>
+        <SliceZone slices={page.data.slices} components={components} />
+      </main>
+      <Footer nav={nav} />
+    </>
+  );
 }
 
 export async function generateMetadata(

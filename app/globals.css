@@ -7,6 +7,7 @@
   --color-orange: #F5A623;
 }
 
+@layer base {
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --navy:#0A0F5A;--blue:#2F66D0;--lb:#5AA9FF;--orange:#F5A623;
@@ -130,3 +131,4 @@ footer a:hover{color:#fff}
 #faq .arr{color:var(--navy)!important;}
 #faq .fi{background:#fff!important;border-color:rgba(10,15,90,.12)!important;}
 .nextbtn button:disabled{opacity:.35;cursor:not-allowed;}
+}
