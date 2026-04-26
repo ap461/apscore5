@@ -39,22 +39,24 @@ const FaqAccordion: FC<{ slice: FaqAccordionSlice }> = ({ slice }) => {
   return (
     <section className="faq-light" id="faq" data-slice-type={slice.slice_type}>
       <div className="container">
-        {slice.primary?.eyebrow ? (
-          <div className="kicker">{String(slice.primary.eyebrow)}</div>
-        ) : null}
-        <PrismicRichText
-          field={slice.primary?.headline as never}
-          components={{
-            heading1: ({ children }) => <h2>{children}</h2>,
-            heading2: ({ children }) => <h2>{children}</h2>,
-          }}
-        />
-        <PrismicRichText
-          field={slice.primary?.lede as never}
-          components={{
-            paragraph: ({ children }) => <p className="sdesc">{children}</p>,
-          }}
-        />
+        <div className="faq-head">
+          {slice.primary?.eyebrow ? (
+            <div className="kicker">{String(slice.primary.eyebrow)}</div>
+          ) : null}
+          <PrismicRichText
+            field={slice.primary?.headline as never}
+            components={{
+              heading1: ({ children }) => <h2>{children}</h2>,
+              heading2: ({ children }) => <h2>{children}</h2>,
+            }}
+          />
+          <PrismicRichText
+            field={slice.primary?.lede as never}
+            components={{
+              paragraph: ({ children }) => <p className="sdesc">{children}</p>,
+            }}
+          />
+        </div>
 
         {items.length > 0 && (
           <div className="faq-wrap">
@@ -69,9 +71,7 @@ const FaqAccordion: FC<{ slice: FaqAccordionSlice }> = ({ slice }) => {
                     )}
                     {item.question}
                   </span>
-                  <span className="arr" aria-hidden="true">
-                    ▾
-                  </span>
+                  <span className="arr" aria-hidden="true"></span>
                 </summary>
                 <div className="fia">
                   <PrismicRichText field={item.answer as never} />

@@ -209,6 +209,74 @@ footer a:hover{color:#fff}
 .faq-light .arr{color:var(--navy);}
 .faq-light .fi{background:#fff;border-color:rgba(10,15,90,.12);}
 
+/* FAQ light variant — header + list polish */
+.faq-light .faq-head{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 36px;
+}
+.faq-light .faq-head .kicker{margin-bottom:12px}
+.faq-light .faq-head h2{
+  font-size:clamp(28px,3.6vw,40px);
+  line-height:1.15;
+  margin-bottom:14px;
+  max-width:640px;
+  margin-left:auto;margin-right:auto;
+}
+.faq-light .faq-head .sdesc{
+  margin:0 auto;
+  max-width:560px;
+  text-align:center;
+}
+
+.faq-light .faq-wrap{
+  max-width:860px;
+  margin:0 auto;
+  gap:10px;
+}
+
+.faq-light .fi{
+  transition:border-color .15s,box-shadow .15s;
+}
+.faq-light .fi:hover{
+  border-color:rgba(10,15,90,.18);
+}
+.faq-light .fi[open]{
+  box-shadow:0 4px 16px rgba(10,15,90,.06);
+}
+
+.faq-light .fiq{
+  padding:18px 22px;
+  align-items:center;
+  gap:16px;
+}
+.faq-light .fia{
+  padding:0 22px 18px;
+}
+
+/* Custom chevron — replaces the ▾ character */
+.faq-light .arr{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:28px;height:28px;flex-shrink:0;
+  border-radius:50%;
+  background:var(--soft2);
+  color:var(--navy);
+  font-size:0;
+  transition:transform .25s,background .15s;
+}
+.faq-light .arr::before{
+  content:"";
+  width:10px;height:10px;
+  border-right:2px solid currentColor;
+  border-bottom:2px solid currentColor;
+  transform:rotate(45deg) translate(-2px,-2px);
+}
+.faq-light .fi[open] .arr{
+  background:var(--blue);
+  color:#fff;
+  transform:rotate(180deg);
+}
+
 /* ── Phase 3 additions — see docs/PHASE_3_PLAN.md ─────────────── */
 
 /* .grid4 — 4-up responsive grid; collapses 4 → 2 → 1.
