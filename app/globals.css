@@ -1,3 +1,68 @@
+/* ================================================================
+   APScore5 Design System
+   ----------------------------------------------------------------
+   The live homepage at https://apscore5.com is the visual source
+   of truth. Audit: docs/DESIGN_SYSTEM.md.
+
+   SLICE AUTHORS: reach for these semantic classes first.
+   Tailwind utilities (e.g. bg-navy, text-orange) are a last
+   resort — only when an existing class genuinely doesn't fit
+   (e.g. PillarHero's stronger navy treatment).
+
+   ── Layout ─────────────────────────────────────────────────────
+   .container            Max-width 1140px, gutter padding
+   <section>             Auto 44px top/bottom rhythm
+   .hero / .hero-inner   Light-bg homepage hero (gradient + grid)
+   .stats-bar            Full-bleed navy stat strip
+
+   ── Buttons ────────────────────────────────────────────────────
+   .btn .btn-p           Primary  — navy fill, white text
+   .btn .btn-s           Secondary — white, navy outline (also
+                         used wherever an "outline" / "ghost"
+                         button is needed)
+   .btn .btn-accent      Accent   — orange fill, navy text
+
+   ── Eyebrow vs Kicker (NOT synonyms) ───────────────────────────
+   .eyebrow + .eydot     Pill badge w/ orange dot — light bg only
+   .kicker               Plain UPPERCASE label above an <h2>
+
+   ── Typography ─────────────────────────────────────────────────
+   h1 / h2               Auto navy, fluid clamp(), tight tracking
+   .sub                  18px lead paragraph under hero h1
+   .sdesc                17px lead paragraph under section h2
+   .note                 13px small print
+   p (default)           17px body, var(--text)
+
+   ── Cards ──────────────────────────────────────────────────────
+   .qcard                Hero showcase card (24px radius, shadow)
+   .ccard                Course/grid card (white, hover lift)
+   .cp                   Checklist-pill row
+   .tp                   Trust pill (hero badge w/ caption)
+   .tag                  Small UPPERCASE blue chip
+
+   ── Sections / Patterns ────────────────────────────────────────
+   .grid3                3-up responsive grid (→ 2-up → 1-up)
+   .cta-box              Light gradient CTA card
+   .nl-box               Navy newsletter band (rounded card)
+   .faq-wrap, .fi,
+   .fiq, .fia, .arr      FAQ accordion (default DARK styling)
+   .faq-light            FAQ light variant — apply to the
+                         wrapping <section class="faq-light">.
+                         Preferred over the legacy #faq id-based
+                         !important overrides (kept for backcompat).
+   footer                Navy footer band
+
+   ── Nav ────────────────────────────────────────────────────────
+   .nav-wrap > .nav      Sticky blurred top nav
+   .nav-link             Pill nav item
+
+   ── Tailwind theme tokens ──────────────────────────────────────
+   The @theme block below exposes --color-navy / --color-blue /
+   --color-light-blue / --color-orange to Tailwind v4 so utilities
+   like bg-navy / text-orange resolve. Keep in sync with :root
+   below. Do NOT remove — PillarHero depends on it.
+   ================================================================ */
+
 @import "tailwindcss";
 
 @theme {
@@ -130,5 +195,19 @@ footer a:hover{color:#fff}
 #faq .fia{color:var(--muted)!important;}
 #faq .arr{color:var(--navy)!important;}
 #faq .fi{background:#fff!important;border-color:rgba(10,15,90,.12)!important;}
+
+/* .faq-light — light-mode FAQ section.
+   Apply to <section class="faq-light"> wrapping .faq-wrap.
+   Compound selector specificity (0,2,0) beats the default
+   .fi/.fiq/.fia rules (0,1,0) — no !important needed. */
+.faq-light{background:#EEF4FF;}
+.faq-light .kicker{color:var(--blue);}
+.faq-light h2{color:var(--navy);}
+.faq-light .sdesc{color:var(--muted);}
+.faq-light .fiq{color:var(--navy);}
+.faq-light .fia{color:var(--muted);}
+.faq-light .arr{color:var(--navy);}
+.faq-light .fi{background:#fff;border-color:rgba(10,15,90,.12);}
+
 .nextbtn button:disabled{opacity:.35;cursor:not-allowed;}
 }
