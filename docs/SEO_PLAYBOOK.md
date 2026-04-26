@@ -271,7 +271,7 @@ Run this against every published page monthly, or before any major content push.
 
 ## Part 9 — No cannibalization — keyword routing
 
-Source of truth: project knowledge documents `AP_Course_Pillar_Page.docx`, `AP_Course_-_Unit_Page.docx`, and `Blog_Page_Guidelines.docx`. Distilled rules below.
+Source documents (`AP_Course_Pillar_Page.docx`, `AP_Course_-_Unit_Page.docx`, `Blog_Page_Guidelines.docx`) live in Claude Project Knowledge — not committed to this repo. The rules below are the canonical, repo-local operating standard. If the source documents are ever updated and conflict with these rules, this playbook wins until explicitly amended in a commit.
 
 ### The cannibalization rule (non-negotiable)
 
