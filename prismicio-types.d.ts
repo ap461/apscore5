@@ -77,7 +77,9 @@ type CoursePillarPageDocumentDataSlicesSlice =
   | QuickAnswerSlice
   | DifficultySectionSlice
   | ExamStructureSlice
-  | StudyStrategySlice;
+  | StudyStrategySlice
+  | UnitCardsGridSlice
+  | VideoEmbedSlice;
 
 /**
  * Content for Course Pillar Page documents
@@ -827,6 +829,75 @@ export type StudyStrategySlice = prismic.SharedSlice<
   StudyStrategySliceVariation
 >;
 
+/**
+ * Primary content in *UnitCardsGrid → Default → Primary*
+ */
+export interface UnitCardsGridSliceDefaultPrimary {
+  eyebrow: prismic.KeyTextField;
+  headline: prismic.RichTextField;
+  lede: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *UnitCardsGrid → Items*
+ */
+export interface UnitCardsGridSliceDefaultItem {
+  unit_number: prismic.KeyTextField;
+  unit_weight: prismic.KeyTextField;
+  unit_mcq: prismic.KeyTextField;
+  unit_flavor_chip: prismic.KeyTextField;
+  unit_title: prismic.KeyTextField;
+  unit_tagline: prismic.KeyTextField;
+  overview: prismic.RichTextField;
+  trap_text: prismic.RichTextField;
+  concepts: prismic.RichTextField;
+  unit_cta_text: prismic.KeyTextField;
+  unit_cta_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+export type UnitCardsGridSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<UnitCardsGridSliceDefaultPrimary>,
+  Simplify<UnitCardsGridSliceDefaultItem>
+>;
+
+type UnitCardsGridSliceVariation = UnitCardsGridSliceDefault;
+
+export type UnitCardsGridSlice = prismic.SharedSlice<
+  "unit_cards_grid",
+  UnitCardsGridSliceVariation
+>;
+
+/**
+ * Primary content in *VideoEmbed → Default → Primary*
+ */
+export interface VideoEmbedSliceDefaultPrimary {
+  eyebrow: prismic.KeyTextField;
+  title: prismic.RichTextField;
+  youtube_id: prismic.KeyTextField;
+  duration: prismic.KeyTextField;
+  placeholder_text: prismic.KeyTextField;
+}
+
+export type VideoEmbedSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<VideoEmbedSliceDefaultPrimary>,
+  never
+>;
+
+type VideoEmbedSliceVariation = VideoEmbedSliceDefault;
+
+export type VideoEmbedSlice = prismic.SharedSlice<
+  "video_embed",
+  VideoEmbedSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -905,6 +976,15 @@ declare module "@prismicio/client" {
       StudyStrategySliceDefaultItem,
       StudyStrategySliceVariation,
       StudyStrategySliceDefault,
+      UnitCardsGridSlice,
+      UnitCardsGridSliceDefaultPrimary,
+      UnitCardsGridSliceDefaultItem,
+      UnitCardsGridSliceVariation,
+      UnitCardsGridSliceDefault,
+      VideoEmbedSlice,
+      VideoEmbedSliceDefaultPrimary,
+      VideoEmbedSliceVariation,
+      VideoEmbedSliceDefault,
     };
   }
 }

@@ -18,4 +18,6 @@ export const components = {
   difficulty_section: dynamic(() => import("./DifficultySection")),
   exam_structure: dynamic(() => import("./ExamStructure")),
   study_strategy: dynamic(() => import("./StudyStrategy")),
+  unit_cards_grid: dynamic(() => import("./UnitCardsGrid")),
+  video_embed: dynamic(() => import("./VideoEmbed")),
 };
