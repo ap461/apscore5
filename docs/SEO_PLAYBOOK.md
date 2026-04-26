@@ -32,6 +32,8 @@ A user must understand the page in 5 seconds. Above the fold MUST contain:
 
 If someone has to read a paragraph before they understand the page, you've already lost them.
 
+**Sub-rule for exam-relevant pages (pillar, unit):** A user must extract the top 3 exam facts (exam date, total time, MCQ/FRQ counts) in 3 seconds. These get a dedicated stat strip in the hero, not buried inside Exam Structure further down. The 3-second test trumps the 5-second test for these pages.
+
 ### 3. Structure beats prose
 Good structure outranks good writing. Always:
 - Paragraphs ≤3 lines
@@ -82,6 +84,13 @@ Every page guides the user forward:
 - Sign up to track progress
 
 No dead ends. Every page is a node, not a destination.
+
+**CTA repetition rule:** Every pillar and unit page must surface the primary CTA in at least 3 places:
+1. **Hero above the fold** — the primary action button visible without scrolling
+2. **One mid-page conversion block** — full-width signup card after value has been demonstrated
+3. **Sticky mobile bar** — appears at >30% scroll on viewports <768px, hidden when logged in
+
+The action must be consistent across all 3 (e.g., all "Start Free — Take the Diagnostic"). Copy variations are fine; the destination is the same.
 
 ### 9. Visual hierarchy is intentional
 Not everything has equal weight. Use size, spacing, and color contrast deliberately. Most important: largest, brightest, most spaced. Least important: smallest, muted, dense.
@@ -212,6 +221,16 @@ Copy into every PR description. All boxes must be checked.
 - [ ] Last-reviewed date visible
 - [ ] Body word count meets tier target (pillar ≥3,800 / unit ≥2,400 / blog ≥3,500)
 
+**Required sections (cross-reference Part 10)**
+- [ ] All required sections for this page tier are present and visible
+- [ ] Strategy section present (Pillar/Unit only) — qualifies under Part 11
+- [ ] Strategy section H2 uses outcome framing, not activity framing
+
+**Conversion**
+- [ ] CTA appears ≥3 times: hero above fold, mid-page conversion block, sticky-mobile bar
+- [ ] Sticky mobile bar appears at >30% scroll on <768px viewports
+- [ ] Above-fold 3-second exam-facts test passes (date / time / MCQ-FRQ counts visible)
+
 **AEO**
 - [ ] FAQPage block, 15–30 Q&A pairs, native `<details>`
 - [ ] FAQ answers direct in first 2 sentences
@@ -266,6 +285,12 @@ Run this against every published page monthly, or before any major content push.
 | 5-second test | passes | |
 | Differentiator above fold | visible | |
 | Cannibalization | no forbidden keywords from brief | |
+| All required sections present | per Part 10 | |
+| Strategy section qualifies | ≥4 of 5 elements per Part 11 | |
+| Strategy H2 uses outcome framing | promises the 5, not study | |
+| CTA placements | ≥3 (hero / mid / sticky) | |
+| Sticky mobile CTA bar | renders at >30% scroll on <768px | |
+| 3-second exam-facts test | top 3 facts visible without scroll | |
 
 ---
 
@@ -302,3 +327,56 @@ Before merging any content change:
 1. Grep the new content against the "forbidden keywords" of the page brief
 2. If any forbidden keyword appears as an H2, H3, or in 3+ body sentences, reject the change
 3. The keyword belongs on its routed page, not this one
+
+---
+
+## Part 10 — Required content sections by page tier
+
+Beyond technical SEO and design principles, every page tier has a fixed set of content sections it MUST contain. This is the content-architecture contract — page won't ship without all required sections.
+
+| Section | Pillar | Unit | Topic blog | Notes |
+|---|---|---|---|---|
+| Hero with stat strip + primary CTA | required | required | required | Hero must pass 3-second exam-facts test |
+| Quick Answer block (QAPage schema) | required | required | required | H2 = question, body = answer |
+| "Is it hard?" / decision section | required | required | optional | Sentiment-coded cards (harder / easier / fit / maybe) |
+| **Strategy section ("How to get a 5")** | **required** | **required** | n/a | Prescriptive content — see Part 11 below |
+| Exam structure / unit weight | required | required | n/a | Logistics + scoring breakdown |
+| Content grid (units, topics, or sections) | required | required | required | Card layout with internal links |
+| Practice questions slice | required | required | required (5/5/5) | Question reveal triggers in-article ad |
+| Flashcards slice | required | required (75 cards) | optional | Display ad every 4–5 cards |
+| Mid-page conversion block | required | required | required | Free-account CTA |
+| Real AP-style test (signup-gated) | optional | required | required (10–15 Q) | Drives signups |
+| FAQ accordion (15–30 Q&A) | required | required | required | Native `<details>`, FAQPage schema |
+| Internal-link footer | required | required | required | Pillar → all units + 3 top blogs; Unit → pillar + sibling units; Blog → unit + 2 sibling blogs |
+| Sticky mobile CTA bar | required | required | required | Per Part 1 principle #8 |
+
+### How to verify on a live page
+
+Open the page on mobile. Without scrolling, you should see: clear H1, sub-headline, 3 exam facts, primary CTA. Within 30s of scrolling, every required section above should be visually present and obvious. Missing any required section is a Part 7 fail.
+
+---
+
+## Part 11 — Strategy content vs. info content
+
+Most competitors (Fiveable, Albert.io, College Board) are strong on **info content** — what the course is, what's on the exam, definitions. They're weak on **strategy content** — how to actually succeed.
+
+This is the gap APScore5 fills. Every pillar and unit page must include strategy content. Strategy content is prescriptive, not descriptive. It tells the student exactly what to do.
+
+### What qualifies as strategy content
+
+A "strategy section" must include at least 4 of these 5 elements:
+1. **Timeline** — when to start, what to do each phase (Sept-Dec, Jan-Feb, Mar-Apr, last 2 weeks)
+2. **Weekly cadence** — minutes/day or hours/week, what fills that time
+3. **Weak-area tactics** — how to identify and fix gaps (links to diagnostic / dashboard)
+4. **Common mistakes to avoid** — what students do wrong, what to do instead
+5. **Exam-day plan** — pacing, FRQ time-budget, what to do when stuck
+
+### What does NOT qualify
+
+- "Read the textbook and take practice tests" (generic, descriptive, useless)
+- Just listing study tips without sequencing or commitment
+- Marketing copy ("our platform makes studying easier!")
+
+### Strategy section framing
+
+The H2 of the strategy section must promise the outcome the student wants, not the activity. Use "How to get a 5 on AP Human Geography" or "The 5-minute path to a 5" — NOT "How to study AP Human Geography." Outcome framing converts; activity framing doesn't.

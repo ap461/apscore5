@@ -42,6 +42,34 @@
 - ItemList (the 7 units, ordered)
 - QAPage (Quick Answer block)
 
+## Required content sections (per Part 10)
+Tier 1 Pillar — all required sections committed:
+- PillarHero (with stat strip + primary CTA)
+- QuickAnswer (QAPage schema)
+- DifficultySection ("Is AP Human Geography hard?")
+- StudyStrategy (Strategy section — see spec below)
+- ExamStructure
+- VideoEmbed
+- UnitCardsGrid (links to 7 unit pages)
+- UnitQuestionBank (in-article ads)
+- FlashcardCarousel (interstitial ads)
+- ConversionBlock (mid-page signup)
+- FaqAccordion (27 Q&A, FAQPage schema)
+- Internal-link footer (pending — depends on unit pages)
+- Sticky mobile CTA bar (pending — see commit queue)
+
+## Strategy section spec (StudyStrategy slice)
+Outcome-framed H2: "The 5-minute-a-day path to a 5"
+Current H2 in Prismic: "How to study AP Human Geography — without burning out"
+Action: rewrite to outcome framing. Activity framing converts ~30% less than outcome framing.
+
+Strategy elements committed (5 of 5):
+- [x] Timeline — 4 phases (Sept-Dec, Jan-Feb, Mar-Apr, last 2 weeks)
+- [x] Weekly cadence — 5-10 mins/day per phase
+- [x] Weak-area tactics — links to diagnostic + dashboard
+- [x] Common mistakes to avoid — phase 03 callout (FRQ format)
+- [ ] Exam-day plan — currently missing, add as phase 05 or sidebar
+
 ## Differentiator (must appear above the fold)
 - "+8.3% avg 30-day score lift" stat (only stat of its kind in the AP HuG search results)
 - 1,250+ free practice questions (largest free bank online claim)

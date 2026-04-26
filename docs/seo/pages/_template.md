@@ -31,6 +31,20 @@
 ## Schemas required
 - <list of @type values, e.g., Course + FAQPage + BreadcrumbList + ItemList + QAPage>
 
+## Required content sections (per Part 10)
+List the page tier's required sections that this brief commits to building. Cross-reference Part 10 of the playbook.
+- <Section name>
+- <Section name>
+
+## Strategy section spec (Pillar/Unit only)
+Outcome-framed H2: <e.g., "The 5-minute path to a 5">
+Strategy elements committed (≥4 of 5 per Part 11):
+- [ ] Timeline (multi-phase study plan)
+- [ ] Weekly cadence (mins/day, what fills it)
+- [ ] Weak-area tactics (diagnostic / dashboard tie-in)
+- [ ] Common mistakes to avoid
+- [ ] Exam-day plan
+
 ## Differentiator (must appear above the fold)
 - <unique data point or angle>
 - <another differentiator>
