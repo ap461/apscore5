@@ -12,9 +12,7 @@ const FaqAccordion: FC<any> = ({ slice }) => {
       if (!Array.isArray(val) || val.length === 0) continue;
       const first = val[0];
       if (typeof first !== "object" || first === null) continue;
-      // Skip rich text arrays
       if ("type" in first && typeof first.type === "string" && ("spans" in first || "text" in first)) continue;
-      // Found a content array
       items = val;
       break;
     }
@@ -23,12 +21,12 @@ const FaqAccordion: FC<any> = ({ slice }) => {
   return (
     <section className="faq-accordion py-12" data-slice-type={slice.slice_type}>
       <div className="container">
-        {slice.primary?.eyebrow && (<p className="eyebrow" style={{ textAlign: "center" }}>{slice.primary.eyebrow}</p>)}
-        <div style={{ textAlign: "center" }}><PrismicRichText field={slice.primary?.headline} /></div>
-        <div style={{ textAlign: "center", maxWidth: "700px", margin: "0 auto 2em", color: "#555" }}><PrismicRichText field={slice.primary?.lede} /></div>
+        {slice.primary?.eyebrow && (<p className="eyebrow">{slice.primary.eyebrow}</p>)}
+        <PrismicRichText field={slice.primary?.headline} />
+        <div style={{ marginBottom: "2em", color: "#555" }}><PrismicRichText field={slice.primary?.lede} /></div>
 
         {items.length > 0 && (
-          <div style={{ maxWidth: "820px", margin: "0 auto" }}>
+          <div>
             {items.map((item: any, i: number) => (
               <details key={i} open={item.open_by_default} style={{ borderBottom: "1px solid #e5e5e5", padding: "1.25em 0" }}>
                 <summary style={{ cursor: "pointer", fontWeight: 600, fontSize: "1.1em", lineHeight: 1.4 }}>
