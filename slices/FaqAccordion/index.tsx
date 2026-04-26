@@ -14,6 +14,21 @@ type FaqAccordionSlice = {
   items?: FaqItem[];
 };
 
+function richTextToPlain(field: unknown): string {
+  if (!Array.isArray(field)) return "";
+  return field
+    .map((block) => {
+      if (block && typeof block === "object" && "text" in block) {
+        const t = (block as { text?: unknown }).text;
+        return typeof t === "string" ? t : "";
+      }
+      return "";
+    })
+    .join(" ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 const FaqAccordion: FC<{ slice: FaqAccordionSlice }> = ({ slice }) => {
   let items: FaqItem[] = [];
 
@@ -36,8 +51,32 @@ const FaqAccordion: FC<{ slice: FaqAccordionSlice }> = ({ slice }) => {
     }
   }
 
+  const faqPageSchema =
+    items.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: items.map((item) => ({
+            "@type": "Question",
+            name: item.question ?? "",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: richTextToPlain(item.answer),
+            },
+          })),
+        }
+      : null;
+
   return (
     <section className="faq-light" id="faq" data-slice-type={slice.slice_type}>
+      {faqPageSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqPageSchema).replace(/</g, "\\u003c"),
+          }}
+        />
+      )}
       <div className="container">
         <div className="faq-head">
           {slice.primary?.eyebrow ? (
