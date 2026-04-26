@@ -3,15 +3,20 @@ import { PrismicRichText } from "@prismicio/react";
 
 const FaqAccordion: FC<any> = ({ slice }) => {
   let items: any[] = [];
+
   if (Array.isArray(slice.items) && slice.items.length > 0) {
     items = slice.items;
   } else if (slice.primary && typeof slice.primary === "object") {
     for (const key of Object.keys(slice.primary)) {
       const val = slice.primary[key];
-      if (Array.isArray(val) && val.length > 0 && typeof val[0] === "object" && val[0] !== null) {
-        items = val;
-        break;
-      }
+      if (!Array.isArray(val) || val.length === 0) continue;
+      const first = val[0];
+      if (typeof first !== "object" || first === null) continue;
+      // Skip rich text arrays
+      if ("type" in first && typeof first.type === "string" && ("spans" in first || "text" in first)) continue;
+      // Found a content array
+      items = val;
+      break;
     }
   }
 
