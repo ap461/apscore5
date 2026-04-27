@@ -2,6 +2,8 @@
   "id": "course_pillar_page",
   "label": "Course Pillar Page",
   "repeatable": true,
+  "status": true,
+  "format": "custom",
   "json": {
     "Main": {
       "uid": {
@@ -22,7 +24,10 @@
         "type": "Image",
         "config": {
           "label": "Banner image",
-          "constraint": { "width": 1200, "height": 628 },
+          "constraint": {
+            "width": 1200,
+            "height": 628
+          },
           "thumbnails": []
         }
       },
@@ -43,16 +48,10 @@
             "exam_structure": {
               "type": "SharedSlice"
             },
-            "diagnostic_quiz": {
-              "type": "SharedSlice"
-            },
             "video_embed": {
               "type": "SharedSlice"
             },
             "unit_cards_grid": {
-              "type": "SharedSlice"
-            },
-            "conversion_block": {
               "type": "SharedSlice"
             },
             "unit_question_bank": {
@@ -62,9 +61,6 @@
               "type": "SharedSlice"
             },
             "flashcard_carousel": {
-              "type": "SharedSlice"
-            },
-            "faq_accordion": {
               "type": "SharedSlice"
             }
           }
@@ -117,7 +113,5 @@
         }
       }
     }
-  },
-  "status": true,
-  "format": "custom"
+  }
 }
