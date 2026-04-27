@@ -9,6 +9,7 @@ import type {
   LinkField,
   NumberField,
   PrismicDocumentWithoutUID,
+  BooleanField,
 } from "@prismicio/client";
 
 /**
@@ -93,13 +94,15 @@ export type CourseDocument = PrismicDocumentWithUID<CourseDocumentData, "course"
 export interface CoursesHubPageDocumentData extends Record<string, PrismicField> {
   meta_title: KeyTextField;
   meta_description: KeyTextField;
+  canonical_url: LinkField;
+  no_index: BooleanField;
+  og_image: ImageField;
+  slices: SliceZone;
 }
 
 export type CoursesHubPageDocument = PrismicDocumentWithoutUID<CoursesHubPageDocumentData, "courses_hub_page">;
 
 // ─── FAQ Item (Repeatable) ────────────────────────────────────────────────────
-
-export interface FAQDocumentData extends Record<string, PrismicField> {
   question: KeyTextField;
   answer: RichTextField;
   order: NumberField;

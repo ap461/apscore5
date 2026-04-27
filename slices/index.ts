@@ -3,9 +3,14 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  ap_planning_poll: dynamic(() => import("./ApPlanningPoll")),
+  conversion_block: dynamic(() => import("./ConversionBlock")),
+  course_grid: dynamic(() => import("./CourseGrid")),
   courses_grid: dynamic(() => import("./CoursesGrid")),
+  courses_hub_hero: dynamic(() => import("./CoursesHubHero")),
   difficulty_section: dynamic(() => import("./DifficultySection")),
   exam_structure: dynamic(() => import("./ExamStructure")),
+  faq_accordion: dynamic(() => import("./FaqAccordion")),
   flashcard_carousel: dynamic(() => import("./FlashcardCarousel")),
   hero_section: dynamic(() => import("./HeroSection")),
   newsletter_signup: dynamic(() => import("./NewsletterSignup")),
@@ -16,4 +21,5 @@ export const components = {
   unit_cards_grid: dynamic(() => import("./UnitCardsGrid")),
   unit_question_bank: dynamic(() => import("./UnitQuestionBank")),
   video_embed: dynamic(() => import("./VideoEmbed")),
+  why_ap_matters: dynamic(() => import("./WhyApMatters")),
 };

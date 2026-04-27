@@ -197,7 +197,6 @@ export async function getCoursesHubPage(): Promise<GetCoursesHubPageReturn> {
     if (docs.length === 0) {
       throw new Error("No courses_hub_page found");
     }
-    console.log(docs, "docs");
     return docs[0] as unknown as CoursesHubPageDocument;
   } catch (error) {
     console.error("[prismic] getCoursesHubPage failed:", error);
