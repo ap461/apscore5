@@ -1,0 +1,55 @@
+{
+  "id": "frq_skill_block",
+  "type": "SharedSlice",
+  "name": "FrqSkillBlock",
+  "description": "FRQ skill block: paragraph + sample-sentence callout + checked bullets.",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "FRQ skill"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Headline (H2)"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,heading3,heading4,strong,em,hyperlink,list-item,o-list-item",
+            "label": "Body (supports H3/H4)"
+          }
+        },
+        "sample_sentence": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Sample Sentence (rendered as callout)"
+          }
+        }
+      },
+      "items": {
+        "bullet": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Bullet"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "deep_dive",
+  "type": "SharedSlice",
+  "name": "DeepDive",
+  "description": "Collapsible 30-second deep-dive (native <details>/<summary>, closed by default).",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Deep dive"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Headline (H2)"
+          }
+        },
+        "summary_label": {
+          "type": "Text",
+          "config": {
+            "label": "Summary Label",
+            "placeholder": "Open the 30-second explanation"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,heading3,heading4,strong,em,hyperlink,list-item,o-list-item",
+            "label": "Body (revealed when expanded)"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

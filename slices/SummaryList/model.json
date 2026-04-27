@@ -1,0 +1,48 @@
+{
+  "id": "summary_list",
+  "type": "SharedSlice",
+  "name": "SummaryList",
+  "description": "Eyebrow + H2 + checked-bullet list. Used for memory hooks, mistakes, mini summaries.",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Memory hooks"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Headline (H2)"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,heading3,heading4,strong,em,hyperlink,list-item,o-list-item",
+            "label": "Body (optional intro, supports H3/H4)"
+          }
+        }
+      },
+      "items": {
+        "bullet": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Bullet (with strong span for the lede)"
+          }
+        }
+      }
+    }
+  ]
+}

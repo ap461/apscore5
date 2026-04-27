@@ -1,0 +1,75 @@
+{
+  "id": "definition_block",
+  "type": "SharedSlice",
+  "name": "DefinitionBlock",
+  "description": "Three H3 sub-blocks: Definition / In simple terms / AP exam use. Each sub-block is a proper heading + paragraph for clean SEO/AEO snippet extraction.",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Definition + AP exam use"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Headline (H2)"
+          }
+        },
+        "definition_h3": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading3",
+            "label": "Definition Heading (H3)"
+          }
+        },
+        "definition_paragraph": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Definition Paragraph"
+          }
+        },
+        "simple_terms_h3": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading3",
+            "label": "Simple Terms Heading (H3)"
+          }
+        },
+        "simple_terms_paragraph": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Simple Terms Paragraph"
+          }
+        },
+        "ap_use_h3": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading3",
+            "label": "AP Exam Use Heading (H3)"
+          }
+        },
+        "ap_use_paragraph": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "AP Exam Use Paragraph"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

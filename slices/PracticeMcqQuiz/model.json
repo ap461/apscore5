@@ -1,0 +1,116 @@
+{
+  "id": "practice_mcq_quiz",
+  "type": "SharedSlice",
+  "name": "PracticeMcqQuiz",
+  "description": "5-question inline AP-style MCQ preview. Ad after question 2. Score feedback signup-gated.",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Practice"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Headline (H2)"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,heading3,heading4,strong,em,hyperlink,list-item,o-list-item",
+            "label": "Body (supports H3/H4)"
+          }
+        },
+        "score_feedback": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Score Feedback (rendered as callout after submission)"
+          }
+        }
+      },
+      "items": {
+        "question_index": {
+          "type": "Number",
+          "config": {
+            "label": "Question Index",
+            "placeholder": "1"
+          }
+        },
+        "course_label": {
+          "type": "Text",
+          "config": {
+            "label": "Course Label",
+            "placeholder": "AP Human Geography"
+          }
+        },
+        "question_stem": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Question Stem"
+          }
+        },
+        "option_a": {
+          "type": "Text",
+          "config": {
+            "label": "Option A",
+            "placeholder": ""
+          }
+        },
+        "option_b": {
+          "type": "Text",
+          "config": {
+            "label": "Option B",
+            "placeholder": ""
+          }
+        },
+        "option_c": {
+          "type": "Text",
+          "config": {
+            "label": "Option C",
+            "placeholder": ""
+          }
+        },
+        "option_d": {
+          "type": "Text",
+          "config": {
+            "label": "Option D",
+            "placeholder": ""
+          }
+        },
+        "correct_index": {
+          "type": "Select",
+          "config": {
+            "label": "Correct Answer",
+            "options": [
+              "1",
+              "2",
+              "3",
+              "4"
+            ]
+          }
+        },
+        "explanation": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Explanation"
+          }
+        }
+      }
+    }
+  ]
+}

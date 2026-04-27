@@ -1,0 +1,79 @@
+{
+  "id": "flashcard_deck",
+  "type": "SharedSlice",
+  "name": "FlashcardDeck",
+  "description": "Sequential flip cards. Tap reveals back. Ad after every Nth card (default 5).",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Sequential flip cards"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Headline (H2)"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,heading3,heading4,strong,em,hyperlink,list-item,o-list-item",
+            "label": "Body"
+          }
+        },
+        "ad_pacing_every_n": {
+          "type": "Number",
+          "config": {
+            "label": "Ad Pacing (every N cards)",
+            "placeholder": "5"
+          }
+        }
+      },
+      "items": {
+        "kicker": {
+          "type": "Select",
+          "config": {
+            "label": "Kicker",
+            "options": [
+              "Definition",
+              "Core idea",
+              "AP phrase",
+              "Example",
+              "Criticism",
+              "Comparison",
+              "Exam trap",
+              "FRQ skill",
+              "Final check"
+            ]
+          }
+        },
+        "front_text": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading3",
+            "label": "Front Text (Question)"
+          }
+        },
+        "back_text": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading3",
+            "label": "Back Text (Answer)"
+          }
+        }
+      }
+    }
+  ]
+}

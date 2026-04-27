@@ -1,0 +1,83 @@
+{
+  "id": "comparison_table",
+  "type": "SharedSlice",
+  "name": "ComparisonTable",
+  "description": "3-column comparison table with 3-6 rows.",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Quick comparison"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Headline (H2)"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,heading3,heading4,strong,em,hyperlink,list-item,o-list-item",
+            "label": "Body"
+          }
+        },
+        "column_1_label": {
+          "type": "Text",
+          "config": {
+            "label": "Column 1 Label",
+            "placeholder": "Concept"
+          }
+        },
+        "column_2_label": {
+          "type": "Text",
+          "config": {
+            "label": "Column 2 Label",
+            "placeholder": "Main focus"
+          }
+        },
+        "column_3_label": {
+          "type": "Text",
+          "config": {
+            "label": "Column 3 Label",
+            "placeholder": "AP exam clue"
+          }
+        }
+      },
+      "items": {
+        "cell_1": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,heading3,heading4,strong,em,hyperlink,list-item,o-list-item",
+            "label": "Cell 1 (with strong span for concept name)"
+          }
+        },
+        "cell_2": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,heading3,heading4,strong,em,hyperlink,list-item,o-list-item",
+            "label": "Cell 2"
+          }
+        },
+        "cell_3": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,heading3,heading4,strong,em,hyperlink,list-item,o-list-item",
+            "label": "Cell 3"
+          }
+        }
+      }
+    }
+  ]
+}

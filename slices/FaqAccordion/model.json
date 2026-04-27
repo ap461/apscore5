@@ -1,0 +1,71 @@
+{
+  "id": "faq_accordion",
+  "type": "SharedSlice",
+  "name": "FaqAccordion",
+  "description": "FAQ accordion with category-grouped Q/As. Renders FAQPage JSON-LD. Questions render inside <summary>, answers inside <p> \u2014 FAQPage schema handles SEO regardless of heading level.",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "FAQ"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Headline (H2)"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,heading3,heading4,strong,em,hyperlink,list-item,o-list-item",
+            "label": "Body (supports H3/H4)"
+          }
+        }
+      },
+      "items": {
+        "category": {
+          "type": "Select",
+          "config": {
+            "label": "Category",
+            "options": [
+              "Definition",
+              "Real-life example",
+              "Validity",
+              "Criticism",
+              "Comparison",
+              "AP exam use",
+              "History",
+              "Logistics"
+            ]
+          }
+        },
+        "question": {
+          "type": "Text",
+          "config": {
+            "label": "Question (rendered inside <summary>)",
+            "placeholder": ""
+          }
+        },
+        "answer": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Answer"
+          }
+        }
+      }
+    }
+  ]
+}

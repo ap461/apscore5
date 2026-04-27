@@ -1,0 +1,174 @@
+{
+  "id": "quiz_block",
+  "type": "SharedSlice",
+  "name": "QuizBlock",
+  "description": "30-question gated AP-style test (10 easy + 10 medium + 10 hard). Display ad every 2 answers; video ad at difficulty transitions.",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Take the full test"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Headline (H2)"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,heading3,heading4,strong,em,hyperlink,list-item,o-list-item",
+            "label": "Body (supports H3/H4)"
+          }
+        },
+        "gate_message": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Soft Gate Message (shown to guests after Q3)"
+          }
+        },
+        "pass_threshold_percent": {
+          "type": "Number",
+          "config": {
+            "label": "Pass Threshold %",
+            "placeholder": "70"
+          }
+        },
+        "display_ad_every_n": {
+          "type": "Number",
+          "config": {
+            "label": "Display Ad Every N Answers",
+            "placeholder": "2"
+          }
+        },
+        "video_ad_at_difficulty_transitions": {
+          "type": "Boolean",
+          "config": {
+            "label": "Video Ad at Difficulty Transitions",
+            "default_value": true,
+            "placeholder_true": "Yes",
+            "placeholder_false": "No"
+          }
+        }
+      },
+      "items": {
+        "difficulty": {
+          "type": "Select",
+          "config": {
+            "label": "Difficulty",
+            "options": [
+              "easy",
+              "medium",
+              "hard"
+            ]
+          }
+        },
+        "question_index": {
+          "type": "Number",
+          "config": {
+            "label": "Question Index",
+            "placeholder": "1"
+          }
+        },
+        "question_stem": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Question Stem"
+          }
+        },
+        "question_image": {
+          "type": "Image",
+          "config": {
+            "label": "Question Image (optional, for image-based MCQs)",
+            "thumbnails": []
+          }
+        },
+        "question_image_alt": {
+          "type": "Text",
+          "config": {
+            "label": "Question Image Alt",
+            "placeholder": ""
+          }
+        },
+        "option_a": {
+          "type": "Text",
+          "config": {
+            "label": "Option A",
+            "placeholder": ""
+          }
+        },
+        "option_b": {
+          "type": "Text",
+          "config": {
+            "label": "Option B",
+            "placeholder": ""
+          }
+        },
+        "option_c": {
+          "type": "Text",
+          "config": {
+            "label": "Option C",
+            "placeholder": ""
+          }
+        },
+        "option_d": {
+          "type": "Text",
+          "config": {
+            "label": "Option D",
+            "placeholder": ""
+          }
+        },
+        "correct_index": {
+          "type": "Select",
+          "config": {
+            "label": "Correct Answer",
+            "options": [
+              "1",
+              "2",
+              "3",
+              "4"
+            ]
+          }
+        },
+        "explanation": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Explanation"
+          }
+        },
+        "exam_tip": {
+          "type": "Text",
+          "config": {
+            "label": "Exam Tip",
+            "placeholder": ""
+          }
+        },
+        "related_topic": {
+          "type": "Link",
+          "config": {
+            "label": "Related Topic (review link)",
+            "select": "document",
+            "customtypes": [
+              "topic_page"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

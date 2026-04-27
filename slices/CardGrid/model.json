@@ -1,0 +1,221 @@
+{
+  "id": "card_grid",
+  "type": "SharedSlice",
+  "name": "CardGrid",
+  "description": "General-purpose 2/3/4-column card grid. Reused for examples, case studies, application clues, etc.",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Four Column",
+      "docURL": "...",
+      "version": "initial",
+      "description": "4-col grid (default)",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Real-world examples"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Headline (H2)"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,heading3,heading4,strong,em,hyperlink,list-item,o-list-item",
+            "label": "Body (optional, supports H3/H4)"
+          }
+        },
+        "with_links": {
+          "type": "Boolean",
+          "config": {
+            "label": "Cards are clickable links",
+            "default_value": false,
+            "placeholder_true": "Yes",
+            "placeholder_false": "No"
+          }
+        },
+        "closing_callout": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Closing Callout (optional, rendered as box below grid)"
+          }
+        }
+      },
+      "items": {
+        "card_title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading3",
+            "label": "Card Title (H3)"
+          }
+        },
+        "card_body": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Card Body"
+          }
+        },
+        "card_link": {
+          "type": "Link",
+          "config": {
+            "label": "Card Link (required if 'With Links' is on)",
+            "select": null,
+            "allowTargetBlank": true
+          }
+        }
+      }
+    },
+    {
+      "id": "three_col",
+      "name": "Three Column",
+      "docURL": "...",
+      "version": "initial",
+      "description": "3-col grid",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Real-world examples"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Headline (H2)"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,heading3,heading4,strong,em,hyperlink,list-item,o-list-item",
+            "label": "Body (optional, supports H3/H4)"
+          }
+        },
+        "with_links": {
+          "type": "Boolean",
+          "config": {
+            "label": "Cards are clickable links",
+            "default_value": false,
+            "placeholder_true": "Yes",
+            "placeholder_false": "No"
+          }
+        },
+        "closing_callout": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Closing Callout (optional, rendered as box below grid)"
+          }
+        }
+      },
+      "items": {
+        "card_title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading3",
+            "label": "Card Title (H3)"
+          }
+        },
+        "card_body": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Card Body"
+          }
+        },
+        "card_link": {
+          "type": "Link",
+          "config": {
+            "label": "Card Link (required if 'With Links' is on)",
+            "select": null,
+            "allowTargetBlank": true
+          }
+        }
+      }
+    },
+    {
+      "id": "two_col",
+      "name": "Two Column",
+      "docURL": "...",
+      "version": "initial",
+      "description": "2-col grid",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Real-world examples"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Headline (H2)"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,heading3,heading4,strong,em,hyperlink,list-item,o-list-item",
+            "label": "Body (optional, supports H3/H4)"
+          }
+        },
+        "with_links": {
+          "type": "Boolean",
+          "config": {
+            "label": "Cards are clickable links",
+            "default_value": false,
+            "placeholder_true": "Yes",
+            "placeholder_false": "No"
+          }
+        },
+        "closing_callout": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Closing Callout (optional, rendered as box below grid)"
+          }
+        }
+      },
+      "items": {
+        "card_title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading3",
+            "label": "Card Title (H3)"
+          }
+        },
+        "card_body": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Card Body"
+          }
+        },
+        "card_link": {
+          "type": "Link",
+          "config": {
+            "label": "Card Link (required if 'With Links' is on)",
+            "select": null,
+            "allowTargetBlank": true
+          }
+        }
+      }
+    }
+  ]
+}

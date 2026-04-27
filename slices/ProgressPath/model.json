@@ -1,0 +1,62 @@
+{
+  "id": "progress_path",
+  "type": "SharedSlice",
+  "name": "ProgressPath",
+  "description": "4-step progression card grid + closing score-nudge callout. Each step uses an H3 sub-heading.",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Progress signal"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Headline (H2)"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,heading3,heading4,strong,em,hyperlink,list-item,o-list-item",
+            "label": "Body (supports H3/H4)"
+          }
+        },
+        "closing_callout": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Closing Callout (score nudge)"
+          }
+        }
+      },
+      "items": {
+        "step_title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading3",
+            "label": "Step Title (H3)"
+          }
+        },
+        "step_body": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Step Body"
+          }
+        }
+      }
+    }
+  ]
+}

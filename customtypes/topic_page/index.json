@@ -1,0 +1,281 @@
+{
+  "format": "custom",
+  "id": "topic_page",
+  "label": "Topic Page",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "URL Slug (UID)",
+          "placeholder": "malthusian-theory"
+        }
+      },
+      "course_uid": {
+        "type": "Link",
+        "config": {
+          "label": "Course",
+          "select": "document",
+          "customtypes": ["course_pillar_page"]
+        }
+      },
+      "unit_uid": {
+        "type": "Link",
+        "config": {
+          "label": "Unit",
+          "select": "document",
+          "customtypes": ["unit_page"]
+        }
+      },
+      "topic_number": {
+        "type": "Number",
+        "config": {
+          "label": "Topic Number (within unit)",
+          "placeholder": "4"
+        }
+      },
+      "topic_title": {
+        "type": "Text",
+        "config": {
+          "label": "Topic Title",
+          "placeholder": "Malthusian Theory"
+        }
+      },
+      "topic_summary": {
+        "type": "Text",
+        "config": {
+          "label": "Topic Summary (max 240 chars)",
+          "placeholder": "One-sentence summary used in dashboard cards and search results."
+        }
+      },
+      "estimated_time_minutes": {
+        "type": "Number",
+        "config": {
+          "label": "Estimated Time (minutes, 3-30)",
+          "placeholder": "8"
+        }
+      },
+      "difficulty": {
+        "type": "Select",
+        "config": {
+          "label": "Difficulty",
+          "options": ["foundational", "moderate", "advanced"],
+          "default_value": "moderate"
+        }
+      },
+      "frq_skill": {
+        "type": "Select",
+        "config": {
+          "label": "FRQ Skill (AP-readiness tracker)",
+          "options": [
+            "define_identify",
+            "describe_explain",
+            "compare_contrast",
+            "cause_effect",
+            "evaluate_argue",
+            "apply_concept",
+            "read_visual"
+          ],
+          "default_value": "describe_explain"
+        }
+      },
+      "learning_objectives": {
+        "type": "Group",
+        "config": {
+          "label": "Learning Objectives (3-5 entries)",
+          "fields": {
+            "objective": {
+              "type": "Text",
+              "config": {
+                "label": "Objective",
+                "placeholder": "Define Malthusian Theory in one sentence."
+              }
+            }
+          }
+        }
+      },
+      "unit_number": {
+        "type": "Number",
+        "config": {
+          "label": "Unit Number (auto-filled from unit_uid)",
+          "placeholder": "auto-filled"
+        }
+      },
+      "unit_title": {
+        "type": "Text",
+        "config": {
+          "label": "Unit Title (auto-filled from unit_uid)",
+          "placeholder": "auto-filled"
+        }
+      },
+      "exam_weight": {
+        "type": "Text",
+        "config": {
+          "label": "Exam Weight % (auto-filled from unit_uid)",
+          "placeholder": "12-18%"
+        }
+      },
+      "flipcard_count": {
+        "type": "Number",
+        "config": {
+          "label": "Flipcard Count (auto-computed)",
+          "placeholder": "auto-computed"
+        }
+      },
+      "mcq_count": {
+        "type": "Number",
+        "config": {
+          "label": "MCQ Count (auto-computed: 5 inline + 30 full test = 35)",
+          "placeholder": "auto-computed"
+        }
+      },
+      "question_count": {
+        "type": "Number",
+        "config": {
+          "label": "Total Question Count (auto-computed)",
+          "placeholder": "auto-computed"
+        }
+      },
+      "related_topics": {
+        "type": "Group",
+        "config": {
+          "label": "Related Topics (Continue Learning, min 4)",
+          "fields": {
+            "topic": {
+              "type": "Link",
+              "config": {
+                "label": "Related Topic",
+                "select": "document",
+                "customtypes": ["topic_page"]
+              }
+            }
+          }
+        }
+      },
+      "prerequisites": {
+        "type": "Group",
+        "config": {
+          "label": "Prerequisites (topics to know first)",
+          "fields": {
+            "topic": {
+              "type": "Link",
+              "config": {
+                "label": "Prerequisite Topic",
+                "select": "document",
+                "customtypes": ["topic_page"]
+              }
+            }
+          }
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "topic_banner": { "type": "SharedSlice" },
+            "topic_hero": { "type": "SharedSlice" },
+            "simple_explanation": { "type": "SharedSlice" },
+            "video_summary": { "type": "SharedSlice" },
+            "flashcard_deck": { "type": "SharedSlice" },
+            "card_grid": { "type": "SharedSlice" },
+            "definition_block": { "type": "SharedSlice" },
+            "deep_dive": { "type": "SharedSlice" },
+            "comparison_table": { "type": "SharedSlice" },
+            "text_block": { "type": "SharedSlice" },
+            "summary_list": { "type": "SharedSlice" },
+            "practice_mcq_quiz": { "type": "SharedSlice" },
+            "frq_skill_block": { "type": "SharedSlice" },
+            "register_block": { "type": "SharedSlice" },
+            "quiz_block": { "type": "SharedSlice" },
+            "progress_path": { "type": "SharedSlice" },
+            "faq_accordion": { "type": "SharedSlice" },
+            "final_recap": { "type": "SharedSlice" }
+          }
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Title (<title> tag)",
+          "placeholder": "What is Malthusian Theory? | AP Human Geography | APScore5"
+        }
+      },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Description (~155 chars)",
+          "placeholder": "Learn Malthusian Theory for AP Human Geography with flip cards, video, practice questions, and AP exam tips."
+        }
+      },
+      "canonical_url": {
+        "type": "Link",
+        "config": {
+          "label": "Canonical URL",
+          "select": "web",
+          "placeholder": "https://apscore5.com/ap-human-geography/malthusian-theory"
+        }
+      },
+      "og_image": {
+        "type": "Image",
+        "config": {
+          "label": "OpenGraph Share Image (1200x630)",
+          "constraint": {
+            "width": 1200,
+            "height": 630
+          },
+          "thumbnails": []
+        }
+      },
+      "primary_keyword": {
+        "type": "Text",
+        "config": {
+          "label": "Primary SEO Keyword",
+          "placeholder": "malthusian theory"
+        }
+      },
+      "secondary_keywords": {
+        "type": "Group",
+        "config": {
+          "label": "Secondary Keywords (long-tail variations)",
+          "fields": {
+            "keyword": {
+              "type": "Text",
+              "config": {
+                "label": "Keyword",
+                "placeholder": "neo-malthusian theory ap human geography"
+              }
+            }
+          }
+        }
+      },
+      "no_index": {
+        "type": "Boolean",
+        "config": {
+          "label": "Block search engine indexing (staging only)",
+          "default_value": false,
+          "placeholder_true": "Hidden from Google",
+          "placeholder_false": "Indexed (default)"
+        }
+      }
+    },
+    "Lifecycle": {
+      "published_at": {
+        "type": "Date",
+        "config": {
+          "label": "Published At (set on first publish, never edited)"
+        }
+      },
+      "last_reviewed": {
+        "type": "Date",
+        "config": {
+          "label": "Last Reviewed (updated on every weekly refresh)"
+        }
+      }
+    }
+  }
+}

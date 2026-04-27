@@ -1,0 +1,113 @@
+{
+  "id": "topic_hero",
+  "type": "SharedSlice",
+  "name": "TopicHero",
+  "description": "Hero with breadcrumb, badge, title, lede, CTAs, and a 4-stat progress aside.",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "breadcrumb_text": {
+          "type": "Text",
+          "config": {
+            "label": "Breadcrumb",
+            "placeholder": "AP Human Geography > Unit 2 > Population & Migration"
+          }
+        },
+        "badge_text": {
+          "type": "Text",
+          "config": {
+            "label": "Badge",
+            "placeholder": "High-engagement microtopic lesson"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading1",
+            "label": "Headline (H1)"
+          }
+        },
+        "lede": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,heading3,heading4,strong,em,hyperlink,list-item,o-list-item",
+            "label": "Lede"
+          }
+        },
+        "primary_cta_text": {
+          "type": "Text",
+          "config": {
+            "label": "Primary CTA Text",
+            "placeholder": "Watch Summary"
+          }
+        },
+        "primary_cta_link": {
+          "type": "Link",
+          "config": {
+            "label": "Primary CTA Link",
+            "select": null,
+            "allowTargetBlank": true
+          }
+        },
+        "secondary_cta_text": {
+          "type": "Text",
+          "config": {
+            "label": "Secondary CTA Text",
+            "placeholder": "Start Flip Cards"
+          }
+        },
+        "secondary_cta_link": {
+          "type": "Link",
+          "config": {
+            "label": "Secondary CTA Link",
+            "select": null,
+            "allowTargetBlank": true
+          }
+        },
+        "progress_label": {
+          "type": "Text",
+          "config": {
+            "label": "Progress Label",
+            "placeholder": "Unit 2 Progress"
+          }
+        },
+        "progress_percent": {
+          "type": "Number",
+          "config": {
+            "label": "Progress Percent (placeholder for guests)",
+            "placeholder": "38"
+          }
+        },
+        "progress_caption": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,heading3,heading4,strong,em,hyperlink,list-item,o-list-item",
+            "label": "Progress Caption"
+          }
+        }
+      },
+      "items": {
+        "stat_value": {
+          "type": "Text",
+          "config": {
+            "label": "Stat Value",
+            "placeholder": "10"
+          }
+        },
+        "stat_label": {
+          "type": "Text",
+          "config": {
+            "label": "Stat Label",
+            "placeholder": "Flip cards"
+          }
+        }
+      }
+    }
+  ]
+}

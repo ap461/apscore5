@@ -1,0 +1,86 @@
+{
+  "id": "final_recap",
+  "type": "SharedSlice",
+  "name": "FinalRecap",
+  "description": "Closing recap: 2 callouts + summary list + next-topic register-inline.",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Final takeaway"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Headline (H2)"
+          }
+        },
+        "shortcut_callout": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "AP Shortcut Callout"
+          }
+        },
+        "confidence_callout": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Confidence Check Callout"
+          }
+        },
+        "next_topic_lede": {
+          "type": "Text",
+          "config": {
+            "label": "Next Topic Lede",
+            "placeholder": "You've completed 1 of 4 steps in this Unit's score path."
+          }
+        },
+        "next_topic_caption": {
+          "type": "Text",
+          "config": {
+            "label": "Next Topic Caption",
+            "placeholder": "Continue to Neo-Malthusian Theory to strengthen comparison questions."
+          }
+        },
+        "next_topic_cta_text": {
+          "type": "Text",
+          "config": {
+            "label": "Next Topic CTA Text",
+            "placeholder": "Next Topic"
+          }
+        },
+        "next_topic_cta_link": {
+          "type": "Link",
+          "config": {
+            "label": "Next Topic CTA Link",
+            "select": "document",
+            "customtypes": [
+              "topic_page"
+            ]
+          }
+        }
+      },
+      "items": {
+        "bullet": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Summary Bullet"
+          }
+        }
+      }
+    }
+  ]
+}

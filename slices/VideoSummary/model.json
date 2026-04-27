@@ -1,0 +1,62 @@
+{
+  "id": "video_summary",
+  "type": "SharedSlice",
+  "name": "VideoSummary",
+  "description": "Embedded 60-90 second video summary with thumbnail fallback.",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Video summary"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Headline (H2)"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,heading3,heading4,strong,em,hyperlink,list-item,o-list-item",
+            "label": "Body"
+          }
+        },
+        "video_embed_url": {
+          "type": "Link",
+          "config": {
+            "label": "Video Embed URL (YouTube)",
+            "select": null,
+            "allowTargetBlank": true
+          }
+        },
+        "video_thumbnail": {
+          "type": "Image",
+          "config": {
+            "label": "Video Thumbnail (fallback)",
+            "thumbnails": []
+          }
+        },
+        "video_caption": {
+          "type": "Text",
+          "config": {
+            "label": "Video Caption",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

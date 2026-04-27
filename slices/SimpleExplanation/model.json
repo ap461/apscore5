@@ -1,0 +1,47 @@
+{
+  "id": "simple_explanation",
+  "type": "SharedSlice",
+  "name": "SimpleExplanation",
+  "description": "Eyebrow + H2 + paragraph + AP-shortcut callout. Carries the AEO snippet target.",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Simple explanation"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Headline (H2)"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,heading3,heading4,strong,em,hyperlink,list-item,o-list-item",
+            "label": "Body (supports H3/H4 sub-headings)"
+          }
+        },
+        "ap_shortcut": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "AP Shortcut (rendered as callout box)"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

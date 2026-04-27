@@ -1,0 +1,69 @@
+{
+  "id": "register_block",
+  "type": "SharedSlice",
+  "name": "RegisterBlock",
+  "description": "Inline register CTA: dashboard tracker preview + Save My Progress button.",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Save your progress"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Headline (H2)"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Body"
+          }
+        },
+        "tracker_lede": {
+          "type": "Text",
+          "config": {
+            "label": "Tracker Lede",
+            "placeholder": "Your free progress dashboard will track:"
+          }
+        },
+        "tracker_items": {
+          "type": "Text",
+          "config": {
+            "label": "Tracker Items (pipe-delimited)",
+            "placeholder": "Completed topics | Question accuracy | Weak units | Daily streak | Test readiness"
+          }
+        },
+        "cta_text": {
+          "type": "Text",
+          "config": {
+            "label": "CTA Text",
+            "placeholder": "Save My Progress"
+          }
+        },
+        "cta_link": {
+          "type": "Link",
+          "config": {
+            "label": "CTA Link",
+            "select": null,
+            "allowTargetBlank": true
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

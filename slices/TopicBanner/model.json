@@ -1,0 +1,37 @@
+{
+  "id": "topic_banner",
+  "type": "SharedSlice",
+  "name": "TopicBanner",
+  "description": "Wide course-tinted banner image above the hero (1600x600).",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "banner_image": {
+          "type": "Image",
+          "config": {
+            "label": "Banner Image",
+            "constraint": {
+              "width": 1600,
+              "height": 600
+            },
+            "thumbnails": []
+          }
+        },
+        "banner_alt": {
+          "type": "Text",
+          "config": {
+            "label": "Alt Text (required)",
+            "placeholder": "Map showing global population pressure regions"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
