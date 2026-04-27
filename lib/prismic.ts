@@ -135,10 +135,10 @@ const FALLBACK_NAVIGATION = {
     { label: "Pricing", url: "/pricing" },
   ] satisfies NavLink[],
   footerCourses: [
-    { label: "AP Biology", url: "/ap-biology" },
-    { label: "AP Human Geography", url: "/ap-human-geography" },
-    { label: "AP Computer Science Principles", url: "/ap-computer-science-principles" },
-  ] satisfies NavLink[],
+    { label: "AP Biology", url: "/course/ap-biology" },
+    { label: "AP Human Geography", url: "/course/ap-human-geography" },
+    { label: "AP Computer Science Principles", url: "/course/ap-computer-science-principles" },
+  ]satisfies NavLink[],
   footerSite: [
     { label: "How it Works", url: "/courses" },
     { label: "Practice Sets", url: "/practice" },
