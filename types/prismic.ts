@@ -103,6 +103,8 @@ export interface CoursesHubPageDocumentData extends Record<string, PrismicField>
 export type CoursesHubPageDocument = PrismicDocumentWithoutUID<CoursesHubPageDocumentData, "courses_hub_page">;
 
 // ─── FAQ Item (Repeatable) ────────────────────────────────────────────────────
+
+export interface FAQDocumentData extends Record<string, PrismicField> {
   question: KeyTextField;
   answer: RichTextField;
   order: NumberField;
