@@ -135,9 +135,9 @@ const FALLBACK_NAVIGATION = {
     { label: "Pricing", url: "/pricing" },
   ] satisfies NavLink[],
   footerCourses: [
-    { label: "AP Biology", url: "/course/ap-biology" },
-    { label: "AP Human Geography", url: "/course/ap-human-geography" },
-    { label: "AP Computer Science Principles", url: "/course/ap-computer-science-principles" },
+    { label: "AP Biology", url: "/course/ap-biology/" },
+    { label: "AP Human Geography", url: "/course/ap-human-geography/" },
+    { label: "AP Computer Science Principles", url: "/course/ap-computer-science-principles/" },
   ]satisfies NavLink[],
   footerSite: [
     { label: "How it Works", url: "/courses" },
